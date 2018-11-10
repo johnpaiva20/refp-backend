@@ -1,19 +1,22 @@
 package com.tostringtech.refp.core.entities;
 
 import java.util.Calendar;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-import org.springframework.data.annotation.Id;
+
 
 @Entity
 public class Membro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long cdMembro;
+	Long codMembro;
 	@Column(nullable = false, unique = true)
 	String nrMatricula;
 	@Column(nullable = false)
@@ -23,11 +26,9 @@ public class Membro {
 	@Column(nullable = false)
 	String email;
 	@Column(nullable = false)
-	String nmTelefone;
+	String nrTelefone;
 	@Column(nullable = false)
 	Calendar dtNascimento;
 	@Column(nullable = false)
-	String titulacao;
-	// Empresa empresa;
-	
+	String descTitulacao;
 }

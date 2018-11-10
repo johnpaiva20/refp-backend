@@ -1,19 +1,23 @@
 package com.tostringtech.refp.core.entities;
 
 import java.util.Calendar;
+import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-import org.springframework.data.annotation.Id;
+
 
 @Entity
 public class Projeto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long cdProjeto;
+	Long codProjeto;
 	@Column(nullable = false, unique = true)
 	String cdAneel;
 	@Column(nullable = false)
@@ -24,13 +28,26 @@ public class Projeto {
 	int vlDuracaoMeses;
 	@Column(nullable = false, unique = true)
 	String dsOrdemServico;
+	@Column(nullable = false)
+	String status;
+	
+	@OneToMany(targetEntity=Membro.class)
+	Set<Membro>membros;
+	
+	@OneToMany()
+	List<Despesa>despesas;
 
+	
+	
+	
+	
+	
 	public Long getCdProjeto() {
-		return cdProjeto;
+		return codProjeto;
 	}
 
 	public void setCdProjeto(Long cdProjeto) {
-		this.cdProjeto = cdProjeto;
+		this.codProjeto = cdProjeto;
 	}
 
 	public String getCdAneel() {

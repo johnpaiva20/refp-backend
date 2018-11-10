@@ -4,8 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 @Entity
 public class Empresa {
@@ -20,5 +19,6 @@ public class Empresa {
 	String nomeFantasia;
 	@Column(nullable = false)
 	String sigla;
+	String tpEmpresa;
 
 }
