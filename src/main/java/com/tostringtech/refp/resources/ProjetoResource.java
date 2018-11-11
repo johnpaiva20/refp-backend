@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tostringtech.refp.core.entities.Membro;
 import com.tostringtech.refp.core.entities.Projeto;
 import com.tostringtech.refp.core.services.ProjetoService;
 
@@ -37,4 +38,11 @@ public class ProjetoResource {
 		Projeto p = projetoService.create(projeto);
 		return ResponseEntity.ok().body(p);
 	}
+	
+	@RequestMapping(value = "/{id}/membros" ,method = RequestMethod.GET)
+	public ResponseEntity<?>findAllMembers(@PathVariable Long id){
+		List<Membro>membro=projetoService.findAllProjectMembers(id);
+		return ResponseEntity.ok().body(membro);
+	}
+	
 }

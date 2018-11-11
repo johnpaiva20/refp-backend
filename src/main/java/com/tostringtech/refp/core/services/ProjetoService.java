@@ -20,10 +20,10 @@ public class ProjetoService {
 
 	@Autowired
 	private ProjetoRepository projetoRepositorio;
-
-	@Autowired
-	private MembroService membroService;
 	
+	@Autowired
+	private MembroService  membroService;
+
 	//Projeto 
 	public Projeto create(Projeto projeto) {
 		return projetoRepositorio.save(projeto);
@@ -52,18 +52,21 @@ public class ProjetoService {
 		return membroService.findByProject(codProjeto);
 	}
 
-	public void addProjectMember(Membro membro, Long codProjeto) {
+	public void addProjectMember(Long codMembro, Long codProjeto,String descTitulacao) {
 		Projeto projeto = find(codProjeto);
+		Membro membro = membroService.find(codMembro);
+		membro.getDescTitulacao().put(projeto, descTitulacao);
 		projeto.getMembros().add(membro);
 		update(projeto);
 	}
 
-	public void removeProjectMember(Membro membro, Long codProjeto) {
+	public void removeProjectMember(Long codMembro, Long codProjeto) {
 		Projeto projeto = find(codProjeto);
+		Membro membro = membroService.find(codMembro);
 		projeto.getMembros().remove(membro);
 		update(projeto);
 	}
-
+	
 	// Despesa Projeto
 
 	public void addProjectExpense(Despesa despesa, Long codProjeto) {

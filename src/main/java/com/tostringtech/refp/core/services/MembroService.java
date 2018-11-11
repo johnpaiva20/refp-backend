@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.tostringtech.refp.core.entities.Membro;
 import com.tostringtech.refp.core.entities.Projeto;
 import com.tostringtech.refp.repositories.MembroRepository;
 
+@Service
 public class MembroService {
 	@Autowired
 	private MembroRepository membroRepositorio;

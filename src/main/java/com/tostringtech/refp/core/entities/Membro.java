@@ -29,13 +29,13 @@ public class Membro {
 	@Column(nullable = false)
 	Calendar dtNascimento;
 
-	@ElementCollection(targetClass = Projeto.class)
-	@MapKeyClass(String.class)
-	private Map<String, Projeto> descTitulacao;
+	@ElementCollection(targetClass = String.class)
+	@MapKeyClass(Projeto.class)
+	private Map<Projeto, String> descTitulacao;
 	
-	@ElementCollection(targetClass = Projeto.class)
-	@MapKeyClass(Boolean.class)
-	private Map<Boolean, Projeto> snAtivo;
+	@ElementCollection(targetClass = Boolean.class)
+	@MapKeyClass(Projeto.class)
+	private Map<Projeto, Boolean> snAtivo;
 
 	public Long getCodMembro() {
 		return codMembro;
@@ -93,12 +93,20 @@ public class Membro {
 		this.dtNascimento = dtNascimento;
 	}
 
-	public Map<String, Projeto> getDescTitulacao() {
+	public Map<Projeto, String> getDescTitulacao() {
 		return descTitulacao;
 	}
 
-	public void setDescTitulacao(Map<String, Projeto> descTitulacao) {
+	public void setDescTitulacao(Map<Projeto, String> descTitulacao) {
 		this.descTitulacao = descTitulacao;
+	}
+
+	public Map<Projeto, Boolean> getSnAtivo() {
+		return snAtivo;
+	}
+
+	public void setSnAtivo(Map<Projeto, Boolean> snAtivo) {
+		this.snAtivo = snAtivo;
 	}
 
 }

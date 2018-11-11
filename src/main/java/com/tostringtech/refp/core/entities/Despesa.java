@@ -19,4 +19,36 @@ public class Despesa {
 	double vlDespesa;
 	@Column
 	Calendar dtDespesa;
+
+	public Long getCodDespesa() {
+		return codDespesa;
+	}
+
+	public void setCodDespesa(Long codDespesa) {
+		this.codDespesa = codDespesa;
+	}
+
+	public String getNrDocumento() {
+		return nrDocumento;
+	}
+
+	public void setNrDocumento(String nrDocumento) {
+		this.nrDocumento = nrDocumento;
+	}
+
+	public double getVlDespesa() {
+		return vlDespesa;
+	}
+
+	public void setVlDespesa(double vlDespesa) {
+		this.vlDespesa = vlDespesa;
+	}
+
+	public Calendar getDtDespesa() {
+		return dtDespesa;
+	}
+
+	public void setDtDespesa(Calendar dtDespesa) {
+		this.dtDespesa = dtDespesa;
+	}
 }
