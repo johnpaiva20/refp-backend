@@ -17,37 +17,35 @@ import javax.persistence.OneToMany;
 public class Projeto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long codProjeto;
+	private Long codProjeto;
 	@Column(nullable = false, unique = true)
-	String cdAneel;
+	private String cdAneel;
 	@Column(nullable = false)
-	String dsTitulo;
+	private String dsTitulo;
 	@Column(nullable = false)
-	Calendar dtInicio;
+	private Calendar dtInicio;
 	@Column(nullable = false)
-	int vlDuracaoMeses;
+	private int vlDuracaoMeses;
 	@Column(nullable = false, unique = true)
-	String dsOrdemServico;
+	private String dsOrdemServico;
 	@Column(nullable = false)
-	String status;
+	private String status;
 	
 	@OneToMany(targetEntity=Membro.class)
-	Set<Membro>membros;
+	private Set<Membro>membros;
 	
 	@OneToMany()
-	List<Despesa>despesas;
+	private List<Despesa>despesas;
+	
+	@OneToMany()
+	private Set<Empresa>empresas;
 
-	
-	
-	
-	
-	
-	public Long getCdProjeto() {
+	public Long getCodProjeto() {
 		return codProjeto;
 	}
 
-	public void setCdProjeto(Long cdProjeto) {
-		this.codProjeto = cdProjeto;
+	public void setCodProjeto(Long codProjeto) {
+		this.codProjeto = codProjeto;
 	}
 
 	public String getCdAneel() {
@@ -89,5 +87,38 @@ public class Projeto {
 	public void setDsOrdemServico(String dsOrdemServico) {
 		this.dsOrdemServico = dsOrdemServico;
 	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Set<Membro> getMembros() {
+		return membros;
+	}
+
+	public void setMembros(Set<Membro> membros) {
+		this.membros = membros;
+	}
+
+	public List<Despesa> getDespesas() {
+		return despesas;
+	}
+
+	public void setDespesas(List<Despesa> despesas) {
+		this.despesas = despesas;
+	}
+
+	public Set<Empresa> getEmpresas() {
+		return empresas;
+	}
+
+	public void setEmpresas(Set<Empresa> empresas) {
+		this.empresas = empresas;
+	}
+
 
 }
