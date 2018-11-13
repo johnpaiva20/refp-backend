@@ -37,7 +37,7 @@ public class ProjetoService {
 		projetoRepositorio.save(projeto);
 	}
 
-	public Projeto find(Long codProjeto) {
+	public Projeto findByCodProjeto(Long codProjeto) {
 		Optional<Projeto> p = projetoRepositorio.findById(codProjeto);
 		return p.orElse(null);
 	}
@@ -53,41 +53,41 @@ public class ProjetoService {
 	}
 
 	public void addProjectMember(Long codMembro, Long codProjeto,String descTitulacao) {
-		Projeto projeto = find(codProjeto);
+		Projeto projeto = findByCodProjeto(codProjeto);
 		Membro membro = membroService.find(codMembro);
 		membro.getDescTitulacao().put(projeto, descTitulacao);
-		projeto.getMembros().add(membro);
+		//projeto.getMembros().add(membro);
 		update(projeto);
 	}
 
 	public void removeProjectMember(Long codMembro, Long codProjeto) {
-		Projeto projeto = find(codProjeto);
+		Projeto projeto = findByCodProjeto(codProjeto);
 		Membro membro = membroService.find(codMembro);
-		projeto.getMembros().remove(membro);
+		//projeto.getMembros().remove(membro);
 		update(projeto);
 	}
 	
 	// Despesa Projeto
 
 	public void addProjectExpense(Despesa despesa, Long codProjeto) {
-		Projeto projeto = find(codProjeto);
-		projeto.getDespesas().add(despesa);
+		Projeto projeto = findByCodProjeto(codProjeto);
+		//projeto.getDespesas().add(despesa);
 		update(projeto);
 	}
 
 	public void removeProjectExpense(Despesa despesa, Long codProjeto) {
-		Projeto projeto = find(codProjeto);
-		projeto.getDespesas().remove(despesa);
+		Projeto projeto = findByCodProjeto(codProjeto);
+		//projeto.getDespesas().remove(despesa);
 		update(projeto);
 	}
    //Empresas Projeto
 	public void addEnterprise(Long codProjeto,Long codEmpresa, String tpEmpresa) {
-		Projeto projeto = find(codProjeto);
+		Projeto projeto = findByCodProjeto(codProjeto);
 		update(projeto);
 	}
 
 	public void removeEnterprise(Long codEmpresa, Long codProjeto) {
-		Projeto projeto = find(codProjeto);
+		Projeto projeto = findByCodProjeto(codProjeto);
 		update(projeto);
 	}
 

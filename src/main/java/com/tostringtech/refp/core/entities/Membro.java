@@ -1,10 +1,12 @@
 package com.tostringtech.refp.core.entities;
 
-import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,27 +17,44 @@ import javax.persistence.MapKeyClass;
 public class Membro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	Long codMembro;
+	private Long codMembro;
 	@Column(nullable = false, unique = true)
-	String nrMatricula;
+	private String nrMatricula;
 	@Column(nullable = false)
-	String nmMembro;
+	private String nmMembro;
 	@Column(nullable = false, unique = true)
-	String nrCpf;
+	private String nrCpf;
 	@Column(nullable = false)
-	String email;
+	private String email;
 	@Column(nullable = false)
-	String nrTelefone;
+	private String nrTelefone;
 	@Column(nullable = false)
-	Calendar dtNascimento;
+	private Date dtNascimento;
 
 	@ElementCollection(targetClass = String.class)
 	@MapKeyClass(Projeto.class)
-	private Map<Projeto, String> descTitulacao;
+	private Map<Projeto, String> descTitulacao=new HashMap<>();
 	
 	@ElementCollection(targetClass = Boolean.class)
 	@MapKeyClass(Projeto.class)
-	private Map<Projeto, Boolean> snAtivo;
+	private Map<Projeto, Boolean> snAtivo=new HashMap<>();
+
+	public Membro() {
+		
+	}
+	
+
+	public Membro(Long codMembro, String nrMatricula, String nmMembro, String nrCpf, String email, String nrTelefone,
+			Date dtNascimento) {
+		this.codMembro = codMembro;
+		this.nrMatricula = nrMatricula;
+		this.nmMembro = nmMembro;
+		this.nrCpf = nrCpf;
+		this.email = email;
+		this.nrTelefone = nrTelefone;
+		this.dtNascimento = dtNascimento;
+	}
+
 
 	public Long getCodMembro() {
 		return codMembro;
@@ -85,11 +104,11 @@ public class Membro {
 		this.nrTelefone = nrTelefone;
 	}
 
-	public Calendar getDtNascimento() {
+	public Date getDtNascimento() {
 		return dtNascimento;
 	}
 
-	public void setDtNascimento(Calendar dtNascimento) {
+	public void setDtNascimento(Date dtNascimento) {
 		this.dtNascimento = dtNascimento;
 	}
 

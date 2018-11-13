@@ -1,5 +1,6 @@
 package com.tostringtech.refp.core.entities;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.Column;
@@ -26,7 +27,19 @@ public class Empresa {
 
 	@ElementCollection(targetClass = Projeto.class)
 	@MapKeyClass(String.class)
-	private Map<String, Projeto> tpEmpresa;
+	private Map<String, Projeto> tpEmpresa=new HashMap<>();
+
+	public Empresa() {
+	
+	}
+
+	public Empresa(Long cdEmpresa, String nrCnpj, String razaoSocial, String nomeFantasia, String sigla) {
+		this.cdEmpresa = cdEmpresa;
+		this.nrCnpj = nrCnpj;
+		this.razaoSocial = razaoSocial;
+		this.nomeFantasia = nomeFantasia;
+		this.sigla = sigla;
+	}
 
 	public Long getCdEmpresa() {
 		return cdEmpresa;

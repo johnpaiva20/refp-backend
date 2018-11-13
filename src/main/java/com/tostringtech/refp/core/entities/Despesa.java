@@ -1,6 +1,7 @@
 package com.tostringtech.refp.core.entities;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,7 +19,18 @@ public class Despesa {
 	@Column
 	double vlDespesa;
 	@Column
-	Calendar dtDespesa;
+	Date dtDespesa;
+
+	public Despesa() {
+	
+	}
+
+	public Despesa(Long codDespesa, String nrDocumento, double vlDespesa, Date dtDespesa) {
+		this.codDespesa = codDespesa;
+		this.nrDocumento = nrDocumento;
+		this.vlDespesa = vlDespesa;
+		this.dtDespesa = dtDespesa;
+	}
 
 	public Long getCodDespesa() {
 		return codDespesa;
@@ -44,11 +56,11 @@ public class Despesa {
 		this.vlDespesa = vlDespesa;
 	}
 
-	public Calendar getDtDespesa() {
+	public Date getDtDespesa() {
 		return dtDespesa;
 	}
 
-	public void setDtDespesa(Calendar dtDespesa) {
+	public void setDtDespesa(Date dtDespesa) {
 		this.dtDespesa = dtDespesa;
 	}
 }

@@ -18,32 +18,22 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {                                    
-    @Bean
-    public Docket api() { 
-        return new Docket(DocumentationType.SWAGGER_2)  
-          .select()                                  
-          .apis(RequestHandlerSelectors.any())              
-          .paths(PathSelectors.any())                          
-          .build();
-    }
-    
-    
-    private Predicate<RequestHandler> apis() {
-        return RequestHandlerSelectors.basePackage("com.tostringtech.refp.core.entities");
-    }
-    
-   /* private ApiInfo apiInfo() {
-
-        ApiInfo apiInfo = new ApiInfoBuilder()
-                .title ("API de Avaliação de Livros")
-                .description ("Essa é a API de Avaliação de Livros.")
-                .license("Apache License Version 2.0")
-                .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
-                .termsOfServiceUrl("/service.html")
-                .version("1.0.0")
-                .contact(new Contact("Marcel Ferry","www.marcelferry.com.br", "marcelferry@marcelferry.com.br"))
-                .build();
-
-        return apiInfo;
-    }*/
+	 @Bean
+	    public Docket productApi() {
+	        return new Docket(DocumentationType.SWAGGER_2)
+	                .select()
+	                .apis(RequestHandlerSelectors.basePackage("com.tostringtech.refp.resources"))
+	                .build()
+	                .apiInfo(metaData());
+	    }
+	    private ApiInfo metaData() {
+	        return new ApiInfoBuilder()
+	                .title("Spring Boot REST API")
+	                .description("Spring Boot REST API")
+	                .version("1.0.0")
+	                .license("Apache License Version 2.0")
+	                .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0\"")
+	                .contact(new Contact("", "", ""))
+	                .build();
+	    }
 }
