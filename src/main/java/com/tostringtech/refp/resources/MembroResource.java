@@ -39,4 +39,10 @@ public class MembroResource {
 		return ResponseEntity.ok().body(m);
 	}
 	
+	
+	@RequestMapping(method = RequestMethod.PUT)
+	public ResponseEntity<?> update(@RequestBody Membro membro) {
+		Membro m = membroService.update(membro);
+		return ResponseEntity.ok().body(m) ;
+	}
 }
