@@ -10,17 +10,18 @@ import com.tostringtech.refp.core.entities.Rubrica;
 import com.tostringtech.refp.repositories.RubricaRepository;
 
 @Service
-public class RubricaService {
+public class RubricaService implements IServices<Rubrica>{
 
 	@Autowired
 	private RubricaRepository rubricaRepositorio;
 
+	
 	public Rubrica create(Rubrica rubrica) {
 		return rubricaRepositorio.save(rubrica);
 	}
 
-	public void delete(Rubrica rubrica) {
-		rubricaRepositorio.delete(rubrica);
+	public void delete(Long codRubrica) {
+		rubricaRepositorio.deleteById(codRubrica);
 	}
 
 	public Rubrica update(Rubrica rubrica) {
@@ -35,5 +36,9 @@ public class RubricaService {
 	public List<Rubrica> findAll() {
 		return (List<Rubrica>) rubricaRepositorio.findAll();
 	}
+
+	
+
+	
 
 }
