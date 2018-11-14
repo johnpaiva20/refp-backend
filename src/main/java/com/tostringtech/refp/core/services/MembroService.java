@@ -11,10 +11,10 @@ import com.tostringtech.refp.repositories.MembroRepository;
 
 @Service
 public class MembroService {
+	
 	@Autowired
 	private MembroRepository membroRepositorio;
 
-	// Membro
 	public Membro create(Membro membro) {
 		return membroRepositorio.save(membro);
 	}

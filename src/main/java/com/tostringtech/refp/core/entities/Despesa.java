@@ -1,8 +1,6 @@
 package com.tostringtech.refp.core.entities;
 
-import java.util.Calendar;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Despesa {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long codDespesa;
 	@Column
 	String nrDocumento;

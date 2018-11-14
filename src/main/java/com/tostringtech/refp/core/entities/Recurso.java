@@ -1,11 +1,13 @@
 package com.tostringtech.refp.core.entities;
 
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 
 @Entity
 public class Recurso implements Serializable {
@@ -23,6 +25,7 @@ public class Recurso implements Serializable {
 		this.codRecurso = codRecurso;
 		this.descRecurso = descRecurso;
 	}
+		
 
 	public long getCodRecurso() {
 		return codRecurso;
@@ -39,6 +42,8 @@ public class Recurso implements Serializable {
 	public void setDescRecurso(String descRecurso) {
 		this.descRecurso = descRecurso;
 	}
+
+	
 
 	@Override
 	public int hashCode() {
@@ -63,7 +68,7 @@ public class Recurso implements Serializable {
 	}
 
 
-
+	
 	
 
 	

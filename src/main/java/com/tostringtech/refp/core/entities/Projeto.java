@@ -7,20 +7,22 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.NaturalIdCache;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,16 +30,14 @@ import io.swagger.annotations.ApiModelProperty;
 @Entity
 @ApiModel(value="Projeto")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@NaturalIdCache
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Projeto implements Serializable {
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4639376019630777524L;
 
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(hidden = true)
 	private Long codProjeto;
 
@@ -83,6 +83,15 @@ public class Projeto implements Serializable {
 	    @JsonIgnore
 	private Set<Empresa> empresas=new HashSet<>();
 
+	@OneToMany(
+	        mappedBy = "recurso",
+	        cascade = CascadeType.ALL,
+	        orphanRemoval = true
+	    )
+	private List<RecursosProjeto> recursosDoProjeto = new ArrayList<RecursosProjeto>();
+	
+	
+	
 	public Projeto() {
 
 	}
@@ -97,9 +106,13 @@ public class Projeto implements Serializable {
 		this.dsOrdemServico = dsOrdemServico;
 		this.status = status;
 	}
-
+	
 	public Long getCodProjeto() {
 		return codProjeto;
+	}
+
+	public void setCodProjeto(Long codProjeto) {
+		this.codProjeto = codProjeto;
 	}
 
 	public String getCdAneel() {
@@ -174,4 +187,15 @@ public class Projeto implements Serializable {
 		this.empresas = empresas;
 	}
 
+	public List<RecursosProjeto> getRecursosDoProjeto() {
+		return recursosDoProjeto;
+	}
+
+	public void setRecursosDoProjeto(List<RecursosProjeto> recursosDoProjeto) {
+		this.recursosDoProjeto = recursosDoProjeto;
+	}
+
+	
+
+	
 }
