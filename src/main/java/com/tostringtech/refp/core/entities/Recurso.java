@@ -1,13 +1,11 @@
 package com.tostringtech.refp.core.entities;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Recurso implements Serializable {
@@ -15,55 +13,38 @@ public class Recurso implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cod_recurso;
+	private long codRecurso;
 	@Column
-	private String desc_recurso;
-	@ManyToOne
-	private Rubrica rubrica;
+	private String descRecurso;
 	
 	public Recurso() {}
 
-	public Recurso(long cod_recurso, String desc_recurso, Rubrica rubrica) {
-		this.cod_recurso = cod_recurso;
-		this.desc_recurso = desc_recurso;
-		this.rubrica = rubrica;
+	public Recurso(long codRecurso, String descRecurso) {
+		this.codRecurso = codRecurso;
+		this.descRecurso = descRecurso;
 	}
 
-	public long getCod_recurso() {
-		return cod_recurso;
+	public long getCodRecurso() {
+		return codRecurso;
 	}
 
-	public void setCod_recurso(long cod_recurso) {
-		this.cod_recurso = cod_recurso;
+	public void setCodRecurso(long codRecurso) {
+		this.codRecurso = codRecurso;
 	}
 
-	public String getDesc_recurso() {
-		return desc_recurso;
+	public String getDescRecurso() {
+		return descRecurso;
 	}
 
-	public void setDesc_recurso(String desc_recurso) {
-		this.desc_recurso = desc_recurso;
-	}
-
-	public Rubrica getRubrica() {
-		return rubrica;
-	}
-
-	public void setRubrica(Rubrica rubrica) {
-		this.rubrica = rubrica;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public void setDescRecurso(String descRecurso) {
+		this.descRecurso = descRecurso;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (cod_recurso ^ (cod_recurso >>> 32));
-		result = prime * result + ((desc_recurso == null) ? 0 : desc_recurso.hashCode());
-		result = prime * result + ((rubrica == null) ? 0 : rubrica.hashCode());
+		result = prime * result + (int) (codRecurso ^ (codRecurso >>> 32));
 		return result;
 	}
 
@@ -76,22 +57,12 @@ public class Recurso implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Recurso other = (Recurso) obj;
-		if (cod_recurso != other.cod_recurso)
-			return false;
-		if (desc_recurso == null) {
-			if (other.desc_recurso != null)
-				return false;
-		} else if (!desc_recurso.equals(other.desc_recurso))
-			return false;
-		if (rubrica == null) {
-			if (other.rubrica != null)
-				return false;
-		} else if (!rubrica.equals(other.rubrica))
+		if (codRecurso != other.codRecurso)
 			return false;
 		return true;
 	}
-	
-	
+
+
 
 	
 
