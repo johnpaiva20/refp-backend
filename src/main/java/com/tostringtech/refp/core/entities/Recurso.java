@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import io.swagger.annotations.ApiModelProperty;
+
 
 @Entity
 public class Recurso implements Serializable {
@@ -15,6 +17,7 @@ public class Recurso implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(hidden = true)
 	private long codRecurso;
 	@Column
 	private String descRecurso;

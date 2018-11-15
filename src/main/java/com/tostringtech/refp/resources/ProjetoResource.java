@@ -62,11 +62,6 @@ public class ProjetoResource {
 		return ResponseEntity.ok().body(membro);
 	}
 
-	@RequestMapping(value = "/{codProjeto}/membros", method = RequestMethod.POST)
-	public ResponseEntity<?> addMember(@PathVariable Long codProjeto, @RequestBody Long codMembro,
-			@RequestBody String descTitulacao) {
-		projetoService.addProjectMember(codMembro, codProjeto, descTitulacao);
-		return ResponseEntity.ok().body("");
-	}
+
 
 }

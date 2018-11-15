@@ -1,16 +1,12 @@
 package com.tostringtech.refp.core.entities;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MapKeyClass;
 
 @Entity
 public class Membro {
@@ -29,14 +25,6 @@ public class Membro {
 	private String nrTelefone;
 	@Column(nullable = false)
 	private Date dtNascimento;
-
-	@ElementCollection(targetClass = String.class)
-	@MapKeyClass(Projeto.class)
-	private Map<Projeto, String> descTitulacao=new HashMap<>();
-	
-	@ElementCollection(targetClass = Boolean.class)
-	@MapKeyClass(Projeto.class)
-	private Map<Projeto, Boolean> snAtivo=new HashMap<>();
 
 	public Membro() {
 		
@@ -111,20 +99,5 @@ public class Membro {
 		this.dtNascimento = dtNascimento;
 	}
 
-	public Map<Projeto, String> getDescTitulacao() {
-		return descTitulacao;
-	}
-
-	public void setDescTitulacao(Map<Projeto, String> descTitulacao) {
-		this.descTitulacao = descTitulacao;
-	}
-
-	public Map<Projeto, Boolean> getSnAtivo() {
-		return snAtivo;
-	}
-
-	public void setSnAtivo(Map<Projeto, Boolean> snAtivo) {
-		this.snAtivo = snAtivo;
-	}
 
 }

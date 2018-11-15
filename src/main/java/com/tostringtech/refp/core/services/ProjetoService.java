@@ -48,13 +48,6 @@ public class ProjetoService {
 		return membroService.findByProject(codProjeto);
 	}
 
-	public void addProjectMember(Long codMembro, Long codProjeto,String descTitulacao) {
-		Projeto projeto = findByCodProjeto(codProjeto);
-		Membro membro = membroService.find(codMembro);
-		membro.getDescTitulacao().put(projeto, descTitulacao);
-		//projeto.getMembros().add(membro);
-		update(projeto);
-	}
 
 	public void removeProjectMember(Long codMembro, Long codProjeto) {
 		Projeto projeto = findByCodProjeto(codProjeto);

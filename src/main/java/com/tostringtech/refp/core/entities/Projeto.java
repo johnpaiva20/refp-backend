@@ -15,36 +15,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.NaturalIdCache;
-import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
-@ApiModel(value="Projeto")
-@JsonIgnoreProperties(ignoreUnknown = true)
-@NaturalIdCache
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+@ApiModel(value = "Projeto")
 public class Projeto implements Serializable {
-	private static final long serialVersionUID = 4639376019630777524L;
 
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(hidden = true)
 	private Long codProjeto;
 
-	
 	@Column(nullable = false, unique = true)
 	@ApiModelProperty()
-	private String cdAneel;
+	private String codAneel;
 
 	@Column(nullable = false)
 	@ApiModelProperty()
@@ -66,32 +57,27 @@ public class Projeto implements Serializable {
 	@Column(nullable = false)
 	@ApiModelProperty()
 	private String status;
-
-	@OneToMany(targetEntity = Membro.class)
-	@ApiModelProperty(hidden = true)
-	@RestResource(exported = false)
-    @JsonIgnore
-	private Set<Membro> membros=new HashSet<>();
-
-	@OneToMany(targetEntity = Despesa.class)
-	@ApiModelProperty(hidden = true)
+	
 	@JsonIgnore
-	private List<Despesa> despesas=new ArrayList<>();
-
-	@OneToMany(targetEntity = Empresa.class)
 	@ApiModelProperty(hidden = true)
-	    @JsonIgnore
-	private Set<Empresa> empresas=new HashSet<>();
+	@OneToMany(mappedBy = "membro", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<MembrosProjeto> membrosProjeto = new HashSet<>();
 
-	@OneToMany(
-	        mappedBy = "recurso",
-	        cascade = CascadeType.ALL,
-	        orphanRemoval = true
-	    )
-	private List<RecursosProjeto> recursosDoProjeto = new ArrayList<RecursosProjeto>();
-	
-	
-	
+	@JsonIgnore
+	@ApiModelProperty(hidden = true)
+	@OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<EmpresasProjeto> empresasProjeto = new HashSet<>();
+
+	@JsonIgnore
+	@ApiModelProperty(hidden = true)
+	@OneToMany(mappedBy = "despesa", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<DespesasProjeto> despesasProjeto = new ArrayList<>();
+
+	@JsonIgnore
+	@ApiModelProperty(hidden = true)
+	@OneToMany(mappedBy = "recurso", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<RecursosProjeto> recursosProjeto = new ArrayList<RecursosProjeto>();
+
 	public Projeto() {
 
 	}
@@ -99,14 +85,14 @@ public class Projeto implements Serializable {
 	public Projeto(Long codProjeto, String cdAneel, String dsTitulo, Date dtInicio, int vlDuracaoMeses,
 			String dsOrdemServico, String status) {
 		this.codProjeto = codProjeto;
-		this.cdAneel = cdAneel;
+		this.codAneel = cdAneel;
 		this.dsTitulo = dsTitulo;
 		this.dtInicio = dtInicio;
 		this.vlDuracaoMeses = vlDuracaoMeses;
 		this.dsOrdemServico = dsOrdemServico;
 		this.status = status;
 	}
-	
+
 	public Long getCodProjeto() {
 		return codProjeto;
 	}
@@ -115,12 +101,12 @@ public class Projeto implements Serializable {
 		this.codProjeto = codProjeto;
 	}
 
-	public String getCdAneel() {
-		return cdAneel;
+	public String getCodAneel() {
+		return codAneel;
 	}
 
-	public void setCdAneel(String cdAneel) {
-		this.cdAneel = cdAneel;
+	public void setCodAneel(String codAneel) {
+		this.codAneel = codAneel;
 	}
 
 	public String getDsTitulo() {
@@ -163,39 +149,35 @@ public class Projeto implements Serializable {
 		this.status = status;
 	}
 
-	public Set<Membro> getMembros() {
-		return membros;
+	public Set<MembrosProjeto> getMembrosProjeto() {
+		return membrosProjeto;
 	}
 
-	public void setMembros(Set<Membro> membros) {
-		this.membros = membros;
+	public void setMembrosProjeto(Set<MembrosProjeto> membrosProjeto) {
+		this.membrosProjeto = membrosProjeto;
 	}
 
-	public List<Despesa> getDespesas() {
-		return despesas;
+	public Set<EmpresasProjeto> getEmpresasProjeto() {
+		return empresasProjeto;
 	}
 
-	public void setDespesas(List<Despesa> despesas) {
-		this.despesas = despesas;
+	public void setEmpresasProjeto(Set<EmpresasProjeto> empresasProjeto) {
+		this.empresasProjeto = empresasProjeto;
 	}
 
-	public Set<Empresa> getEmpresas() {
-		return empresas;
+	public List<DespesasProjeto> getDespesasProjeto() {
+		return despesasProjeto;
 	}
 
-	public void setEmpresas(Set<Empresa> empresas) {
-		this.empresas = empresas;
+	public void setDespesasProjeto(List<DespesasProjeto> despesasProjeto) {
+		this.despesasProjeto = despesasProjeto;
 	}
 
-	public List<RecursosProjeto> getRecursosDoProjeto() {
-		return recursosDoProjeto;
+	public List<RecursosProjeto> getRecursosProjeto() {
+		return recursosProjeto;
 	}
 
-	public void setRecursosDoProjeto(List<RecursosProjeto> recursosDoProjeto) {
-		this.recursosDoProjeto = recursosDoProjeto;
+	public void setRecursosProjeto(List<RecursosProjeto> recursosProjeto) {
+		this.recursosProjeto = recursosProjeto;
 	}
-
-	
-
-	
 }
