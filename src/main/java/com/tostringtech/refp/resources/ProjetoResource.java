@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.tostringtech.refp.core.entities.Membro;
 import com.tostringtech.refp.core.entities.Projeto;
+import com.tostringtech.refp.core.entities.Recurso;
+import com.tostringtech.refp.core.entities.RecursoProjeto;
 import com.tostringtech.refp.core.services.ProjetoService;
 
 @RestController
@@ -67,6 +69,12 @@ public class ProjetoResource {
 			@RequestBody String descTitulacao) {
 		projetoService.addProjectMember(codMembro, codProjeto, descTitulacao);
 		return ResponseEntity.ok().body("");
+	}
+	
+	@RequestMapping(value = "/{codProjeto}/recurso", method = RequestMethod.POST)
+	public ResponseEntity<?> addRecurso(@PathVariable Long codProjeto, @RequestBody RecursoProjeto recurso) {
+		RecursoProjeto recursoProjeto = projetoService.addRecursoProjeto(codProjeto, recurso);
+		return ResponseEntity.ok().body(recursoProjeto);
 	}
 
 }
