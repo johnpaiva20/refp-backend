@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class RecursosProjetoId implements Serializable {
+public class RecursoProjetoId implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Column(name = "cod_projeto")
@@ -15,9 +15,9 @@ public class RecursosProjetoId implements Serializable {
 	private Long codRecurso;
 	
 	
-	public RecursosProjetoId() {}
+	public RecursoProjetoId() {}
 	
-	public RecursosProjetoId(Long codProjeto, Long codRecurso) {
+	public RecursoProjetoId(Long codProjeto, Long codRecurso) {
 		this.codProjeto = codProjeto;
 		this.codRecurso = codRecurso;
 	}
@@ -52,7 +52,7 @@ public class RecursosProjetoId implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		RecursosProjetoId other = (RecursosProjetoId) obj;
+		RecursoProjetoId other = (RecursoProjetoId) obj;
 		if (codProjeto == null) {
 			if (other.codProjeto != null)
 				return false;

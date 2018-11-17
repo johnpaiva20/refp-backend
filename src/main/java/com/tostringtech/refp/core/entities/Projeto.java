@@ -88,7 +88,7 @@ public class Projeto implements Serializable {
 	        cascade = CascadeType.ALL,
 	        orphanRemoval = true
 	    )
-	private List<RecursosProjeto> recursosDoProjeto = new ArrayList<RecursosProjeto>();
+	private List<RecursoProjeto> recursosDoProjeto = new ArrayList<RecursoProjeto>();
 	
 	
 	
@@ -187,12 +187,12 @@ public class Projeto implements Serializable {
 		this.empresas = empresas;
 	}
 
-	public List<RecursosProjeto> getRecursosDoProjeto() {
+	public List<RecursoProjeto> getRecursosDoProjeto() {
 		return recursosDoProjeto;
 	}
 
-	public void setRecursosDoProjeto(List<RecursosProjeto> recursosDoProjeto) {
-		this.recursosDoProjeto = recursosDoProjeto;
+	public void setRecursosDoProjeto(RecursoProjeto recursosDoProjeto) {
+		this.recursosDoProjeto.add(recursosDoProjeto) ;
 	}
 
 	

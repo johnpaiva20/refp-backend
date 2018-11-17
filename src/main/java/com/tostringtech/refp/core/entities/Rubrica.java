@@ -1,17 +1,14 @@
 package com.tostringtech.refp.core.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 public class Rubrica implements Serializable {
@@ -19,48 +16,59 @@ public class Rubrica implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cod_rubrica;
+	@ApiModelProperty(hidden = true)
+	private long codRubrica;
 	@Column
-	private String desc_rubrica;
-	@OneToMany
-	@JoinTable(
-			name="Rubrica_Recurso",
-			joinColumns = @JoinColumn(name="cod_rubrica"),
-			inverseJoinColumns = @JoinColumn(name="cod_recurso")
-			)
-	private List<Recurso> recursos = new ArrayList<Recurso>();
+	private String descRubrica;
 
 	public Rubrica() {
 	}
-
-	public Rubrica(long cod_rubrica, String desc_rubrica) {
-		this.cod_rubrica = cod_rubrica;
-		this.desc_rubrica = desc_rubrica;
+	
+	public Rubrica(long codRubrica, String descRubrica) {
+		this.codRubrica = codRubrica;
+		this.descRubrica = descRubrica;
 	}
 
-	public long getCod_rubrica() {
-		return cod_rubrica;
+	public long getCodRubrica() {
+		return codRubrica;
 	}
 
-	public void setCod_rubrica(long cod_rubrica) {
-		this.cod_rubrica = cod_rubrica;
+	public void setCodRubrica(long codRubrica) {
+		this.codRubrica = codRubrica;
 	}
 
-	public String getDesc_rubrica() {
-		return desc_rubrica;
+	public String getDescRubrica() {
+		return descRubrica;
 	}
 
-	public void setDesc_rubrica(String desc_rubrica) {
-		this.desc_rubrica = desc_rubrica;
+	public void setDescRubrica(String descRubrica) {
+		this.descRubrica = descRubrica;
 	}
 
-	public List<Recurso> getRecursos() {
-		return recursos;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (codRubrica ^ (codRubrica >>> 32));
+		return result;
 	}
 
-	public void setRecursos(List<Recurso> recursos) {
-		this.recursos = recursos;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Rubrica other = (Rubrica) obj;
+		if (codRubrica != other.codRubrica)
+			return false;
+		return true;
 	}
+	
+
+
 	
 
 }

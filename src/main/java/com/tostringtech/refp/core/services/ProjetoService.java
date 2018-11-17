@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.tostringtech.refp.core.entities.Despesa;
 import com.tostringtech.refp.core.entities.Membro;
 import com.tostringtech.refp.core.entities.Projeto;
+import com.tostringtech.refp.core.entities.Recurso;
+import com.tostringtech.refp.core.entities.RecursoProjeto;
 import com.tostringtech.refp.repositories.ProjetoRepository;
 
 @Service
@@ -20,6 +22,10 @@ public class ProjetoService {
 	@Autowired
 	private MembroService  membroService;
 
+	@Autowired
+	private RecursoProjetoService  recursoProjetoService;
+
+	
 	//Projeto 
 	public Projeto create(Projeto projeto) {
 		return projetoRepositorio.save(projeto);
@@ -29,8 +35,8 @@ public class ProjetoService {
 		projetoRepositorio.delete(projeto);
 	}
 
-	public void update(Projeto projeto) {
-		projetoRepositorio.save(projeto);
+	public Projeto update(Projeto projeto) {
+		return projetoRepositorio.save(projeto);
 	}
 
 	public Projeto findByCodProjeto(Long codProjeto) {
@@ -55,7 +61,7 @@ public class ProjetoService {
 		//projeto.getMembros().add(membro);
 		update(projeto);
 	}
-
+	
 	public void removeProjectMember(Long codMembro, Long codProjeto) {
 		Projeto projeto = findByCodProjeto(codProjeto);
 		Membro membro = membroService.find(codMembro);
@@ -87,4 +93,21 @@ public class ProjetoService {
 		update(projeto);
 	}
 
+	//Recursos projeto
+	public RecursoProjeto addRecursoProjeto(Long codProjeto, RecursoProjeto recurso) {
+		RecursoProjetoService recProjService = new RecursoProjetoService();
+		
+		Projeto projeto = findByCodProjeto(codProjeto);
+		recurso.setProjeto(projeto);
+		//recurso = new RecursoService().create(recurso);
+		
+		//RecursoProjeto recProjeto = new RecursoProjeto();
+
+		//recProjeto.setProjeto(projeto);
+		//recProjeto.setRecurso(recurso);
+		//recProjeto.setValorRecurso(valorRecurso);
+		
+//		return recProjService.create(recProjeto);
+		return recProjService.create(recurso);
+	}
 }
