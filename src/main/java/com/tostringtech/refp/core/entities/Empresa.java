@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class Empresa {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long cdEmpresa;
 	@Column(nullable = false, unique = true)
 	private String nrCnpj;

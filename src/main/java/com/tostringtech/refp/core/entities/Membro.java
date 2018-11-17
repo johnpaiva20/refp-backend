@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Entity
 public class Membro {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codMembro;
 	@Column(nullable = false, unique = true)
 	private String nrMatricula;

@@ -19,6 +19,7 @@ public class Recurso implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(hidden = true)
 	private long codRecurso;
+	
 	@Column
 	private String descRecurso;
 	

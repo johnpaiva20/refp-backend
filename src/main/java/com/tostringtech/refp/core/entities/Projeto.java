@@ -10,10 +10,15 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -54,10 +59,14 @@ public class Projeto implements Serializable {
 	@ApiModelProperty()
 	private String dsOrdemServico;
 
+	@ApiModelProperty()
+	@Column
+	private String tpProjeto;
+
 	@Column(nullable = false)
 	@ApiModelProperty()
 	private String status;
-	
+
 	@JsonIgnore
 	@ApiModelProperty(hidden = true)
 	@OneToMany(mappedBy = "membro", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -179,5 +188,13 @@ public class Projeto implements Serializable {
 
 	public void setRecursosProjeto(List<RecursosProjeto> recursosProjeto) {
 		this.recursosProjeto = recursosProjeto;
+	}
+
+	public String getTpProjeto() {
+		return tpProjeto;
+	}
+
+	public void setTpProjeto(String tpProjeto) {
+		this.tpProjeto = tpProjeto;
 	}
 }

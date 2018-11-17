@@ -11,47 +11,54 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Rubrica implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long cod_rubrica;
+	private String codRubrica;
+
 	@Column
-	private String desc_rubrica;
+	private String descRubrica;
+
+	@ManyToOne(targetEntity = TipoProjeto.class)
+	@JoinColumn(name = "tpProjeto")
+	private TipoProjeto tpProjeto;
+
 	@OneToMany
-	@JoinTable(
-			name="Rubrica_Recurso",
-			joinColumns = @JoinColumn(name="cod_rubrica"),
-			inverseJoinColumns = @JoinColumn(name="cod_recurso")
-			)
-	private List<Recurso> recursos = new ArrayList<Recurso>();
+	@JsonIgnore
+	@JoinTable(name = "recursos_rubrica", joinColumns = @JoinColumn(name = "codRubrica"), inverseJoinColumns = @JoinColumn(name = "codRecurso"))
+	private List<Recurso> recursos = new ArrayList<>();
 
 	public Rubrica() {
 	}
 
-	public Rubrica(long cod_rubrica, String desc_rubrica) {
-		this.cod_rubrica = cod_rubrica;
-		this.desc_rubrica = desc_rubrica;
+	public Rubrica(String codRubrica, String descRubrica) {
+		this.codRubrica = codRubrica;
+		this.descRubrica = descRubrica;
 	}
 
-	public long getCod_rubrica() {
-		return cod_rubrica;
+	public String getCod_rubrica() {
+		return codRubrica;
 	}
 
-	public void setCod_rubrica(long cod_rubrica) {
-		this.cod_rubrica = cod_rubrica;
+	public void setCod_rubrica(String cod_rubrica) {
+		this.codRubrica = cod_rubrica;
 	}
 
 	public String getDesc_rubrica() {
-		return desc_rubrica;
+		return descRubrica;
 	}
 
 	public void setDesc_rubrica(String desc_rubrica) {
-		this.desc_rubrica = desc_rubrica;
+		this.descRubrica = desc_rubrica;
 	}
 
 	public List<Recurso> getRecursos() {
@@ -61,6 +68,5 @@ public class Rubrica implements Serializable {
 	public void setRecursos(List<Recurso> recursos) {
 		this.recursos = recursos;
 	}
-	
 
 }

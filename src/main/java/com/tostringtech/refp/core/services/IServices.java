@@ -6,7 +6,7 @@ public interface IServices <T>{
 
 	public T create(T obj);
 	public T update(T obj) ;
-	public void delete(Long codRubrica); 
+	public void delete(Long codObj); 
 	public T findByCod(Long codObj);
 	public List<T> findAll();
 	

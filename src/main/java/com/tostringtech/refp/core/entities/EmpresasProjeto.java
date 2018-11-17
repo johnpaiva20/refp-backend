@@ -1,5 +1,6 @@
 package com.tostringtech.refp.core.entities;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,10 +22,12 @@ public class EmpresasProjeto {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@MapsId("codEmpresa")
 	private Empresa empresa;
+	
+	@Column
+	private String tpEmpresa;
 
 	public EmpresasProjeto() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public EmpresasProjeto(EmpresasProjetoId codEmpresasProjeto, Projeto projeto, Empresa empresa) {
@@ -56,6 +59,14 @@ public class EmpresasProjeto {
 
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
+	}
+
+	public String getTpEmpresa() {
+		return tpEmpresa;
+	}
+
+	public void setTpEmpresa(String tpEmpresa) {
+		this.tpEmpresa = tpEmpresa;
 	}
 
 }
