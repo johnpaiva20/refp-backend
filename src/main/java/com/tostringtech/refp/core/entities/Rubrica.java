@@ -23,9 +23,6 @@ public class Rubrica implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty(hidden = true)
 	private String codRubrica;
 	@Column
 	private String descRubrica;
