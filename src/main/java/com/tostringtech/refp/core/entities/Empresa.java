@@ -1,20 +1,15 @@
 package com.tostringtech.refp.core.entities;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MapKeyClass;
 
 @Entity
 public class Empresa {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long cdEmpresa;
 	@Column(nullable = false, unique = true)
 	private String nrCnpj;
@@ -24,10 +19,6 @@ public class Empresa {
 	private String nomeFantasia;
 	@Column(nullable = false)
 	private String sigla;
-
-	@ElementCollection(targetClass = Projeto.class)
-	@MapKeyClass(String.class)
-	private Map<String, Projeto> tpEmpresa=new HashMap<>();
 
 	public Empresa() {
 	
@@ -81,12 +72,54 @@ public class Empresa {
 		this.sigla = sigla;
 	}
 
-	public Map<String, Projeto> getTpEmpresa() {
-		return tpEmpresa;
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cdEmpresa == null) ? 0 : cdEmpresa.hashCode());
+		result = prime * result + ((nomeFantasia == null) ? 0 : nomeFantasia.hashCode());
+		result = prime * result + ((nrCnpj == null) ? 0 : nrCnpj.hashCode());
+		result = prime * result + ((razaoSocial == null) ? 0 : razaoSocial.hashCode());
+		result = prime * result + ((sigla == null) ? 0 : sigla.hashCode());
+		return result;
 	}
 
-	public void setTpEmpresa(Map<String, Projeto> tpEmpresa) {
-		this.tpEmpresa = tpEmpresa;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Empresa other = (Empresa) obj;
+		if (cdEmpresa == null) {
+			if (other.cdEmpresa != null)
+				return false;
+		} else if (!cdEmpresa.equals(other.cdEmpresa))
+			return false;
+		if (nomeFantasia == null) {
+			if (other.nomeFantasia != null)
+				return false;
+		} else if (!nomeFantasia.equals(other.nomeFantasia))
+			return false;
+		if (nrCnpj == null) {
+			if (other.nrCnpj != null)
+				return false;
+		} else if (!nrCnpj.equals(other.nrCnpj))
+			return false;
+		if (razaoSocial == null) {
+			if (other.razaoSocial != null)
+				return false;
+		} else if (!razaoSocial.equals(other.razaoSocial))
+			return false;
+		if (sigla == null) {
+			if (other.sigla != null)
+				return false;
+		} else if (!sigla.equals(other.sigla))
+			return false;
+		return true;
 	}
 
 }

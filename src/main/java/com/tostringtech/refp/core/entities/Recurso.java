@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 
 import io.swagger.annotations.ApiModelProperty;
 
+import io.swagger.annotations.ApiModelProperty;
+
 
 @Entity
 public class Recurso implements Serializable {
@@ -20,6 +22,7 @@ public class Recurso implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(hidden = true)
 	private long codRecurso;
+	
 	@Column
 	private String descRecurso;
 	@ManyToOne 
