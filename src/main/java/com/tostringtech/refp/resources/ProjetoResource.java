@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tostringtech.refp.core.entities.Projeto;
+import com.tostringtech.refp.core.entities.Recurso;
+import com.tostringtech.refp.core.entities.RecursoProjeto;
 import com.tostringtech.refp.core.services.ProjetoService;
 
 @RestController(value="Projetos")
@@ -49,6 +51,12 @@ public class ProjetoResource  {
 	@DeleteMapping(value="/{codProjeto}")
 	public ResponseEntity<?> delete(@PathVariable Long codProjeto) {
 		return ResponseEntity.ok().body("");
+	}
+	
+	@PostMapping(value = "/{codProjeto}/recurso")
+	public ResponseEntity<?> addRecurso(@PathVariable Long codProjeto, @RequestBody RecursoProjeto recurso) {
+		RecursoProjeto recursoProjeto = projetoService.addRecursoProjeto(codProjeto, recurso);
+		return ResponseEntity.ok().body(recursoProjeto);
 	}
 
 	@GetMapping(value = "/{codProjeto}")

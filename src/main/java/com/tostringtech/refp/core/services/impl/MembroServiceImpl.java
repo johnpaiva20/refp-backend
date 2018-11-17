@@ -12,7 +12,7 @@ import com.tostringtech.refp.repositories.MembroRepository;
 
 @Service
 public class MembroServiceImpl implements MembroService {
-	
+
 	@Autowired
 	private MembroRepository membroRepositorio;
 
@@ -36,15 +36,15 @@ public class MembroServiceImpl implements MembroService {
 		return (List<Membro>) membroRepositorio.findByCodProjeto(codProjeto);
 	}
 
-	@Override
 	public void delete(Long codMembro) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
-	public Membro findByCod(Long codMembro) {
-		Optional<Membro> membro = membroRepositorio.findById(codMembro);
-		return membro.orElse(null);
+	public Membro findByCod(Long codObj) {
+		Optional<Membro> m=membroRepositorio.findById(codObj);
+		return m.orElse(null);
 	}
+
 }

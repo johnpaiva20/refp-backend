@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tostringtech.refp.core.entities.Recurso;
+import com.tostringtech.refp.core.services.RecursoProjetoService;
 import com.tostringtech.refp.core.services.RecursoService;
 
 @RestController
@@ -19,6 +20,8 @@ public class RecursoResource {
 	
 	@Autowired
 	private RecursoService recursoService;
+	@Autowired
+	private RecursoProjetoService recursoProjetoService;
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Long id) {

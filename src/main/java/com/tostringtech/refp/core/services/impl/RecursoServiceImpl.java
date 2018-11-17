@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.tostringtech.refp.core.entities.Recurso;
 import com.tostringtech.refp.core.services.IServices;
+import com.tostringtech.refp.core.services.RecursoService;
 import com.tostringtech.refp.repositories.RecursoRepository;
 
 @Service
-public class RecursoServiceImpl implements IServices<Recurso> {
+public class RecursoServiceImpl implements RecursoService {
 
 	@Autowired
 	private RecursoRepository recursoRepository;

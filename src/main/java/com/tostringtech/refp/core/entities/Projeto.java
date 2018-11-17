@@ -85,7 +85,7 @@ public class Projeto implements Serializable {
 	@JsonIgnore
 	@ApiModelProperty(hidden = true)
 	@OneToMany(mappedBy = "recurso", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<RecursosProjeto> recursosProjeto = new ArrayList<RecursosProjeto>();
+	private List<RecursoProjeto> recursosProjeto = new ArrayList<RecursoProjeto>();
 
 	public Projeto() {
 
@@ -182,11 +182,11 @@ public class Projeto implements Serializable {
 		this.despesasProjeto = despesasProjeto;
 	}
 
-	public List<RecursosProjeto> getRecursosProjeto() {
+	public List<RecursoProjeto> getRecursosProjeto() {
 		return recursosProjeto;
 	}
 
-	public void setRecursosProjeto(List<RecursosProjeto> recursosProjeto) {
+	public void setRecursosProjeto(List<RecursoProjeto> recursosProjeto) {
 		this.recursosProjeto = recursosProjeto;
 	}
 

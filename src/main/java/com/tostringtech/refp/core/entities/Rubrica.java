@@ -11,20 +11,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 public class Rubrica implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String codRubrica;
 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(hidden = true)
+	private String codRubrica;
 	@Column
 	private String descRubrica;
 
@@ -45,28 +47,20 @@ public class Rubrica implements Serializable {
 		this.descRubrica = descRubrica;
 	}
 
-	public String getCod_rubrica() {
+	public String getCodRubrica() {
 		return codRubrica;
 	}
 
-	public void setCod_rubrica(String cod_rubrica) {
-		this.codRubrica = cod_rubrica;
+	public void setCodRubrica(String codRubrica) {
+		this.codRubrica = codRubrica;
 	}
 
-	public String getDesc_rubrica() {
+	public String getDescRubrica() {
 		return descRubrica;
 	}
 
-	public void setDesc_rubrica(String desc_rubrica) {
-		this.descRubrica = desc_rubrica;
-	}
-
-	public List<Recurso> getRecursos() {
-		return recursos;
-	}
-
-	public void setRecursos(List<Recurso> recursos) {
-		this.recursos = recursos;
+	public void setDescRubrica(String descRubrica) {
+		this.descRubrica = descRubrica;
 	}
 
 }
