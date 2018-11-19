@@ -11,7 +11,6 @@ import javax.persistence.ManyToOne;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import io.swagger.annotations.ApiModelProperty;
 
 
 @Entity

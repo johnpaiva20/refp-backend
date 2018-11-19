@@ -53,9 +53,9 @@ public class ProjetoResource  {
 		return ResponseEntity.ok().body("");
 	}
 	
-	@PostMapping(value = "/{codProjeto}/recurso")
-	public ResponseEntity<?> addRecurso(@PathVariable Long codProjeto, @RequestBody RecursoProjeto recurso) {
-		RecursoProjeto recursoProjeto = projetoService.addRecursoProjeto(codProjeto, recurso);
+	@PostMapping(value = "/recurso")
+	public ResponseEntity<?> addRecurso(@RequestBody RecursoProjeto recurso) {
+		RecursoProjeto recursoProjeto = projetoService.addRecursoProjeto(recurso);
 		return ResponseEntity.ok().body(recursoProjeto);
 	}
 

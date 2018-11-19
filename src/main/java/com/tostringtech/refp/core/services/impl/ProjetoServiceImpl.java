@@ -9,10 +9,13 @@ import org.springframework.stereotype.Service;
 import com.tostringtech.refp.core.entities.Despesa;
 import com.tostringtech.refp.core.entities.Membro;
 import com.tostringtech.refp.core.entities.Projeto;
+import com.tostringtech.refp.core.entities.Recurso;
 import com.tostringtech.refp.core.entities.RecursoProjeto;
+import com.tostringtech.refp.core.entities.RecursoProjetoId;
 import com.tostringtech.refp.core.services.MembroService;
 import com.tostringtech.refp.core.services.ProjetoService;
 import com.tostringtech.refp.core.services.RecursoProjetoService;
+import com.tostringtech.refp.core.services.RecursoService;
 import com.tostringtech.refp.repositories.ProjetoRepository;
 
 @Service
@@ -27,6 +30,9 @@ public class ProjetoServiceImpl implements ProjetoService {
 	@Autowired
 	private RecursoProjetoService  recursoProjetoService;
 
+	@Autowired
+	private RecursoService  recursoService;
+	
 	@Override
 	public void delete(Long codProjeto) {
 		Projeto p= findByCod(codProjeto);
@@ -91,9 +97,19 @@ public class ProjetoServiceImpl implements ProjetoService {
 	}
 
 	@Override
-	public RecursoProjeto addRecursoProjeto(Long codProjeto, RecursoProjeto recurso) {
-		// TODO Auto-generated method stub
-		return null;
+	public RecursoProjeto addRecursoProjeto(RecursoProjeto recursoProjeto) {
+		Projeto projeto = projetoRepositorio.findById(recursoProjeto.getProjeto().getCodProjeto()).get();
+		recursoProjeto.setProjeto(projeto);
+		Recurso recurso = recursoService.findByCod(recursoProjeto.getRecurso().getCodRecurso());
+		recursoProjeto.setRecurso(recurso);
+		
+		RecursoProjetoId recProjId = new RecursoProjetoId();
+		recProjId.setCodProjeto(projeto.getCodProjeto());
+		recProjId.setCodRecurso(recurso.getCodRecurso());
+		
+		recursoProjeto.setCodRecursosProjeto(recProjId);
+		
+		return recursoProjetoService.create(recursoProjeto);
 	}
 
 	
@@ -142,25 +158,8 @@ public class ProjetoServiceImpl implements ProjetoService {
 		Projeto projeto = findByCodProjeto(codProjeto);
 		update(projeto);
 	}
+*/
 
-
-	//Recursos projeto
-	public RecursoProjeto addRecursoProjeto(Long codProjeto, RecursoProjeto recurso) {
-		RecursoProjetoService recProjService = new RecursoProjetoService();
-		
-		Projeto projeto = findByCodProjeto(codProjeto);
-		recurso.setProjeto(projeto);
-		//recurso = new RecursoService().create(recurso);
-		
-		//RecursoProjeto recProjeto = new RecursoProjeto();
-
-		//recProjeto.setProjeto(projeto);
-		//recProjeto.setRecurso(recurso);
-		//recProjeto.setValorRecurso(valorRecurso);
-		
-//		return recProjService.create(recProjeto);
-		return recProjService.create(recurso);
-	}*/
 
 	
 }

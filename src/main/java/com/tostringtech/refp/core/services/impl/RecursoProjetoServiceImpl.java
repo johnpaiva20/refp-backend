@@ -42,8 +42,7 @@ public class RecursoProjetoServiceImpl  implements RecursoProjetoService {
 
 	@Override
 	public RecursoProjeto create(RecursoProjeto obj) {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.save(obj);
 	}
 
 }
