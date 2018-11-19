@@ -10,15 +10,10 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -87,6 +82,7 @@ public class Projeto implements Serializable {
 	@OneToMany(mappedBy = "recurso", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<RecursoProjeto> recursosProjeto = new ArrayList<RecursoProjeto>();
 
+	
 	public Projeto() {
 
 	}

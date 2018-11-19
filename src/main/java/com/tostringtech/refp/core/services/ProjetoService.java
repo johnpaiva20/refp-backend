@@ -28,6 +28,6 @@ public interface ProjetoService extends IServices<Projeto> {
 	//Empresa
 	public void addEnterprise(Long codProjeto,Long codEmpresa, String tpEmpresa);
 	// Recurso
-	public RecursoProjeto addRecursoProjeto(Long codProjeto, RecursoProjeto recurso);
+	public RecursoProjeto addRecursoProjeto(RecursoProjeto recurso);
 
 }

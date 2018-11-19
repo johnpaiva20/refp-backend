@@ -23,7 +23,10 @@ public class Rubrica implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String codRubrica;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@ApiModelProperty(hidden = true)
+	private long codRubrica;
+	
 	@Column
 	private String descRubrica;
 
@@ -36,19 +39,22 @@ public class Rubrica implements Serializable {
 	@JoinTable(name = "recursos_rubrica", joinColumns = @JoinColumn(name = "codRubrica"), inverseJoinColumns = @JoinColumn(name = "codRecurso"))
 	private List<Recurso> recursos = new ArrayList<>();
 
-	public Rubrica() {
-	}
-
-	public Rubrica(String codRubrica, String descRubrica) {
+	
+	public Rubrica() {}
+	
+	
+	public Rubrica(long codRubrica, String descRubrica, TipoProjeto tpProjeto) {
 		this.codRubrica = codRubrica;
 		this.descRubrica = descRubrica;
+		this.tpProjeto = tpProjeto;
 	}
 
-	public String getCodRubrica() {
+
+	public long getCodRubrica() {
 		return codRubrica;
 	}
 
-	public void setCodRubrica(String codRubrica) {
+	public void setCodRubrica(long codRubrica) {
 		this.codRubrica = codRubrica;
 	}
 
@@ -60,4 +66,50 @@ public class Rubrica implements Serializable {
 		this.descRubrica = descRubrica;
 	}
 
+
+	public TipoProjeto getTpProjeto() {
+		return tpProjeto;
+	}
+
+
+	public void setTpProjeto(TipoProjeto tpProjeto) {
+		this.tpProjeto = tpProjeto;
+	}
+
+
+	public List<Recurso> getRecursos() {
+		return recursos;
+	}
+
+
+	public void setRecursos(List<Recurso> recursos) {
+		this.recursos = recursos;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (codRubrica ^ (codRubrica >>> 32));
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Rubrica other = (Rubrica) obj;
+		if (codRubrica != other.codRubrica)
+			return false;
+		return true;
+	}
+
+	
+	
 }

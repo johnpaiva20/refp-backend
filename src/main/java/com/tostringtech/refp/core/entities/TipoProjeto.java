@@ -19,6 +19,16 @@ public class TipoProjeto {
 	@Column(length = 1)
 	private String snAtivo;
 
+	
+	public TipoProjeto() {}
+	
+	public TipoProjeto(String tpProjeto, String descTipoProjeto, String snAtivo) {
+		super();
+		this.tpProjeto = tpProjeto;
+		this.descTipoProjeto = descTipoProjeto;
+		this.snAtivo = snAtivo;
+	}
+
 	public String getTipoProjeto() {
 		return tpProjeto;
 	}
