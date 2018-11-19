@@ -25,29 +25,58 @@ public class TipoProjeto implements Serializable {
 	@ApiModelProperty(readOnly=true)
 	private String snAtivo;
 
+
+	
+	public TipoProjeto() {}
+	
+
+
+
+	public TipoProjeto(String codTipoProjeto, String descTipoProjeto, String snAtivo) {
+		super();
+		this.codTipoProjeto = codTipoProjeto;
+		this.descTipoProjeto = descTipoProjeto;
+		this.snAtivo = snAtivo;
+	}
+
+
+
+
 	public String getCodTipoProjeto() {
 		return codTipoProjeto;
 	}
+
+
 
 	public void setCodTipoProjeto(String codTipoProjeto) {
 		this.codTipoProjeto = codTipoProjeto;
 	}
 
+
+
 	public String getDescTipoProjeto() {
 		return descTipoProjeto;
 	}
+
+
 
 	public void setDescTipoProjeto(String descTipoProjeto) {
 		this.descTipoProjeto = descTipoProjeto;
 	}
 
+
+
 	public String getSnAtivo() {
 		return snAtivo;
 	}
 
+
+
 	public void setSnAtivo(String snAtivo) {
 		this.snAtivo = snAtivo;
 	}
+	
+	
 
 	
 	
