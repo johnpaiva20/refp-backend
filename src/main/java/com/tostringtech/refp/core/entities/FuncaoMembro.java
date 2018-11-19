@@ -1,5 +1,6 @@
 package com.tostringtech.refp.core.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,6 +8,9 @@ import javax.persistence.Id;
 public class FuncaoMembro {
 	
 	@Id
-	private String codFuncao;
+	private String codFuncaoMembro;
+	
+	@Column
+	private String descFuncaoMembro;
 
 }

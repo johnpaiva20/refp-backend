@@ -13,11 +13,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
-import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,38 +32,54 @@ public class Projeto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(hidden = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codProjeto;
 
-	@Column(nullable = false, unique = true)
 	@ApiModelProperty()
+	@Column(nullable = false, unique = true)
 	private String codAneel;
 
-	@Column(nullable = false)
 	@ApiModelProperty()
+	@Column(nullable = false)
 	private String dsTitulo;
 
-	@Column(nullable = false)
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@ApiModelProperty()
+	@Column(nullable = false)
+	@Temporal(TemporalType.DATE)
 	private Date dtInicio;
 
-	@Column(nullable = false)
 	@ApiModelProperty()
+	@Column(nullable = false)
 	private int vlDuracaoMeses;
 
 	@Column(nullable = false, unique = true)
 	@ApiModelProperty()
 	private String dsOrdemServico;
 
-	@ApiModelProperty()
-	@Column
-	private String tpProjeto;
-
 	@Column(nullable = false)
 	@ApiModelProperty()
 	private String status;
+
+	@ManyToOne()
+	@ApiModelProperty()
+	@JoinColumn(name = "codTipoProjeto")
+	@JsonIgnoreProperties(value = { "snAtivo" })
+	private TipoProjeto codTipoProjeto;
+
+	/*
+	 * @ManyToOne()
+	 * 
+	 * @ApiModelProperty() private TemaProjeto temaProjeto;
+	 * 
+	 * @ManyToOne()
+	 * 
+	 * @ApiModelProperty() private SubtemaProjeto subtemaProjeto;
+	 * 
+	 * @ManyToOne()
+	 * 
+	 * @ApiModelProperty() private SegmentoProjeto segmentoProjeto;
+	 */
 
 	@JsonIgnore
 	@ApiModelProperty(hidden = true)
@@ -154,6 +173,14 @@ public class Projeto implements Serializable {
 		this.status = status;
 	}
 
+	public TipoProjeto getCodTipoProjeto() {
+		return codTipoProjeto;
+	}
+
+	public void setCodTipoProjeto(TipoProjeto codTipoProjeto) {
+		this.codTipoProjeto = codTipoProjeto;
+	}
+
 	public Set<MembrosProjeto> getMembrosProjeto() {
 		return membrosProjeto;
 	}
@@ -186,11 +213,4 @@ public class Projeto implements Serializable {
 		this.recursosProjeto = recursosProjeto;
 	}
 
-	public String getTpProjeto() {
-		return tpProjeto;
-	}
-
-	public void setTpProjeto(String tpProjeto) {
-		this.tpProjeto = tpProjeto;
-	}
 }
