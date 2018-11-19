@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.hibernate.annotations.Parameter;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -15,8 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.databind.jsonschema.JsonSerializableSchema;
 import com.tostringtech.refp.core.entities.Projeto;
 import com.tostringtech.refp.core.entities.Recurso;
 import com.tostringtech.refp.core.entities.RecursoProjeto;
@@ -44,7 +47,7 @@ public class ProjetoResource  {
 	}
 
 	@PutMapping(value="")
-	public ResponseEntity<?> update(@RequestBody Projeto projeto) {
+	public ResponseEntity<?> update(@RequestBody() Projeto projeto) {
 		return ResponseEntity.ok().body("");
 	}
 	

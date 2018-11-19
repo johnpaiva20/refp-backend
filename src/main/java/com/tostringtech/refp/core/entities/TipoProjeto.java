@@ -1,5 +1,7 @@
 package com.tostringtech.refp.core.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,24 +9,28 @@ import javax.persistence.Id;
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
-public class TipoProjeto {
+public class TipoProjeto implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@ApiModelProperty(hidden = true)
-	private String tpProjeto;
+	@ApiModelProperty()
+	private String codTipoProjeto;
 
 	@Column
+	@ApiModelProperty(readOnly=true)
 	private String descTipoProjeto;
 
 	@Column(length = 1)
+	@ApiModelProperty(readOnly=true)
 	private String snAtivo;
 
-	public String getTipoProjeto() {
-		return tpProjeto;
+	public String getCodTipoProjeto() {
+		return codTipoProjeto;
 	}
 
-	public void setTipoProjeto(String codTipoProjeto) {
-		this.tpProjeto = codTipoProjeto;
+	public void setCodTipoProjeto(String codTipoProjeto) {
+		this.codTipoProjeto = codTipoProjeto;
 	}
 
 	public String getDescTipoProjeto() {
@@ -43,4 +49,6 @@ public class TipoProjeto {
 		this.snAtivo = snAtivo;
 	}
 
+	
+	
 }
