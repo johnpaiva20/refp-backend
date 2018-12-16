@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tostringtech.refp.core.entities.Despesa;
+import com.tostringtech.refp.core.repositories.DespesaRepository;
 import com.tostringtech.refp.core.services.DespesaService;
-import com.tostringtech.refp.repositories.DespesaRepository;
 
 @Service
 public class DespesaServiceImpl implements DespesaService {

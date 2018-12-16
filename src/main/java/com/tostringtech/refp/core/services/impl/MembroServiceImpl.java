@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tostringtech.refp.core.entities.Membro;
+import com.tostringtech.refp.core.repositories.MembroRepository;
 import com.tostringtech.refp.core.services.MembroService;
-import com.tostringtech.refp.repositories.MembroRepository;
 
 @Service
 public class MembroServiceImpl implements MembroService {
