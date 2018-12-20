@@ -1,23 +1,18 @@
 package com.tostringtech.refp.api.controllers.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.tostringtech.refp.api.controllers.RecursoResource;
+import com.tostringtech.refp.api.controllers.RecursoController;
 import com.tostringtech.refp.core.entities.Recurso;
 import com.tostringtech.refp.core.services.RecursoProjetoService;
 import com.tostringtech.refp.core.services.RecursoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/recursos")
-public class RecursoResourceImpl implements RecursoResource {
+public class RecursoControllerImpl implements RecursoController {
 	
 	@Autowired
 	private RecursoService recursoService;
