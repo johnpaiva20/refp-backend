@@ -7,16 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tostringtech.refp.core.entities.Despesa;
+import com.tostringtech.refp.core.entities.FaseCadeiaInovacaoProjeto;
 import com.tostringtech.refp.core.entities.Membro;
 import com.tostringtech.refp.core.entities.Projeto;
 import com.tostringtech.refp.core.entities.Recurso;
 import com.tostringtech.refp.core.entities.RecursoProjeto;
 import com.tostringtech.refp.core.entities.RecursoProjetoId;
+import com.tostringtech.refp.core.entities.SegmentoProjeto;
+import com.tostringtech.refp.core.entities.TipoProduto;
+import com.tostringtech.refp.core.repositories.ProjetoRepository;
 import com.tostringtech.refp.core.services.MembroService;
 import com.tostringtech.refp.core.services.ProjetoService;
 import com.tostringtech.refp.core.services.RecursoProjetoService;
 import com.tostringtech.refp.core.services.RecursoService;
-import com.tostringtech.refp.repositories.ProjetoRepository;
 
 @Service
 public class ProjetoServiceImpl implements ProjetoService {
@@ -111,55 +114,18 @@ public class ProjetoServiceImpl implements ProjetoService {
 		
 		return recursoProjetoService.create(recursoProjeto);
 	}
-
 	
-	/*
-	// Membro Projeto
-
-	public List<Membro> findAllProjectMembers(Long codProjeto) {
-		return membroService.findByProject(codProjeto);
-	}
-
-	public void addProjectMember(Long codMembro, Long codProjeto,String descTitulacao) {
-		Projeto projeto = findByCodProjeto(codProjeto);
-		Membro membro = membroService.find(codMembro);
-		membro.getDescTitulacao().put(projeto, descTitulacao);
-		//projeto.getMembros().add(membro);
-		update(projeto);
+	@Override
+	public List<SegmentoProjeto> findAllProjectSegments() {
+		return projetoRepositorio.findAllProjectSegments();
 	}
 	
-	public void removeProjectMember(Long codMembro, Long codProjeto) {
-		Projeto projeto = findByCodProjeto(codProjeto);
-		Membro membro = membroService.find(codMembro);
-		//projeto.getMembros().remove(membro);
-		update(projeto);
+	@Override
+	public List<TipoProduto> findAllProjectProductsTypes() {
+		return projetoRepositorio.findAllProjectProductsTypes();
 	}
-	
-	// Despesa Projeto
-
-	public void addProjectExpense(Despesa despesa, Long codProjeto) {
-		Projeto projeto = findByCodProjeto(codProjeto);
-		//projeto.getDespesas().add(despesa);
-		update(projeto);
+	@Override
+	public List<FaseCadeiaInovacaoProjeto> findAllProjectInovationPhases() {
+		return projetoRepositorio.findAllProjectInovationPhases();
 	}
-
-	public void removeProjectExpense(Despesa despesa, Long codProjeto) {
-		Projeto projeto = findByCodProjeto(codProjeto);
-		//projeto.getDespesas().remove(despesa);
-		update(projeto);
-	}
-   //Empresas Projeto
-	public void addEnterprise(Long codProjeto,Long codEmpresa, String tpEmpresa) {
-		Projeto projeto = findByCodProjeto(codProjeto);
-		update(projeto);
-	}
-
-	public void removeEnterprise(Long codEmpresa, Long codProjeto) {
-		Projeto projeto = findByCodProjeto(codProjeto);
-		update(projeto);
-	}
-*/
-
-
-	
 }

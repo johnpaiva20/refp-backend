@@ -3,9 +3,12 @@ package com.tostringtech.refp.core.services;
 import java.util.List;
 
 import com.tostringtech.refp.core.entities.Despesa;
+import com.tostringtech.refp.core.entities.FaseCadeiaInovacaoProjeto;
 import com.tostringtech.refp.core.entities.Membro;
 import com.tostringtech.refp.core.entities.Projeto;
 import com.tostringtech.refp.core.entities.RecursoProjeto;
+import com.tostringtech.refp.core.entities.SegmentoProjeto;
+import com.tostringtech.refp.core.entities.TipoProduto;
 
 public interface ProjetoService extends IServices<Projeto> {
 	// Projeto
@@ -17,17 +20,25 @@ public interface ProjetoService extends IServices<Projeto> {
 
 	// Membro
 	public List<Membro> findAllProjectMembers(Long codProjeto);
-
 	public void addProjectMember(Long codMembro, Long codProjeto, String descTitulacao);
-
 	public void removeProjectMember(Long codMembro, Long codProjeto);
 
 	// Despesa
 	public void addProjectExpense(Despesa despesa, Long codProjeto);
 	public void removeProjectExpense(Despesa despesa, Long codProjeto);
+	
 	//Empresa
 	public void addEnterprise(Long codProjeto,Long codEmpresa, String tpEmpresa);
+	
 	// Recurso
 	public RecursoProjeto addRecursoProjeto(RecursoProjeto recurso);
+    
+	//SegmentoProjeto
+	List<SegmentoProjeto> findAllProjectSegments();
+	
+	//TipoProduto
+	List<TipoProduto> findAllProjectProductsTypes();
+
+	List<FaseCadeiaInovacaoProjeto> findAllProjectInovationPhases();
 
 }

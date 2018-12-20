@@ -6,8 +6,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -23,9 +21,8 @@ public class Rubrica implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(hidden = true)
-	private long codRubrica;
+	private String codRubrica;
 	
 	@Column
 	private String descRubrica;
@@ -43,18 +40,18 @@ public class Rubrica implements Serializable {
 	public Rubrica() {}
 	
 	
-	public Rubrica(long codRubrica, String descRubrica, TipoProjeto tpProjeto) {
+	public Rubrica(String codRubrica, String descRubrica, TipoProjeto tpProjeto) {
 		this.codRubrica = codRubrica;
 		this.descRubrica = descRubrica;
 		this.tpProjeto = tpProjeto;
 	}
 
 
-	public long getCodRubrica() {
+	public String getCodRubrica() {
 		return codRubrica;
 	}
 
-	public void setCodRubrica(long codRubrica) {
+	public void setCodRubrica(String codRubrica) {
 		this.codRubrica = codRubrica;
 	}
 
@@ -85,31 +82,4 @@ public class Rubrica implements Serializable {
 	public void setRecursos(List<Recurso> recursos) {
 		this.recursos = recursos;
 	}
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (codRubrica ^ (codRubrica >>> 32));
-		return result;
-	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Rubrica other = (Rubrica) obj;
-		if (codRubrica != other.codRubrica)
-			return false;
-		return true;
-	}
-
-	
-	
 }

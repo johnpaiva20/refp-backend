@@ -7,9 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.tostringtech.refp.core.entities.Rubrica;
-import com.tostringtech.refp.core.services.IServices;
+import com.tostringtech.refp.core.repositories.RubricaRepository;
 import com.tostringtech.refp.core.services.RubricaService;
-import com.tostringtech.refp.repositories.RubricaRepository;
 
 @Service
 public class RubricaServiceImpl implements RubricaService{
