@@ -2,6 +2,7 @@ package com.tostringtech.refp.api.controllers.impl;
 
 import java.util.List;
 
+import com.tostringtech.refp.api.controllers.RubricaController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -11,13 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tostringtech.refp.api.controllers.RubricaResource;
 import com.tostringtech.refp.core.entities.Rubrica;
 import com.tostringtech.refp.core.services.RubricaService;
 
 @RestController
 @RequestMapping(value = "/rubricas")
-public class RubricaResourceImpl implements RubricaResource {
+public class RubricaControllerImpl implements RubricaController {
 
 
 	@Autowired
