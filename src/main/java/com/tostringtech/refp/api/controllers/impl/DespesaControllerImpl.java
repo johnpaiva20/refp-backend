@@ -3,6 +3,7 @@ package com.tostringtech.refp.api.controllers.impl;
 import com.tostringtech.refp.api.controllers.DespesaController;
 import com.tostringtech.refp.core.entities.Despesa;
 import com.tostringtech.refp.core.services.DespesaService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/despesas")
+@Api(tags = "Despesa")
 public class DespesaControllerImpl implements DespesaController {
 	
 	@Autowired

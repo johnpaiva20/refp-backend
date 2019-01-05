@@ -3,6 +3,7 @@ package com.tostringtech.refp.api.controllers.impl;
 import java.util.List;
 
 import com.tostringtech.refp.api.controllers.RubricaController;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import com.tostringtech.refp.core.services.RubricaService;
 
 @RestController
 @RequestMapping(value = "/rubricas")
+@Api(tags = "Rubrica")
 public class RubricaControllerImpl implements RubricaController {
 
 

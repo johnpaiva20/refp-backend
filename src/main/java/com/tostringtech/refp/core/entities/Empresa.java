@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Empresa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long cdEmpresa;
+	private Long codEmpresa;
 	@Column(nullable = false, unique = true)
 	private String nrCnpj;
 	@Column(nullable = false)
@@ -24,8 +24,8 @@ public class Empresa {
 	
 	}
 
-	public Empresa(Long cdEmpresa, String nrCnpj, String razaoSocial, String nomeFantasia, String sigla) {
-		this.cdEmpresa = cdEmpresa;
+	public Empresa(Long codEmpresa, String nrCnpj, String razaoSocial, String nomeFantasia, String sigla) {
+		this.codEmpresa = codEmpresa;
 		this.nrCnpj = nrCnpj;
 		this.razaoSocial = razaoSocial;
 		this.nomeFantasia = nomeFantasia;
@@ -33,11 +33,11 @@ public class Empresa {
 	}
 
 	public Long getCdEmpresa() {
-		return cdEmpresa;
+		return codEmpresa;
 	}
 
 	public void setCdEmpresa(Long cdEmpresa) {
-		this.cdEmpresa = cdEmpresa;
+		this.codEmpresa = cdEmpresa;
 	}
 
 	public String getNrCnpj() {
@@ -77,7 +77,7 @@ public class Empresa {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((cdEmpresa == null) ? 0 : cdEmpresa.hashCode());
+		result = prime * result + ((codEmpresa == null) ? 0 : codEmpresa.hashCode());
 		result = prime * result + ((nomeFantasia == null) ? 0 : nomeFantasia.hashCode());
 		result = prime * result + ((nrCnpj == null) ? 0 : nrCnpj.hashCode());
 		result = prime * result + ((razaoSocial == null) ? 0 : razaoSocial.hashCode());
@@ -94,10 +94,10 @@ public class Empresa {
 		if (getClass() != obj.getClass())
 			return false;
 		Empresa other = (Empresa) obj;
-		if (cdEmpresa == null) {
-			if (other.cdEmpresa != null)
+		if (codEmpresa == null) {
+			if (other.codEmpresa != null)
 				return false;
-		} else if (!cdEmpresa.equals(other.cdEmpresa))
+		} else if (!codEmpresa.equals(other.codEmpresa))
 			return false;
 		if (nomeFantasia == null) {
 			if (other.nomeFantasia != null)

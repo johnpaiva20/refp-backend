@@ -13,38 +13,39 @@ import com.tostringtech.refp.core.services.MembroService;
 @Service
 public class MembroServiceImpl implements MembroService {
 
-	@Autowired
-	private MembroRepository membroRepositorio;
+    @Autowired
+    private MembroRepository membroRepositorio;
 
-	public Membro create(Membro membro) {
-		return membroRepositorio.save(membro);
-	}
+    @Override
+    public Membro create(Membro membro) {
+        return membroRepositorio.save(membro);
+    }
 
-	public void delete(Membro membro) {
-		membroRepositorio.delete(membro);
-	}
+    @Override
+    public Membro update(Membro membro) {
+        return membroRepositorio.save(membro);
+    }
 
-	public Membro update(Membro membro) {
-		return membroRepositorio.save(membro);
-	}
+    @Override
+    public List<Membro> findAll() {
+        return (List<Membro>) membroRepositorio.findAll();
+    }
 
-	public List<Membro> findAll() {
-		return (List<Membro>) membroRepositorio.findAll();
-	}
+    @Override
+    public List<Membro> findByCodProjeto(Long codProjeto) {
+        return membroRepositorio.findByCodProjeto(codProjeto);
+    }
 
-	public List<Membro> findByProject(Long codProjeto) {
-		return (List<Membro>) membroRepositorio.findByCodProjeto(codProjeto);
-	}
+    @Override
+    public void delete(Long codMembro) {
+        // TODO Auto-generated method stub
 
-	public void delete(Long codMembro) {
-		// TODO Auto-generated method stub
+    }
 
-	}
-
-	@Override
-	public Membro findByCod(Long codObj) {
-		Optional<Membro> m=membroRepositorio.findById(codObj);
-		return m.orElse(null);
-	}
+    @Override
+    public Membro findByCod(Long codObj) {
+        Optional<Membro> m = membroRepositorio.findById(codObj);
+        return m.orElse(null);
+    }
 
 }
