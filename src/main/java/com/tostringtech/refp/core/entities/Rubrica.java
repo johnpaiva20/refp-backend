@@ -28,7 +28,7 @@ public class Rubrica implements Serializable {
 	private String descRubrica;
 
 	@ManyToOne(targetEntity = TipoProjeto.class)
-	@JoinColumn(name = "tpProjeto")
+	@JoinColumn(name = "codTipoProjeto")
 	private TipoProjeto tpProjeto;
 
 	@OneToMany

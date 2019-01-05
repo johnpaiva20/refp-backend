@@ -2,16 +2,16 @@ package com.tostringtech.refp.core.services;
 
 import java.util.List;
 
-import com.tostringtech.refp.core.entities.Despesa;
-import com.tostringtech.refp.core.entities.FaseCadeiaInovacaoProjeto;
-import com.tostringtech.refp.core.entities.Membro;
-import com.tostringtech.refp.core.entities.Projeto;
-import com.tostringtech.refp.core.entities.RecursoProjeto;
-import com.tostringtech.refp.core.entities.SegmentoProjeto;
-import com.tostringtech.refp.core.entities.TipoProduto;
+import com.tostringtech.refp.core.entities.*;
 
 public interface ProjetoService extends IServices<Projeto> {
 	// Projeto
+
+	/**
+	 *
+	 * @param projeto
+	 * @return Cria um Projeto e salva no banco de dados
+	 */
 	public Projeto create(Projeto projeto);
 
 	public Projeto update(Projeto projeto);
@@ -20,7 +20,7 @@ public interface ProjetoService extends IServices<Projeto> {
 
 	// Membro
 	public List<Membro> findAllProjectMembers(Long codProjeto);
-	public void addProjectMember(Long codMembro, Long codProjeto, String descTitulacao);
+	public void addProjectMember(Long codMembro, Long codProjeto, Long codFuncao,Long codTitulacao);
 	public void removeProjectMember(Long codMembro, Long codProjeto);
 
 	// Despesa
@@ -31,7 +31,7 @@ public interface ProjetoService extends IServices<Projeto> {
 	public void addEnterprise(Long codProjeto,Long codEmpresa, String tpEmpresa);
 	
 	// Recurso
-	public RecursoProjeto addRecursoProjeto(RecursoProjeto recurso);
+	public Recurso addRecursoProjeto(Recurso recurso);
     
 	//SegmentoProjeto
 	List<SegmentoProjeto> findAllProjectSegments();
@@ -40,5 +40,11 @@ public interface ProjetoService extends IServices<Projeto> {
 	List<TipoProduto> findAllProjectProductsTypes();
 
 	List<FaseCadeiaInovacaoProjeto> findAllProjectInovationPhases();
+
+	List<TipoProjeto> findAllProjectTypes();
+
+	List<TemaProjeto> findAllProjectSubjects();
+
+	List<SubtemaProjeto>findAllProjectSubSubjects(String codTema);
 
 }

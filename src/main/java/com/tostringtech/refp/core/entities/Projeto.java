@@ -79,7 +79,7 @@ public class Projeto implements Serializable {
 	 * @ManyToOne()
 	 * 
 	 * @ApiModelProperty() private SegmentoProjeto segmentoProjeto;
-	 */
+
 
 	@JsonIgnore
 	@ApiModelProperty(hidden = true)
@@ -100,7 +100,7 @@ public class Projeto implements Serializable {
 	@ApiModelProperty(hidden = true)
 	@OneToMany(mappedBy = "recurso", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<RecursoProjeto> recursosProjeto = new ArrayList<RecursoProjeto>();
-
+*/
 	
 	public Projeto() {
 
@@ -181,36 +181,5 @@ public class Projeto implements Serializable {
 		this.codTipoProjeto = codTipoProjeto;
 	}
 
-	public Set<MembrosProjeto> getMembrosProjeto() {
-		return membrosProjeto;
-	}
-
-	public void setMembrosProjeto(Set<MembrosProjeto> membrosProjeto) {
-		this.membrosProjeto = membrosProjeto;
-	}
-
-	public Set<EmpresasProjeto> getEmpresasProjeto() {
-		return empresasProjeto;
-	}
-
-	public void setEmpresasProjeto(Set<EmpresasProjeto> empresasProjeto) {
-		this.empresasProjeto = empresasProjeto;
-	}
-
-	public List<DespesasProjeto> getDespesasProjeto() {
-		return despesasProjeto;
-	}
-
-	public void setDespesasProjeto(List<DespesasProjeto> despesasProjeto) {
-		this.despesasProjeto = despesasProjeto;
-	}
-
-	public List<RecursoProjeto> getRecursosProjeto() {
-		return recursosProjeto;
-	}
-
-	public void setRecursosProjeto(List<RecursoProjeto> recursosProjeto) {
-		this.recursosProjeto = recursosProjeto;
-	}
 
 }

@@ -2,8 +2,8 @@ package com.tostringtech.refp.api.controllers.impl;
 
 import com.tostringtech.refp.api.controllers.RecursoController;
 import com.tostringtech.refp.core.entities.Recurso;
-import com.tostringtech.refp.core.services.RecursoProjetoService;
 import com.tostringtech.refp.core.services.RecursoService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,12 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/recursos")
+@Api(tags = "Recurso")
 public class RecursoControllerImpl implements RecursoController {
 	
 	@Autowired
 	private RecursoService recursoService;
-	@Autowired
-	private RecursoProjetoService recursoProjetoService;
+
 	@Override
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Long id) {

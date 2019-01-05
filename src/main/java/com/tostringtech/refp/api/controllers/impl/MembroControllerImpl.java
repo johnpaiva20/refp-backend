@@ -3,6 +3,7 @@ package com.tostringtech.refp.api.controllers.impl;
 import com.tostringtech.refp.api.controllers.MembroController;
 import com.tostringtech.refp.core.entities.Membro;
 import com.tostringtech.refp.core.services.MembroService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/membros")
+@Api(tags = "Membro")
 public class MembroControllerImpl implements MembroController {
 
 	@Autowired

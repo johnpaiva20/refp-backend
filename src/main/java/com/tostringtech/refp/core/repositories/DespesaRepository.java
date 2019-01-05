@@ -6,4 +6,5 @@ import com.tostringtech.refp.core.entities.Despesa;
 
 public interface DespesaRepository  extends CrudRepository<Despesa, Long> {
 
+
 }
