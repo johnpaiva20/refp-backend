@@ -1,17 +1,16 @@
 package com.tostringtech.refp.core.services.impl;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.tostringtech.refp.core.repositories.RubricaRepository;
+import com.tostringtech.refp.core.services.RubricaService;
+import com.tostringtech.refp.core.entities.Rubrica;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tostringtech.refp.core.entities.Rubrica;
-import com.tostringtech.refp.core.repositories.RubricaRepository;
-import com.tostringtech.refp.core.services.RubricaService;
+import java.util.List;
+import java.util.Optional;
 
 @Service
-public class RubricaServiceImpl implements RubricaService{
+public class RubricaServiceImpl implements RubricaService {
 
 	@Autowired
 	private RubricaRepository rubricaRepositorio;

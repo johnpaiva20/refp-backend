@@ -1,13 +1,13 @@
 package com.tostringtech.refp.core.services.impl;
 
-import java.util.List;
-
+import com.tostringtech.refp.core.repositories.DespesaRepository;
+import com.tostringtech.refp.core.services.DespesaService;
+import com.tostringtech.refp.core.entities.Despesa;
+import com.tostringtech.refp.api.resources.ExpenseResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tostringtech.refp.core.entities.Despesa;
-import com.tostringtech.refp.core.repositories.DespesaRepository;
-import com.tostringtech.refp.core.services.DespesaService;
+import java.util.List;
 
 @Service
 public class DespesaServiceImpl implements DespesaService {
@@ -16,12 +16,21 @@ public class DespesaServiceImpl implements DespesaService {
 	private DespesaRepository despesaRepositorio;
 
 	@Override
-	public Despesa create(Despesa despesa) {
-		return despesaRepositorio.save(despesa);
+    public ExpenseResource create(Despesa despesa) {
+        // TODO Auto-generated method stub
+        despesaRepositorio.save(despesa);
+        return null;
+    }
+
+    @Override
+    public ExpenseResource create(ExpenseResource despesa) {
+        // TODO Auto-generated method stub
+        //despesaRepositorio.save(despesa);
+        return null;
 	}
 
 	@Override
-	public Despesa update(Despesa obj) {
+    public ExpenseResource update(Despesa obj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -29,17 +38,16 @@ public class DespesaServiceImpl implements DespesaService {
 	@Override
 	public void delete(Long codObj) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
-	public Despesa findByCod(Long codObj) {
+    public ExpenseResource findByCod(Long codObj) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Despesa> findAll() {
+    public List<ExpenseResource> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}

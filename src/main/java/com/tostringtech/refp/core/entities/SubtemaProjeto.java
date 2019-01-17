@@ -1,26 +1,38 @@
 package com.tostringtech.refp.core.entities;
 
-import java.io.Serializable;
-
-import javax.persistence.*;
-
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 @Entity
+@Table(name = "SUBTEMA_PROJETO")
 public class SubtemaProjeto implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
     @Id
     @ApiModelProperty(readOnly = true)
-    @Column
+    @Column(name = "COD_SUBTEMA_PROJETO")
     private String codSubtemaProjeto;
-    @Column
+    @Column(name = "DESC_SUBTEMA_PROJETO")
     private String descSubtemaProjeto;
 
     @ManyToOne
-    @JoinColumn(name = "codTema",foreignKey = @ForeignKey(name = "SUBTEMA_TEMA_FK"),unique = false)
-    private TemaProjeto tema;
+    @JoinColumn(name = "COD_TEMA", foreignKey = @ForeignKey(name = "SUBTEMA_TEMA_FK"))
+    private TemaProjeto temaProjeto;
+
+    public SubtemaProjeto() {
+    }
+
+    public SubtemaProjeto(String codSubtemaProjeto) {
+        this.codSubtemaProjeto = codSubtemaProjeto;
+    }
+
+    public SubtemaProjeto(String codSubtemaProjeto, String descSubtemaProjeto, TemaProjeto temaProjeto) {
+        this.codSubtemaProjeto = codSubtemaProjeto;
+        this.descSubtemaProjeto = descSubtemaProjeto;
+        this.temaProjeto = temaProjeto;
+    }
 
     public String getCodSubtemaProjeto() {
         return codSubtemaProjeto;
@@ -38,4 +50,11 @@ public class SubtemaProjeto implements Serializable {
         this.descSubtemaProjeto = descSubtemaProjeto;
     }
 
+    public TemaProjeto getTemaProjeto() {
+        return temaProjeto;
+    }
+
+    public void setTemaProjeto(TemaProjeto temaProjeto) {
+        this.temaProjeto = temaProjeto;
+    }
 }

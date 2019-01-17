@@ -9,18 +9,20 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 @Entity
+@Table(name = "RECURSO")
 public class Recurso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@ApiModelProperty(hidden = true)
+	@Column(name = "COD_RECURSO")
 	private long codRecurso;
-	
-	@Column
+
+	@Column(name = "DESC_RECURSO")
 	private String descRecurso;
 	@ManyToOne
-	@JoinColumn(name = "codRubrica",foreignKey = @ForeignKey(name = "RECURSO_RUBRICA_FK"))
+	@JoinColumn(name = "COD_RUBRICA", foreignKey = @ForeignKey(name = "RECURSO_RUBRICA_FK"))
 	private Rubrica rubrica;
 	
 	

@@ -4,39 +4,29 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
+@Table(name = "RUBRICA")
 public class Rubrica implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@ApiModelProperty(hidden = true)
+    @Column(name = "COD_RUBRICA")
 	private String codRubrica;
-	
-	@Column
+
+    @Column(name = "DESC_RUBRICA")
 	private String descRubrica;
 
 	@ManyToOne(targetEntity = TipoProjeto.class)
-	@JoinColumn(name = "codTipoProjeto")
+    @JoinColumn(name = "COD_TIPO_PROJETO", foreignKey = @ForeignKey(name = "RUBRICA_TIPO_PROJETO_FK"))
 	private TipoProjeto tpProjeto;
 
-	@OneToMany
-	@JsonIgnore
-	@JoinTable(name = "recursos_rubrica", joinColumns = @JoinColumn(name = "codRubrica"), inverseJoinColumns = @JoinColumn(name = "codRecurso"))
-	private List<Recurso> recursos = new ArrayList<>();
-
-	
 	public Rubrica() {}
 	
 	
@@ -73,13 +63,4 @@ public class Rubrica implements Serializable {
 		this.tpProjeto = tpProjeto;
 	}
 
-
-	public List<Recurso> getRecursos() {
-		return recursos;
-	}
-
-
-	public void setRecursos(List<Recurso> recursos) {
-		this.recursos = recursos;
-	}
 }

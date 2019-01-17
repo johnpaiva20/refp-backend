@@ -2,102 +2,104 @@ package com.tostringtech.refp.core.entities;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "MEMBRO", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "NR_MATRICULA", name = "MEMBRO_UK_1"),
+        @UniqueConstraint(columnNames = "NR_CPF", name = "MEMBRO_UK_2")})
 public class Membro {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codMembro;
-	@Column(nullable = false, unique = true)
-	private String nrMatricula;
-	@Column(nullable = false)
-	private String nmMembro;
-	@Column(nullable = false, unique = true)
-	private String nrCpf;
-	@Column(nullable = false)
-	private String email;
-	@Column(nullable = false)
-	private String nrTelefone;
-	@Column(nullable = false)
-	private Date dtNascimento;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "COD_MEMBRO")
+    private Long codMembro;
 
-	public Membro() {
-		
-	}
-	
+    @Column(name = "NR_MATRICULA", nullable = false)
+    private String nrMatricula;
 
-	public Membro(Long codMembro, String nrMatricula, String nmMembro, String nrCpf, String email, String nrTelefone,
-			Date dtNascimento) {
-		this.codMembro = codMembro;
-		this.nrMatricula = nrMatricula;
-		this.nmMembro = nmMembro;
-		this.nrCpf = nrCpf;
-		this.email = email;
-		this.nrTelefone = nrTelefone;
-		this.dtNascimento = dtNascimento;
-	}
+    @Column(name = "NM_MEMBRO", nullable = false)
+    private String nmMembro;
 
+    @Column(name = "NR_CPF", nullable = false)
+    private String nrCpf;
 
-	public Long getCodMembro() {
-		return codMembro;
-	}
+    @Column(name = "EMAIL", nullable = false)
+    private String email;
 
-	public void setCodMembro(Long codMembro) {
-		this.codMembro = codMembro;
-	}
+    @Column(name = "NR_TELEFONE", nullable = false)
+    private String nrTelefone;
 
-	public String getNrMatricula() {
-		return nrMatricula;
-	}
+    @Column(name = "DT_NASCIMENTO", nullable = false)
+    private Date dtNascimento;
 
-	public void setNrMatricula(String nrMatricula) {
-		this.nrMatricula = nrMatricula;
-	}
+    public Membro() {
+    }
 
-	public String getNmMembro() {
-		return nmMembro;
-	}
+    public Membro(Long codMembro, String nrMatricula, String nmMembro, String nrCpf, String email, String nrTelefone,
+                  Date dtNascimento) {
+        this.codMembro = codMembro;
+        this.nrMatricula = nrMatricula;
+        this.nmMembro = nmMembro;
+        this.nrCpf = nrCpf;
+        this.email = email;
+        this.nrTelefone = nrTelefone;
+        this.dtNascimento = dtNascimento;
+    }
 
-	public void setNmMembro(String nmMembro) {
-		this.nmMembro = nmMembro;
-	}
+    public Long getCodMembro() {
+        return codMembro;
+    }
 
-	public String getNrCpf() {
-		return nrCpf;
-	}
+    public void setCodMembro(Long codMembro) {
+        this.codMembro = codMembro;
+    }
 
-	public void setNrCpf(String nrCpf) {
-		this.nrCpf = nrCpf;
-	}
+    public String getNrMatricula() {
+        return nrMatricula;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setNrMatricula(String nrMatricula) {
+        this.nrMatricula = nrMatricula;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getNmMembro() {
+        return nmMembro;
+    }
 
-	public String getNrTelefone() {
-		return nrTelefone;
-	}
+    public void setNmMembro(String nmMembro) {
+        this.nmMembro = nmMembro;
+    }
 
-	public void setNrTelefone(String nrTelefone) {
-		this.nrTelefone = nrTelefone;
-	}
+    public String getNrCpf() {
+        return nrCpf;
+    }
 
-	public Date getDtNascimento() {
-		return dtNascimento;
-	}
+    public void setNrCpf(String nrCpf) {
+        this.nrCpf = nrCpf;
+    }
 
-	public void setDtNascimento(Date dtNascimento) {
-		this.dtNascimento = dtNascimento;
-	}
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNrTelefone() {
+        return nrTelefone;
+    }
+
+    public void setNrTelefone(String nrTelefone) {
+        this.nrTelefone = nrTelefone;
+    }
+
+    public Date getDtNascimento() {
+        return dtNascimento;
+    }
+
+    public void setDtNascimento(Date dtNascimento) {
+        this.dtNascimento = dtNascimento;
+    }
 
 }

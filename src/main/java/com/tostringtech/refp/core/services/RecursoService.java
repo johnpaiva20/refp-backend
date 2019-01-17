@@ -2,6 +2,17 @@ package com.tostringtech.refp.core.services;
 
 import com.tostringtech.refp.core.entities.Recurso;
 
-public interface RecursoService extends IServices<Recurso> {
+import java.util.List;
 
+public interface RecursoService {
+
+    Recurso create(Recurso recurso);
+
+    Recurso update(Recurso recurso);
+
+    void delete(Long codRubrica);
+
+    Recurso findByCod(Long codRecurso);
+
+    List<Recurso> findAll();
 }

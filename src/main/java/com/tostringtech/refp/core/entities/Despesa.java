@@ -1,24 +1,27 @@
 package com.tostringtech.refp.core.entities;
 
-import java.util.Date;
+import io.swagger.annotations.ApiModel;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
+@Table(name = "DESPESA")
 public class Despesa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "COD_DESPESA")
     private Long codDespesa;
-    @Column
+    @Column(name = "NR_DOCUMENTO")
     private String nrDocumento;
-    @Column
+    @Column(name = "VL_DESPESA")
     private double vlDespesa;
 
-    @Column
+    @Column(name = "DT_DESPESA")
     private Date dtDespesa;
 
     @ManyToOne
-    @JoinColumn(name = "codProjeto", foreignKey = @ForeignKey(name = "DESPESA_PROJETO_FK"))
+    @JoinColumn(name = "COD_PROJETO", foreignKey = @ForeignKey(name = "DESPESA_PROJETO_FK"))
     private Projeto projeto;
 
     public Despesa() {
