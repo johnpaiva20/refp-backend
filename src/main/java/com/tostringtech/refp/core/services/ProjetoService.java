@@ -1,50 +1,67 @@
 package com.tostringtech.refp.core.services;
 
-import java.util.List;
-
+import com.tostringtech.refp.api.resources.EnterpriseResource;
+import com.tostringtech.refp.api.resources.MemberResource;
+import com.tostringtech.refp.api.resources.ProjectEnterpriseResource;
+import com.tostringtech.refp.api.resources.ProjectResource;
 import com.tostringtech.refp.core.entities.*;
 
-public interface ProjetoService extends IServices<Projeto> {
-	// Projeto
+import java.io.File;
+import java.util.List;
 
-	/**
-	 *
-	 * @param projeto
-	 * @return Cria um Projeto e salva no banco de dados
-	 */
-	public Projeto create(Projeto projeto);
 
-	public Projeto update(Projeto projeto);
+public interface ProjetoService {
 
-	public List<Projeto> findAll();
+    void addEnterprise(Long codProjeto, EnterpriseResource enterprise);
 
-	// Membro
-	public List<Membro> findAllProjectMembers(Long codProjeto);
-	public void addProjectMember(Long codMembro, Long codProjeto, Long codFuncao,Long codTitulacao);
-	public void removeProjectMember(Long codMembro, Long codProjeto);
+    void addProjectExpense(Despesa despesa, Long codProjeto);
 
-	// Despesa
-	public void addProjectExpense(Despesa despesa, Long codProjeto);
-	public void removeProjectExpense(Despesa despesa, Long codProjeto);
-	
-	//Empresa
-	public void addEnterprise(Long codProjeto,Long codEmpresa, String tpEmpresa);
-	
-	// Recurso
-	public Recurso addRecursoProjeto(Recurso recurso);
-    
-	//SegmentoProjeto
-	List<SegmentoProjeto> findAllProjectSegments();
-	
-	//TipoProduto
-	List<TipoProduto> findAllProjectProductsTypes();
+    void addProjectMember(Long codMembro, Long codProjeto, Long codFuncao, Long codTitulacao);
 
-	List<FaseCadeiaInovacaoProjeto> findAllProjectInovationPhases();
+    Recurso addRecursoProjeto(Recurso recurso);
 
-	List<TipoProjeto> findAllProjectTypes();
+    ProjectResource buildProjectResource(Projeto project);
 
-	List<TemaProjeto> findAllProjectSubjects();
+    ProjectResource buildProjectResource(Long codProjeto);
 
-	List<SubtemaProjeto>findAllProjectSubSubjects(String codTema);
 
+    Projeto buildProjeto(File projectXML);
+
+    Projeto buildProjeto(ProjectResource resource);
+
+    ProjectResource create(Projeto projeto);
+
+    ProjectResource create(ProjectResource projeto);
+
+    void delete(Long codProjeto);
+
+    void delete(Projeto projeto);
+
+    List<ProjectResource> findAll();
+
+    List<ProjectEnterpriseResource> findAllProjectEnterprises(Long codProjeto);
+
+    List<FaseCadeiaInovacaoProjeto> findAllProjectInovationPhases();
+
+    List<MemberResource> findAllProjectMembers(Long codProjeto);
+
+    List<TipoProduto> findAllProjectProductsTypes();
+
+    List<SegmentoProjeto> findAllProjectSegments();
+
+    List<SubtemaProjeto> findAllProjectSubSubjects(String codTema);
+
+    List<TemaProjeto> findAllProjectSubjects();
+
+    List<TipoProjeto> findAllProjectTypes();
+
+    Projeto findById(Long codProjeto);
+
+    void removeProjectExpense(Despesa despesa, Long codProjeto);
+
+    void removeProjectMember(Long codMembro, Long codProjeto);
+
+    void update(Projeto projeto);
+
+    void update(ProjectResource projeto);
 }

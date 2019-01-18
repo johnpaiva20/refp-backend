@@ -1,19 +1,53 @@
 package com.tostringtech.refp.api.controllers;
 
+import com.tostringtech.refp.api.resources.MemberResource;
+import com.tostringtech.refp.core.services.MembroService;
+import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import com.tostringtech.refp.core.entities.Membro;
+import javax.validation.Valid;
+import java.util.List;
 
-public interface MembroController {
+@RestController
+@RequestMapping(value = "/members")
+@Api(tags = "Membro")
+public class MembroController {
 
-	ResponseEntity<?> findAll();
+    @Autowired
+    private MembroService membroService;
 
-	ResponseEntity<?> update(Membro membro);
+    //@PostMapping("")
+    ResponseEntity<MemberResource> create(@Valid @RequestBody MemberResource membro) {
+        //TODO
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-	ResponseEntity<?> findByCodMembro(Long codMmebro);
+    //@DeleteMapping("")
+    ResponseEntity<?> delete(Long codMembro) {
+        //TODO
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-	ResponseEntity<?> delete(Long codMmebro);
+    //@GetMapping("")
+    ResponseEntity<List<MemberResource>> findAll() {
+        //TODO
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-	ResponseEntity<Membro> create(Membro membro);
+    //@GetMapping("/{codMembro}")
+    ResponseEntity<MemberResource> findById(@PathVariable Long codMembro) {
+        //TODO
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    //@PutMapping("/{codMembro}")
+    ResponseEntity<MemberResource> update(@PathVariable Long codMembro, @Valid @RequestBody MemberResource membro) {
+        //TODO
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 
 }

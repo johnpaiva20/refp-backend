@@ -1,16 +1,22 @@
-package com.tostringtech.refp.core.repositories.dao.impl;
+package com.tostringtech.refp.core.repositories.custom.impl;
 
 import com.tostringtech.refp.core.entities.Membro;
-import com.tostringtech.refp.core.repositories.dao.MembroHibernateDAO;
+import com.tostringtech.refp.core.repositories.custom.MembroRepositoryCustom;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.List;
 
-public class MembroHibernateDAOImpl implements MembroHibernateDAO {
+@Repository
+@Transactional
+public class MembroRepositoryImpl implements MembroRepositoryCustom {
+
+
     @PersistenceContext
-    private EntityManager session;
+    private EntityManager entityManager;
 
     @Override
     public List<Membro> findByCodProjeto(Long codProjeto) {
@@ -18,8 +24,10 @@ public class MembroHibernateDAOImpl implements MembroHibernateDAO {
         sql.append(" where mp.cod_membro=m.cod_membro ");
         sql.append(" and mp.cod_projeto=:codProjeto ");
 
-        Query query = session.createNativeQuery(sql.toString(), Membro.class);
+        Query query = this.entityManager.createNativeQuery(sql.toString(), Membro.class);
         query.setParameter("codProjeto", codProjeto);
+
         return query.getResultList();
     }
+
 }

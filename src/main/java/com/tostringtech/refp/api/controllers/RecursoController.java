@@ -1,17 +1,41 @@
 package com.tostringtech.refp.api.controllers;
 
-import org.springframework.http.ResponseEntity;
-
 import com.tostringtech.refp.core.entities.Recurso;
+import com.tostringtech.refp.core.services.RecursoService;
+import io.swagger.annotations.Api;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-public interface RecursoController {
+@RestController
+@RequestMapping(value = "/resources")
+@Api(tags = "Recurso")
+public class RecursoController {
 
-	ResponseEntity<?> find(Long id);
+    @Autowired
+    private RecursoService recursoService;
 
-	ResponseEntity<?> findAll();
+    ResponseEntity<?> create(Recurso recurso) {
+        //TODO
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-	ResponseEntity<?> create(Recurso recurso);
+    ResponseEntity<?> findAll() {
+        //TODO
 
-	ResponseEntity<?> update(Recurso recurso);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    ResponseEntity<?> findById(Long id) {
+        //TODO
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    ResponseEntity<?> update(Recurso recurso) {
+        //TODO
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
 }

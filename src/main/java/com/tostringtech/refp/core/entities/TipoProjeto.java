@@ -5,79 +5,73 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
+@Table(name = "TIPO_PROJETO")
 public class TipoProjeto implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Id
-	@ApiModelProperty()
-	private String codTipoProjeto;
+    @Id
+    @ApiModelProperty()
+    @Column(name = "COD_TIPO_PROJETO")
+    private String codTipoProjeto;
 
-	@Column
-	@ApiModelProperty(readOnly=true)
-	private String descTipoProjeto;
+    @Column(name = "DESC_TIPO_PROJETO")
+    @ApiModelProperty(readOnly = true)
+    private String descTipoProjeto;
 
-	@Column(length = 1)
-	@ApiModelProperty(readOnly=true)
-	private String snAtivo;
-
-
-	
-	public TipoProjeto() {}
-	
+    @Column(name = "SN_ATIVO", length = 1)
+    @ApiModelProperty(readOnly = true)
+    private String snAtivo;
 
 
+    public TipoProjeto() {
+    }
 
-	public TipoProjeto(String codTipoProjeto, String descTipoProjeto, String snAtivo) {
-		super();
-		this.codTipoProjeto = codTipoProjeto;
-		this.descTipoProjeto = descTipoProjeto;
-		this.snAtivo = snAtivo;
-	}
+    public TipoProjeto(String codTipoProjeto) {
+        this.codTipoProjeto = codTipoProjeto;
+    }
 
-
-
-
-	public String getCodTipoProjeto() {
-		return codTipoProjeto;
-	}
-
+    public TipoProjeto(String codTipoProjeto, String descTipoProjeto, String snAtivo) {
+        super();
+        this.codTipoProjeto = codTipoProjeto;
+        this.descTipoProjeto = descTipoProjeto;
+        this.snAtivo = snAtivo;
+    }
 
 
-	public void setCodTipoProjeto(String codTipoProjeto) {
-		this.codTipoProjeto = codTipoProjeto;
-	}
+    public String getCodTipoProjeto() {
+        return codTipoProjeto;
+    }
 
 
-
-	public String getDescTipoProjeto() {
-		return descTipoProjeto;
-	}
-
+    public void setCodTipoProjeto(String codTipoProjeto) {
+        this.codTipoProjeto = codTipoProjeto;
+    }
 
 
-	public void setDescTipoProjeto(String descTipoProjeto) {
-		this.descTipoProjeto = descTipoProjeto;
-	}
+    public String getDescTipoProjeto() {
+        return descTipoProjeto;
+    }
 
 
-
-	public String getSnAtivo() {
-		return snAtivo;
-	}
-
+    public void setDescTipoProjeto(String descTipoProjeto) {
+        this.descTipoProjeto = descTipoProjeto;
+    }
 
 
-	public void setSnAtivo(String snAtivo) {
-		this.snAtivo = snAtivo;
-	}
-	
-	
+    public String getSnAtivo() {
+        return snAtivo;
+    }
 
-	
-	
+
+    public void setSnAtivo(String snAtivo) {
+        this.snAtivo = snAtivo;
+    }
+
+
 }

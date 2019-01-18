@@ -1,54 +1,64 @@
 package com.tostringtech.refp.core.entities;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.persistence.*;
+import java.io.Serializable;
+
 @Entity
+@Table(name = "TEMA_PROJETO")
 public class TemaProjeto implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	@Id
-	@ApiModelProperty(readOnly = true)
-	private String codTema;
-	@Column
-	private String descTema;
+    private static final long serialVersionUID = 1L;
+    @Id
+    @ApiModelProperty(readOnly = true)
+    @Column(name = "COD_TEMA")
+    private String codTema;
+    @Column(name = "DESC_TEMA")
+    private String descTema;
 
-	@ManyToOne()
-	@ApiModelProperty()
-	@JoinColumn(name="codTipoProjeto")
-	private TipoProjeto codTipoProjeto;
+    @ManyToOne()
+    @ApiModelProperty()
+    @JoinColumn(name = "COD_TIPO_PROJETO", foreignKey = @ForeignKey(name = "TEMA_PROJETO_TIPO_PROJETO_FK"))
+    private TipoProjeto codTipoProjeto;
 
-	public String getCodTema() {
-		return codTema;
-	}
+    public TemaProjeto() {
+    }
 
-	public void setCodTema(String codTema) {
-		this.codTema = codTema;
-	}
+    public TemaProjeto(String codTema) {
+        this.codTema = codTema;
+    }
 
-	public String getDescTema() {
-		return descTema;
-	}
+    public TemaProjeto(String codTema, String descTema, TipoProjeto codTipoProjeto) {
+        this.codTema = codTema;
+        this.descTema = descTema;
+        this.codTipoProjeto = codTipoProjeto;
+    }
 
-	public void setDescTema(String descTema) {
-		this.descTema = descTema;
-	}
+    public String getCodTema() {
+        return codTema;
+    }
 
-	public TipoProjeto getCodTipoProjeto() {
-		return codTipoProjeto;
-	}
+    public void setCodTema(String codTema) {
+        this.codTema = codTema;
+    }
 
-	public void setCodTipoProjeto(TipoProjeto codTipoProjeto) {
-		this.codTipoProjeto = codTipoProjeto;
-	}
+    public String getDescTema() {
+        return descTema;
+    }
 
-	// private Set<SubtemaProjeto> subtemas;
-	
+    public void setDescTema(String descTema) {
+        this.descTema = descTema;
+    }
+
+    public TipoProjeto getCodTipoProjeto() {
+        return codTipoProjeto;
+    }
+
+    public void setCodTipoProjeto(TipoProjeto codTipoProjeto) {
+        this.codTipoProjeto = codTipoProjeto;
+    }
+
+    // private Set<SubtemaProjeto> subtemas;
+
 }

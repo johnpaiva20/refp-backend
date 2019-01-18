@@ -1,125 +1,74 @@
 package com.tostringtech.refp.core.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "EMPRESA",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "NR_CNPJ", name = "EMPRESA_UK_1")})
 public class Empresa {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codEmpresa;
-	@Column(nullable = false, unique = true)
-	private String nrCnpj;
-	@Column(nullable = false)
-	private String razaoSocial;
-	@Column(nullable = false)
-	private String nomeFantasia;
-	@Column(nullable = false)
-	private String sigla;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "COD_EMPRESA")
+    private Long codEmpresa;
+    @Column(name = "NR_CNPJ", nullable = false)
+    private String nrCnpj;
+    @Column(name = "DESC_RAZAO_SOCIAL", nullable = false)
+    private String descRazaoSocial;
+    @Column(name = "DESC_NOME_FANTASIA", nullable = false)
+    private String descNomeFantasia;
+    @Column(name = "DESC_SIGLA", nullable = false)
+    private String descSigla;
 
-	public Empresa() {
-	
-	}
+    public Empresa() {
 
-	public Empresa(Long codEmpresa, String nrCnpj, String razaoSocial, String nomeFantasia, String sigla) {
-		this.codEmpresa = codEmpresa;
-		this.nrCnpj = nrCnpj;
-		this.razaoSocial = razaoSocial;
-		this.nomeFantasia = nomeFantasia;
-		this.sigla = sigla;
-	}
+    }
 
-	public Long getCdEmpresa() {
-		return codEmpresa;
-	}
+    public Empresa(Long codEmpresa, String nrCnpj, String descRazaoSocial, String descNomeFantasia, String descSigla) {
+        this.codEmpresa = codEmpresa;
+        this.nrCnpj = nrCnpj;
+        this.descRazaoSocial = descRazaoSocial;
+        this.descNomeFantasia = descNomeFantasia;
+        this.descSigla = descSigla;
+    }
 
-	public void setCdEmpresa(Long cdEmpresa) {
-		this.codEmpresa = cdEmpresa;
-	}
+    public Long getCodEmpresa() {
+        return codEmpresa;
+    }
 
-	public String getNrCnpj() {
-		return nrCnpj;
-	}
+    public void setCodEmpresa(Long codEmpresa) {
+        this.codEmpresa = codEmpresa;
+    }
 
-	public void setNrCnpj(String nrCnpj) {
-		this.nrCnpj = nrCnpj;
-	}
+    public String getNrCnpj() {
+        return nrCnpj;
+    }
 
-	public String getRazaoSocial() {
-		return razaoSocial;
-	}
+    public void setNrCnpj(String nrCnpj) {
+        this.nrCnpj = nrCnpj;
+    }
 
-	public void setRazaoSocial(String razaoSocial) {
-		this.razaoSocial = razaoSocial;
-	}
+    public String getDescRazaoSocial() {
+        return descRazaoSocial;
+    }
 
-	public String getNomeFantasia() {
-		return nomeFantasia;
-	}
+    public void setDescRazaoSocial(String descRazaoSocial) {
+        this.descRazaoSocial = descRazaoSocial;
+    }
 
-	public void setNomeFantasia(String nomeFantasia) {
-		this.nomeFantasia = nomeFantasia;
-	}
+    public String getDescNomeFantasia() {
+        return descNomeFantasia;
+    }
 
-	public String getSigla() {
-		return sigla;
-	}
+    public void setDescNomeFantasia(String descNomeFantasia) {
+        this.descNomeFantasia = descNomeFantasia;
+    }
 
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
-	}
+    public String getDescSigla() {
+        return descSigla;
+    }
 
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((codEmpresa == null) ? 0 : codEmpresa.hashCode());
-		result = prime * result + ((nomeFantasia == null) ? 0 : nomeFantasia.hashCode());
-		result = prime * result + ((nrCnpj == null) ? 0 : nrCnpj.hashCode());
-		result = prime * result + ((razaoSocial == null) ? 0 : razaoSocial.hashCode());
-		result = prime * result + ((sigla == null) ? 0 : sigla.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Empresa other = (Empresa) obj;
-		if (codEmpresa == null) {
-			if (other.codEmpresa != null)
-				return false;
-		} else if (!codEmpresa.equals(other.codEmpresa))
-			return false;
-		if (nomeFantasia == null) {
-			if (other.nomeFantasia != null)
-				return false;
-		} else if (!nomeFantasia.equals(other.nomeFantasia))
-			return false;
-		if (nrCnpj == null) {
-			if (other.nrCnpj != null)
-				return false;
-		} else if (!nrCnpj.equals(other.nrCnpj))
-			return false;
-		if (razaoSocial == null) {
-			if (other.razaoSocial != null)
-				return false;
-		} else if (!razaoSocial.equals(other.razaoSocial))
-			return false;
-		if (sigla == null) {
-			if (other.sigla != null)
-				return false;
-		} else if (!sigla.equals(other.sigla))
-			return false;
-		return true;
-	}
-
+    public void setDescSigla(String descSigla) {
+        this.descSigla = descSigla;
+    }
 }
