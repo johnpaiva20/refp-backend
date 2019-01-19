@@ -1,9 +1,6 @@
 package com.tostringtech.refp.core.services;
 
-import com.tostringtech.refp.api.resources.EnterpriseResource;
-import com.tostringtech.refp.api.resources.MemberResource;
-import com.tostringtech.refp.api.resources.ProjectEnterpriseResource;
-import com.tostringtech.refp.api.resources.ProjectResource;
+import com.tostringtech.refp.api.resources.*;
 import com.tostringtech.refp.core.entities.*;
 
 import java.io.File;
@@ -41,19 +38,25 @@ public interface ProjetoService {
 
     List<ProjectEnterpriseResource> findAllProjectEnterprises(Long codProjeto);
 
-    List<FaseCadeiaInovacaoProjeto> findAllProjectInovationPhases();
+    List<InovationPhaseResource> findAllProjectInovationPhases();
 
     List<MemberResource> findAllProjectMembers(Long codProjeto);
 
-    List<TipoProduto> findAllProjectProductsTypes();
+    SegmentResource buildSegmentResource(SegmentoProjeto segmento);
 
-    List<SegmentoProjeto> findAllProjectSegments();
+    List<ProductTypeResource> findAllProjectProductsTypes();
+
+    List<SegmentResource> findAllProjectSegments();
 
     List<SubtemaProjeto> findAllProjectSubSubjects(String codTema);
 
+    ProjectTypeResource buildProjectTypeResource(TipoProjeto tipo);
+
     List<TemaProjeto> findAllProjectSubjects();
 
-    List<TipoProjeto> findAllProjectTypes();
+    InovationPhaseResource buildInovationPhaseResource(FaseCadeiaInovacaoProjeto faseInovacao);
+
+    List<ProjectTypeResource> findAllProjectTypes();
 
     Projeto findById(Long codProjeto);
 
