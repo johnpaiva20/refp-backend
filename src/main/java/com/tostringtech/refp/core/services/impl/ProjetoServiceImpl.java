@@ -1,11 +1,7 @@
 package com.tostringtech.refp.core.services.impl;
 
-import com.tostringtech.refp.api.resources.EnterpriseResource;
-import com.tostringtech.refp.api.resources.MemberResource;
-import com.tostringtech.refp.api.resources.ProjectEnterpriseResource;
-import com.tostringtech.refp.api.resources.ProjectResource;
+import com.tostringtech.refp.api.resources.*;
 import com.tostringtech.refp.core.entities.*;
-import com.tostringtech.refp.core.entities.relationships.EmpresaProjeto;
 import com.tostringtech.refp.core.repositories.ProjetoRepository;
 import com.tostringtech.refp.core.services.EmpresaService;
 import com.tostringtech.refp.core.services.MembroService;
@@ -142,23 +138,75 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     @Override
-    public List<SegmentoProjeto> findAllProjectSegments() {
-        return projetoRepositorio.findAllProjectSegments();
+    public List<SegmentResource> findAllProjectSegments() {
+        List<SegmentResource> resources = new ArrayList<>();
+        projetoRepositorio.findAllProjectSegments().forEach(segmento -> {
+            SegmentResource resource = buildSegmentResource(segmento);
+            resources.add(resource);
+        });
+        return resources;
     }
 
     @Override
-    public List<TipoProduto> findAllProjectProductsTypes() {
-        return projetoRepositorio.findAllProjectProductsTypes();
+    public SegmentResource buildSegmentResource(SegmentoProjeto segmento) {
+        SegmentResource resource = new SegmentResource();
+        resource.setId(segmento.getCodSegmento());
+        resource.setSegment(segmento.getDescSegmento());
+        return resource;
     }
 
     @Override
-    public List<FaseCadeiaInovacaoProjeto> findAllProjectInovationPhases() {
-        return projetoRepositorio.findAllProjectInovationPhases();
+    public List<ProductTypeResource> findAllProjectProductsTypes() {
+        List<ProductTypeResource> resources = new ArrayList<>();
+        projetoRepositorio.findAllProjectProductsTypes().forEach(produto -> {
+            ProductTypeResource resource = buildProductTypeResource(produto);
+            resources.add(resource);
+        });
+        return resources;
+    }
+
+    public ProductTypeResource buildProductTypeResource(TipoProduto produto) {
+        ProductTypeResource resource = new ProductTypeResource();
+        resource.setId(produto.getCodTipoProduto());
+        resource.setProduct(produto.getDescTipoProduto());
+        return resource;
     }
 
     @Override
-    public List<TipoProjeto> findAllProjectTypes() {
-        return projetoRepositorio.findAllProjectTypes();
+    public List<InovationPhaseResource> findAllProjectInovationPhases() {
+        List<InovationPhaseResource> resources = new ArrayList<>();
+        projetoRepositorio.findAllProjectInovationPhases().forEach(faseInovacao -> {
+            InovationPhaseResource resource = buildInovationPhaseResource(faseInovacao);
+            resources.add(resource);
+        });
+        return resources;
+    }
+
+    @Override
+    public InovationPhaseResource buildInovationPhaseResource(FaseCadeiaInovacaoProjeto faseInovacao) {
+        InovationPhaseResource resource = new InovationPhaseResource();
+        resource.setId(faseInovacao.getCodFaseCadeia());
+        resource.setInnovationPhase(faseInovacao.getDescFaseCadeia());
+        return resource;
+    }
+
+    @Override
+    public List<ProjectTypeResource> findAllProjectTypes() {
+        List<ProjectTypeResource> resources = new ArrayList<>();
+        projetoRepositorio.findAllProjectTypes().forEach(tipo -> {
+            ProjectTypeResource resource = buildProjectTypeResource(tipo);
+            resources.add(resource);
+        });
+        return resources;
+    }
+
+    @Override
+    public ProjectTypeResource buildProjectTypeResource(TipoProjeto tipo) {
+        ProjectTypeResource resource = new ProjectTypeResource();
+        resource.setId(tipo.getCodTipoProjeto());
+        resource.setType(tipo.getDescTipoProjeto());
+        resource.setActive(tipo.getSnAtivo().equals("S"));
+        return resource;
     }
 
     @Override

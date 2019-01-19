@@ -1,22 +1,21 @@
 package com.tostringtech.refp.api.resources;
 
-import com.tostringtech.refp.core.entities.SegmentoProjeto;
 import io.swagger.annotations.ApiModelProperty;
 
-public class SegmentResource {
+public class ProductTypeResource {
 
     @ApiModelProperty(position = 1, readOnly = true)
     private String id;
 
     @ApiModelProperty(position = 2)
-    private String segment;
+    private String product;
 
-    public SegmentResource() {
+    public ProductTypeResource() {
     }
 
-    public SegmentResource(String id, String segment) {
+    public ProductTypeResource(String id, String product) {
         this.id = id;
-        this.segment = segment;
+        this.product = product;
     }
 
     public String getId() {
@@ -27,11 +26,11 @@ public class SegmentResource {
         this.id = id;
     }
 
-    public String getSegment() {
-        return segment;
+    public String getProduct() {
+        return product;
     }
 
-    public void setSegment(String segment) {
-        this.segment = segment;
+    public void setProduct(String product) {
+        this.product = product;
     }
 }

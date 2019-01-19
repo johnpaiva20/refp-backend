@@ -41,7 +41,7 @@ public class ProjetoController {
     public ResponseEntity<ProjectResource> create(ProjectResource projetoResource) {
         ProjectResource resource = projetoService.create(projetoResource);
         if (resource != null) {
-            return new ResponseEntity<>(resource, HttpStatus.CREATED);
+            return new ResponseEntity<>(resource, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
@@ -69,11 +69,14 @@ public class ProjetoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //@GetMapping("/inovation-phases")
+    @GetMapping("/inovation-phases")
     @ApiOperation(value = "Lista todas as fases de inovação")
-    public ResponseEntity<InovationPhaseResource> findAllInovationPhases() {
-        // TODO Auto-generated method stub
-        return null;
+    public ResponseEntity<List<InovationPhaseResource>> findAllInovationPhases() {
+        List<InovationPhaseResource> allProjectInovationPhases = projetoService.findAllProjectInovationPhases();
+        if (!allProjectInovationPhases.isEmpty()) {
+            return new ResponseEntity<>(allProjectInovationPhases, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     //@GetMapping("/{codProjeto}/members")
@@ -82,9 +85,13 @@ public class ProjetoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //@GetMapping("/product-types")
-    public ResponseEntity<?> findAllProductTypes() {
-        // TODO Auto-generated method stub
+    @GetMapping("/product-types")
+    @ApiOperation(value = "Lista todos os produtos")
+    public ResponseEntity<List<ProductTypeResource>> findAllProductTypes() {
+        List<ProductTypeResource> allProjectProductsTypes = projetoService.findAllProjectProductsTypes();
+        if (!allProjectProductsTypes.isEmpty()) {
+            return new ResponseEntity<>(allProjectProductsTypes, HttpStatus.OK);
+        }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
@@ -94,15 +101,18 @@ public class ProjetoController {
         List<ProjectEnterpriseResource> allProjectEnterprises = projetoService.findAllProjectEnterprises(codProjeto);
 
         if (!allProjectEnterprises.isEmpty()) {
-            return new ResponseEntity<>(allProjectEnterprises, HttpStatus.FOUND);
+            return new ResponseEntity<>(allProjectEnterprises, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //@GetMapping("/types")
+    @GetMapping("/types")
     @ApiOperation(value = "Lista todos os tipos de Projeto")
-    public ResponseEntity<ProjectTypeResource> findAllProjectTypes() {
-        // TODO Auto-generated method stub
+    public ResponseEntity<List<ProjectTypeResource>> findAllProjectTypes() {
+        List<ProjectTypeResource> allProjectTypes = projetoService.findAllProjectTypes();
+        if (!allProjectTypes.isEmpty()) {
+            return new ResponseEntity<>(allProjectTypes, HttpStatus.OK);
+        }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
@@ -112,10 +122,13 @@ public class ProjetoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    //@GetMapping("/segments")
+    @GetMapping("/segments")
     @ApiOperation(value = "Lista todos os segmentos")
-    public ResponseEntity<SegmentResource> findAllSegments() {
-        // TODO Auto-generated method stub
+    public ResponseEntity<List<SegmentResource>> findAllSegments() {
+        List<SegmentResource> allProjectSegments = projetoService.findAllProjectSegments();
+        if (!allProjectSegments.isEmpty()) {
+            return new ResponseEntity<>(allProjectSegments, HttpStatus.OK);
+        }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
@@ -139,7 +152,7 @@ public class ProjetoController {
 
         ProjectResource projeto = projetoService.buildProjectResource(codProjeto);
         if (projeto != null) {
-            return new ResponseEntity<>(projeto, HttpStatus.FOUND);
+            return new ResponseEntity<>(projeto, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
