@@ -132,17 +132,20 @@ public class ProjetoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // @GetMapping("/subjects/{codTema}/sub-subjects")
+    // @GetMapping("{codTipoProjeto}/subjects/{codTema}/sub-subjects")
     @ApiOperation(value = "Lista todos os subtemas para Projeto")
-    public ResponseEntity<?> findAllSubSubjects(@PathVariable String codTema) {
+    public ResponseEntity<SubSubjectResource> findAllSubSubjects(@PathVariable String codTipoProjeto, @PathVariable String codTema) {
         // TODO Auto-generated method stub
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // @GetMapping("/subjects")
+    @GetMapping("{codTipoProjeto}/subjects")
     @ApiOperation(value = "Lista todos os temas para Projeto")
-    public ResponseEntity<?> findAllSubjects() {
-        // TODO Auto-generated method stub
+    public ResponseEntity<List<SubjectResource>> findAllSubjects(@PathVariable String codTipoProjeto) {
+        List<SubjectResource> allProjectSubSubjects = projetoService.findAllProjectSubjects(codTipoProjeto);
+        if (!allProjectSubSubjects.isEmpty()) {
+            return new ResponseEntity<>(allProjectSubSubjects, HttpStatus.OK);
+        }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

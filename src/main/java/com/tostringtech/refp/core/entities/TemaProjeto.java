@@ -1,9 +1,14 @@
 package com.tostringtech.refp.core.entities;
 
+import com.tostringtech.refp.core.entities.relationships.EmpresaProjeto;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "TEMA_PROJETO")
@@ -20,7 +25,13 @@ public class TemaProjeto implements Serializable {
     @ManyToOne()
     @ApiModelProperty()
     @JoinColumn(name = "COD_TIPO_PROJETO", foreignKey = @ForeignKey(name = "TEMA_PROJETO_TIPO_PROJETO_FK"))
-    private TipoProjeto codTipoProjeto;
+    private TipoProjeto tipoProjeto;
+
+    @OneToMany(targetEntity = SubtemaProjeto.class)
+    @JoinTable(name = "SUBTEMA_PROJETO",
+            joinColumns = {@JoinColumn(name = "COD_TEMA", foreignKey = @ForeignKey(name = "SUBTEMA_TEMA_FK"))},
+            inverseJoinColumns = {@JoinColumn(name = "COD_SUBTEMA_PROJETO")})
+    private List<SubtemaProjeto> subTema = new ArrayList<>();
 
     public TemaProjeto() {
     }
@@ -32,7 +43,7 @@ public class TemaProjeto implements Serializable {
     public TemaProjeto(String codTema, String descTema, TipoProjeto codTipoProjeto) {
         this.codTema = codTema;
         this.descTema = descTema;
-        this.codTipoProjeto = codTipoProjeto;
+        this.tipoProjeto = codTipoProjeto;
     }
 
     public String getCodTema() {
@@ -51,14 +62,19 @@ public class TemaProjeto implements Serializable {
         this.descTema = descTema;
     }
 
-    public TipoProjeto getCodTipoProjeto() {
-        return codTipoProjeto;
+    public TipoProjeto getTipoProjeto() {
+        return tipoProjeto;
     }
 
-    public void setCodTipoProjeto(TipoProjeto codTipoProjeto) {
-        this.codTipoProjeto = codTipoProjeto;
+    public void setTipoProjeto(TipoProjeto tipoProjeto) {
+        this.tipoProjeto = tipoProjeto;
     }
 
-    // private Set<SubtemaProjeto> subtemas;
+    public List<SubtemaProjeto> getSubTema() {
+        return subTema;
+    }
 
+    public void setSubTema(List<SubtemaProjeto> subTema) {
+        this.subTema = subTema;
+    }
 }

@@ -210,8 +210,40 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     @Override
-    public List<TemaProjeto> findAllProjectSubjects() {
-        return projetoRepositorio.findAllProjectSubjects();
+    public List<SubjectResource> findAllProjectSubjects(String codTipoProjeto) {
+        List<SubjectResource> resources = new ArrayList<>();
+        projetoRepositorio.findAllProjectSubjects(codTipoProjeto).forEach(tema -> {
+            SubjectResource resource = buildSubjectResource(tema);
+            resources.add(resource);
+        });
+        return resources;
+    }
+
+    private SubjectResource buildSubjectResource(TemaProjeto tema) {
+
+        SubjectResource resource = new SubjectResource();
+        resource.setId(tema.getCodTema());
+        resource.setSubject(tema.getDescTema());
+
+        if (!tema.getSubTema().isEmpty()) {
+
+            List<SubSubjectResource> subSubjectResources = new ArrayList<>();
+            tema.getSubTema().forEach(subtema -> {
+                SubSubjectResource subSubjectResource = buildSubSubjectResource(subtema);
+                subSubjectResources.add(subSubjectResource);
+            });
+
+            resource.setSubSubjects(subSubjectResources);
+        }
+        return resource;
+    }
+
+    @Override
+    public SubSubjectResource buildSubSubjectResource(SubtemaProjeto subTema) {
+        SubSubjectResource resource = new SubSubjectResource();
+        resource.setId(subTema.getCodSubtemaProjeto());
+        resource.setSubject(subTema.getDescSubtemaProjeto());
+        return resource;
     }
 
     @Override

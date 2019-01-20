@@ -1,7 +1,9 @@
 package com.tostringtech.refp.api.resources;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+@ApiModel(value = "Project Type ")
 public class ProjectTypeResource {
 
     @ApiModelProperty(position = 1, readOnly = true)

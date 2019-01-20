@@ -1,7 +1,9 @@
 package com.tostringtech.refp.api.resources;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+@ApiModel(value = "Product Type")
 public class ProductTypeResource {
 
     @ApiModelProperty(position = 1, readOnly = true)

@@ -8,11 +8,11 @@ import org.springframework.data.repository.CrudRepository;
 public interface ProjetoRepositoryCustom {
 
 
+    List<TemaProjeto> findAllProjectSubjects(String codTipoProjeto);
+
     List<FaseCadeiaInovacaoProjeto> findAllProjectInovationPhases();
 
     List<SubtemaProjeto> findAllProjectSubSubjects(String codTema);
-
-    List<TemaProjeto> findAllProjectSubjects();
 
     List<TipoProduto> findAllProjectProductsTypes();
 

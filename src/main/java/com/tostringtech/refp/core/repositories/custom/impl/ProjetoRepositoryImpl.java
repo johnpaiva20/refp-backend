@@ -64,9 +64,10 @@ public class ProjetoRepositoryImpl implements ProjetoRepositoryCustom {
     }
 
     @Override
-    public List<TemaProjeto> findAllProjectSubjects() {
-        StringBuilder hql = new StringBuilder("from TemaProjeto");
+    public List<TemaProjeto> findAllProjectSubjects(String codTipoProjeto) {
+        StringBuilder hql = new StringBuilder("from TemaProjeto as tema where tema.tipoProjeto.codTipoProjeto =:codTipoProjeto ");
         TypedQuery<TemaProjeto> query = entityManager.createQuery(hql.toString(), TemaProjeto.class);
+        query.setParameter("codTipoProjeto", codTipoProjeto);
         return query.getResultList();
     }
 
