@@ -17,8 +17,8 @@ import javax.sql.DataSource;
 import java.net.URISyntaxException;
 import java.util.Properties;
 
-@Configuration
-@EnableTransactionManagement
+//@Configuration
+//@EnableTransactionManagement
 public class HibernateConfig {
 
     @Value("${db.password}")

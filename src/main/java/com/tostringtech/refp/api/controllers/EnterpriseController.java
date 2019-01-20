@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/enterprises")
-@Api(tags = "Empresa")
+@Api(tags = "Enterprise")
 public class EnterpriseController {
 
     @Autowired

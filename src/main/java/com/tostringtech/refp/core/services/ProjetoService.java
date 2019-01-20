@@ -48,11 +48,13 @@ public interface ProjetoService {
 
     List<SegmentResource> findAllProjectSegments();
 
+    List<SubjectResource> findAllProjectSubjects(String codTipoProjeto);
+
+    SubSubjectResource buildSubSubjectResource(SubtemaProjeto subTema);
+
     List<SubtemaProjeto> findAllProjectSubSubjects(String codTema);
 
     ProjectTypeResource buildProjectTypeResource(TipoProjeto tipo);
-
-    List<TemaProjeto> findAllProjectSubjects();
 
     InovationPhaseResource buildInovationPhaseResource(FaseCadeiaInovacaoProjeto faseInovacao);
 

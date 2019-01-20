@@ -17,8 +17,8 @@ public class SubtemaProjeto implements Serializable {
     @Column(name = "DESC_SUBTEMA_PROJETO")
     private String descSubtemaProjeto;
 
-    @ManyToOne
-    @JoinColumn(name = "COD_TEMA", foreignKey = @ForeignKey(name = "SUBTEMA_TEMA_FK"))
+    @ManyToOne()
+    @JoinColumn(name = "COD_TEMA")
     private TemaProjeto temaProjeto;
 
     public SubtemaProjeto() {

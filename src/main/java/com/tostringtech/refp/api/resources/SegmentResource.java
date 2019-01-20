@@ -1,8 +1,9 @@
 package com.tostringtech.refp.api.resources;
 
-import com.tostringtech.refp.core.entities.SegmentoProjeto;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+@ApiModel(value = "Project Type ")
 public class SegmentResource {
 
     @ApiModelProperty(position = 1, readOnly = true)
