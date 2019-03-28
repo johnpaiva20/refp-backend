@@ -7,6 +7,7 @@ import java.util.Date;
 @Table(name = "MEMBRO", uniqueConstraints = {
         @UniqueConstraint(columnNames = "NR_CPF", name = "MEMBRO_UK_1")})
 public class Membro {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CD_MEMBRO")

@@ -2,16 +2,16 @@ package com.tostringtech.refp.categoria_contabil.controller;
 
 import com.tostringtech.refp.application.model.Recurso;
 import com.tostringtech.refp.categoria_contabil.controller.resources.AssetResource;
+import com.tostringtech.refp.categoria_contabil.service.CategoriaContabilService;
 import com.tostringtech.refp.categoria_contabil.service.RecursoService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/assets")
@@ -37,7 +37,7 @@ public class RecursoController {
     }
 }*/
 
-    /*@RequestMapping(value = "/page", method = RequestMethod.GET)
+    @RequestMapping(value = "/page", method = RequestMethod.GET)
     public ResponseEntity<Page<AssetResource>> findPage(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
             @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
@@ -47,7 +47,7 @@ public class RecursoController {
         Page<AssetResource> listDto = list.map(rec -> new AssetResource(rec));
         return ResponseEntity.ok().body(listDto);
     }
-*/
+
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> create(@RequestBody AssetResource resource) {

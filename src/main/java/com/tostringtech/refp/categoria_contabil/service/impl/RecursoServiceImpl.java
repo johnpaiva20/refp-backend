@@ -24,6 +24,12 @@ public class RecursoServiceImpl implements RecursoService {
 		Optional<Recurso> recurso = recursoRepository.findById(codigo);
 		return recurso.orElseThrow( () -> new ObjectNotFoundException("Objeto não encontrado."));
 	}
+
+	@Override
+	public Page<Recurso> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
+		return null;
+	}
+
 	@Override
 	public Recurso create (Recurso recurso){
 		return recursoRepository.save(recurso);

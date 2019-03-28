@@ -44,9 +44,9 @@ public class Projeto implements Serializable {
     private String tipoProjeto;
 
 
-    @OneToMany(targetEntity = Despesa.class)
+    /*@OneToMany(targetEntity = Despesa.class)
     @JoinTable(name = "DESPESA")
-    private List<Despesa> despesas = new ArrayList<>();
+    private List<Despesa> despesas = new ArrayList<>();*/
 
     public Projeto() {
     }
@@ -118,13 +118,13 @@ public class Projeto implements Serializable {
         this.status = status;
     }
 
-    public List<Despesa> getDespesas() {
+    /*public List<Despesa> getDespesas() {
         return despesas;
     }
 
     public void setDespesas(List<Despesa> despesas) {
         this.despesas = despesas;
-    }
+    }*/
 
     public String getTipoProjeto() {
         return tipoProjeto;

@@ -6,7 +6,23 @@ public enum SegmentoSetorEletrico {
     DISTRIBUICAO("D", "Distribuição"),
     COMERCIALIZACAO("C", "Comercialização");
 
-    SegmentoSetorEletrico(String codigo, String segmento) {
+    String codigo;
+    String segmento;
 
+    SegmentoSetorEletrico(String codigo, String segmento) {
+        this.codigo = codigo;
+        this.segmento = segmento;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+
+
+    public String getSegmento() {
+        return segmento;
+    }
+
+
 }
