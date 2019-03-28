@@ -119,8 +119,10 @@
 			<artifactId>spring-data-oracle</artifactId>
 			<version>1.2.1.RELEASE</version>
 		</dependency>
-
-
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
