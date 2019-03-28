@@ -21,7 +21,7 @@ public class Recurso implements Serializable {
     @Column(name = "DS_RECURSO")
     private String descricao;
     @ManyToOne
-    @JoinColumn(name = "CD_RUBRICA", foreignKey = @ForeignKey(name = "CNT_RECURSO_RUBRICA_FK"))
+    @JoinColumn(name = "CD_CATEGORIA_CONTABIL", foreignKey = @ForeignKey(name = "CNT_RECURSO_RUBRICA_FK"))
     private CategoriaContabil categoriaContabil;
 
     public Recurso(AssetResource resource) {

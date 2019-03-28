@@ -11,11 +11,9 @@ public interface RecursoService {
 
     void delete(Long codigo);
 
-   // List<Recurso> findAll();
-
     Recurso findByCod(Long codigo);
 
-   // Page<Recurso> findPage(Integer page, Integer linesPerPage, String orderBy, String direction);
+    Page<Recurso> findPage(Integer page, Integer linesPerPage, String orderBy, String direction);
 
     Recurso update(Recurso recurso);
 }
