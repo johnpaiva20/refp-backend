@@ -1,5 +1,6 @@
 package com.tostringtech.refp.empresa.controller.resources;
 
+import com.tostringtech.refp.application.model.Empresa;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -30,6 +31,14 @@ public class EnterpriseResource {
         this.company = company;
         this.trade = trade;
         this.initials = initials;
+    }
+
+    public EnterpriseResource(Empresa empresa) {
+        this.id = empresa.getCodigo();
+        this.cnpj = empresa.getNumeroCnpj();
+        this.company = empresa.getRazaoSocial();
+        this.trade = empresa.getNomeFantasia();
+        this.initials = empresa.getSigla();
     }
 
     public Long getId() {

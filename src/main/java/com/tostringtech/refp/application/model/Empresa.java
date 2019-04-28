@@ -1,11 +1,11 @@
 package com.tostringtech.refp.application.model;
 
+import com.tostringtech.refp.empresa.controller.resources.EnterpriseResource;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "EMPRESA",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "NR_CNPJ", name = "EMPRESA_UK_1")})
+@Table(name = "EMPRESA")
 public class Empresa {
 
     @Id
@@ -29,4 +29,59 @@ public class Empresa {
 
     }
 
+    public Empresa(Long codigo, String numeroCnpj, String razaoSocial, String nomeFantasia, String sigla) {
+        this.codigo = codigo;
+        this.numeroCnpj = numeroCnpj;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+        this.sigla = sigla;
+    }
+
+    public Empresa(EnterpriseResource resource) {
+        this.codigo = resource.getId();
+        this.numeroCnpj = resource.getCnpj();
+        this.razaoSocial = resource.getCompany();
+        this.nomeFantasia = resource.getTrade();
+        this.sigla = resource.getInitials();
+    }
+
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNumeroCnpj() {
+        return numeroCnpj;
+    }
+
+    public void setNumeroCnpj(String numeroCnpj) {
+        this.numeroCnpj = numeroCnpj;
+    }
+
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
+
+    public String getNomeFantasia() {
+        return nomeFantasia;
+    }
+
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
+    }
+
+    public String getSigla() {
+        return sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
+    }
 }

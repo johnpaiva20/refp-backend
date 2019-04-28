@@ -4,8 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "MEMBRO", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "NR_CPF", name = "MEMBRO_UK_1")})
+@Table(name = "MEMBRO")
 public class Membro {
 
     @Id

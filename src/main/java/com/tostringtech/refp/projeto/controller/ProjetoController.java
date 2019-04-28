@@ -97,8 +97,14 @@ public class ProjetoController {
     }
 
     @GetMapping(value = "/account-categories-{type}")
-    public ResponseEntity<List<CategoriaContabil>> findAllAccountCategoriesByProjectType(@PathVariable String type) {
-        List<CategoriaContabil> categoriasContabeis = categoriaContabilService.findAllByProjectType(type);
+    public ResponseEntity<List<AccountCategoryResource>> findAllAccountCategoriesByProjectType(@PathVariable String type) {
+
+        List<AccountCategoryResource> categoriasContabeis = categoriaContabilService
+                .findAllByProjectType(type)
+                .stream()
+                .map(AccountCategoryResource::new)
+                .collect(Collectors.toList());
+
         if (!categoriasContabeis.isEmpty()) {
             return ResponseEntity.ok().body(categoriasContabeis);
         }
@@ -124,7 +130,11 @@ public class ProjetoController {
 
     @GetMapping(value = "/topics-{type}")
     public ResponseEntity<List<TopicResource>> findAllTopicsByProjectType(@PathVariable String type) {
-        List<TopicResource> resources = projetoService.findAllTopicsByProjectType(type).stream().map(TopicResource::new).collect(Collectors.toList());
+        List<TopicResource> resources = projetoService
+                .findAllTopicsByProjectType(type)
+                .stream()
+                .map(TopicResource::new)
+                .collect(Collectors.toList());
 
         if (!resources.isEmpty()) {
             return ResponseEntity.ok().body(resources);
