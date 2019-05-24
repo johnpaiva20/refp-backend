@@ -41,7 +41,7 @@ public class ProjetoController {
         Projeto projeto = projetoService.create(new Projeto(resource));
         resource = new ProjectResource(projeto);
         if (resource != null) {
-            return new ResponseEntity<>(resource, HttpStatus.OK);
+            return new ResponseEntity<>(resource, HttpStatus.CREATED);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

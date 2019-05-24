@@ -1,13 +1,12 @@
 package com.tostringtech.refp.empresa.controller;
 
 import com.tostringtech.refp.application.model.Empresa;
-import com.tostringtech.refp.application.model.Projeto;
 import com.tostringtech.refp.empresa.controller.resources.EnterpriseResource;
 import com.tostringtech.refp.empresa.service.EmpresaService;
-import com.tostringtech.refp.projeto.controller.resources.ProjectResource;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,24 +22,23 @@ public class EnterpriseController {
     @Autowired
     private EmpresaService empresaService;
 
-
     @PostMapping("")
-    @ApiOperation(value = "Cadastrar uma nova Empresa ")
+    @ApiOperation(value = "Cadastrar nova empresa")
     public ResponseEntity<EnterpriseResource> create(@RequestBody EnterpriseResource resource) {
         Empresa empresa = empresaService.create(new Empresa(resource));
         resource = new EnterpriseResource(empresa);
         if (resource != null) {
-            return new ResponseEntity<>(resource, HttpStatus.OK);
+            return new ResponseEntity<>(resource, HttpStatus.CREATED);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @GetMapping("")
-    @ApiOperation(value = "Encontrar todas as Empresas cadastradas")
+    @ApiOperation(value = "Encontrar todas as empresas cadastradas")
     public ResponseEntity<List<EnterpriseResource>> findAll() {
 
-        List<EnterpriseResource> resources = empresaService
-                .findAll()
+        List<EnterpriseResource> resources;
+        resources = empresaService.findAll()
                 .stream()
                 .map(EnterpriseResource::new)
                 .collect(Collectors.toList());
@@ -49,8 +47,28 @@ public class EnterpriseController {
             return new ResponseEntity<>(resources, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
     }
 
+    @GetMapping("/{id}")
+    @ApiOperation(value = "Encontrar Empresa pelo ID")
+    public ResponseEntity<EnterpriseResource> findById(@PathVariable Long id) {
+        Empresa empresa = empresaService.findById(id).orElse(null);
+        EnterpriseResource resource = new EnterpriseResource(empresa);
 
+        if (resource != null) {
+            return new ResponseEntity<>(resource, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @RequestMapping(value = "/page", method = RequestMethod.GET)
+    public ResponseEntity<Page<EnterpriseResource>> findPage(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
+            @RequestParam(value = "orderBy", defaultValue = "descricaoRecurso") String orderBy,
+            @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
+        Page<Empresa> list = empresaService.findPage(page, linesPerPage, orderBy, direction);
+        Page<EnterpriseResource> listDto = list.map(EnterpriseResource::new);
+        return ResponseEntity.ok().body(listDto);
+    }
 }

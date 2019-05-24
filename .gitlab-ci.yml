@@ -1,0 +1,26 @@
+image: maven:latest
+
+stages:
+  - build
+  - test
+  - run
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+build:
+  stage: build
+  script:
+    - mvn clean compile
+
+test:
+  stage: test
+  script:
+    - mvn clean test
+
+run:
+  stage: run
+  script:
+    - mvn clean package
