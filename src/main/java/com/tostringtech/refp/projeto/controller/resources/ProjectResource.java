@@ -19,7 +19,7 @@ public class ProjectResource {
     private String title;
 
     @ApiModelProperty(position = 4)
-    private Date startDate;
+    private Date start;
 
     @ApiModelProperty(position = 5)
     private int duration;
@@ -34,10 +34,10 @@ public class ProjectResource {
     private String type;
 
     @ApiModelProperty(position = 9)
-    private String subject;
+    private String topic;
 
     @ApiModelProperty(position = 10)
-    private String subSubject;
+    private String subtopic;
 
     @ApiModelProperty(position = 11)
     private String segment;
@@ -51,17 +51,17 @@ public class ProjectResource {
     public ProjectResource() {
     }
 
-    public ProjectResource(Long id, String aneelId, String title, Date startDate, int duration, String serviceOrder, String status, String type, String subject, String subSubject, String segment, String innovationPhase, String product) {
+    public ProjectResource(Long id, String aneelId, String title, Date start, int duration, String serviceOrder, String status, String type, String topic, String subtopic, String segment, String innovationPhase, String product) {
         this.id = id;
         this.aneelId = aneelId;
         this.title = title;
-        this.startDate = startDate;
+        this.start = start;
         this.duration = duration;
         this.serviceOrder = serviceOrder;
         this.status = status;
         this.type = type;
-        this.subject = subject;
-        this.subSubject = subSubject;
+        this.topic = topic;
+        this.subtopic = subtopic;
         this.segment = segment;
         this.innovationPhase = innovationPhase;
         this.product = product;
@@ -71,16 +71,16 @@ public class ProjectResource {
         this.id = projeto.getCodigo();
         this.aneelId = projeto.getCodigoAneel();
         this.title = projeto.getTitulo();
-        this.startDate = projeto.getDataInicio();
+        this.start = projeto.getDataInicio();
         this.duration = projeto.getValorDuracaoMeses();
         this.serviceOrder = projeto.getOrdemServico();
         this.status = projeto.getStatus();
         this.type = projeto.getTipoProjeto();
-        /*this.subject = subject;
-        this.subSubject = subSubject;
-        this.segment = segment;
-        this.innovationPhase = innovationPhase;
-        this.product = product;*/
+        this.topic = projeto.getTema();
+        this.subtopic = projeto.getSubtema();
+        this.segment = projeto.getSegmento();
+        this.innovationPhase = projeto.getFaseInovacao();
+        this.product = projeto.getProduto();
     }
 
     public Long getId() {
@@ -107,12 +107,12 @@ public class ProjectResource {
         this.title = title;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getStart() {
+        return start;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setStart(Date start) {
+        this.start = start;
     }
 
     public int getDuration() {
@@ -147,20 +147,20 @@ public class ProjectResource {
         this.type = type;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getTopic() {
+        return topic;
     }
 
-    public void setSubject(String subject) {
-        this.subject = subject;
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
-    public String getSubSubject() {
-        return subSubject;
+    public String getSubtopic() {
+        return subtopic;
     }
 
-    public void setSubSubject(String subSubject) {
-        this.subSubject = subSubject;
+    public void setSubtopic(String subtopic) {
+        this.subtopic = subtopic;
     }
 
     public String getSegment() {
@@ -186,4 +186,6 @@ public class ProjectResource {
     public void setProduct(String product) {
         this.product = product;
     }
+
+
 }

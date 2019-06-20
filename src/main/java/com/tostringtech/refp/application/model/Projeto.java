@@ -5,14 +5,10 @@ import com.tostringtech.refp.projeto.controller.resources.ProjectResource;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Entity
-@Table(name = "PROJETO", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "CD_ANEEL", name = "PROJETO_UK_1"),
-        @UniqueConstraint(columnNames = "DS_ORDEM_SERVICO", name = "PROJETO_UK_2")})
+@Table(name = "PROJETO")
 public class Projeto implements Serializable {
 
 
@@ -40,13 +36,23 @@ public class Projeto implements Serializable {
     @Column(name = "DS_STATUS", nullable = false)
     private String status;
 
-    @Column(name = "TP_PROJETO", nullable = false, length = 2)
+    @Column(name = "TP_PROJETO",  length = 2)
     private String tipoProjeto;
 
+    @Column(name = "CD_SEGMENTO",  length = 1)
+    private String segmento;
 
-    /*@OneToMany(targetEntity = Despesa.class)
-    @JoinTable(name = "DESPESA")
-    private List<Despesa> despesas = new ArrayList<>();*/
+    @Column(name = "CD_TEMA",  length = 2)
+    private String tema;
+
+    @Column(name = "CD_SUBTEMA",  length = 4)
+    private String subtema;
+
+    @Column(name = "TP_PRODUTO",  length = 2)
+    private String produto;
+
+    @Column(name = "TP_FASE_INOVACAO",  length = 2)
+    private String faseInovacao;
 
     public Projeto() {
     }
@@ -55,11 +61,16 @@ public class Projeto implements Serializable {
         this.codigo = resource.getId();
         this.codigoAneel = resource.getAneelId();
         this.titulo = resource.getTitle();
-        this.dataInicio = resource.getStartDate();
+        this.dataInicio = resource.getStart();
         this.valorDuracaoMeses = resource.getDuration();
         this.ordemServico = resource.getServiceOrder();
-        this.status = resource.getStatus();
-        this.tipoProjeto =TipoProjeto.toEnum(resource.getType()).getCodigo();
+        this.status = resource.getStatus() != null ? resource.getStatus() : "ANDAMENTO";
+        this.tipoProjeto = TipoProjeto.toEnum(resource.getType()).getCodigo();
+        this.produto = resource.getProduct();
+        this.faseInovacao = resource.getInnovationPhase();
+        this.tema = resource.getTopic();
+        this.subtema = resource.getSubtopic();
+        this.segmento = resource.getSegment();
     }
 
     public Long getCodigo() {
@@ -118,19 +129,51 @@ public class Projeto implements Serializable {
         this.status = status;
     }
 
-    /*public List<Despesa> getDespesas() {
-        return despesas;
-    }
-
-    public void setDespesas(List<Despesa> despesas) {
-        this.despesas = despesas;
-    }*/
-
     public String getTipoProjeto() {
         return tipoProjeto;
     }
 
     public void setTipoProjeto(String tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
+    }
+
+    public String getSegmento() {
+        return segmento;
+    }
+
+    public void setSegmento(String segmento) {
+        this.segmento = segmento;
+    }
+
+    public String getTema() {
+        return tema;
+    }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+
+    public String getSubtema() {
+        return subtema;
+    }
+
+    public void setSubtema(String subtema) {
+        this.subtema = subtema;
+    }
+
+    public String getProduto() {
+        return produto;
+    }
+
+    public void setProduto(String produto) {
+        this.produto = produto;
+    }
+
+    public String getFaseInovacao() {
+        return faseInovacao;
+    }
+
+    public void setFaseInovacao(String faseInovacao) {
+        this.faseInovacao = faseInovacao;
     }
 }

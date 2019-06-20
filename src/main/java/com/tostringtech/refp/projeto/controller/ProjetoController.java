@@ -4,7 +4,6 @@ import com.tostringtech.refp.application.domain.FaseInovacao;
 import com.tostringtech.refp.application.domain.Produto;
 import com.tostringtech.refp.application.domain.SegmentoSetorEletrico;
 import com.tostringtech.refp.application.domain.TipoProjeto;
-import com.tostringtech.refp.application.model.CategoriaContabil;
 import com.tostringtech.refp.application.model.Projeto;
 import com.tostringtech.refp.categoria_contabil.service.CategoriaContabilService;
 import com.tostringtech.refp.projeto.controller.resources.*;
@@ -97,14 +96,19 @@ public class ProjetoController {
     }
 
     @GetMapping(value = "/account-categories-{type}")
-    public ResponseEntity<List<CategoriaContabil>> findAllAccountCategoriesByProjectType(@PathVariable String type) {
-        List<CategoriaContabil> categoriasContabeis = categoriaContabilService.findAllByProjectType(type);
+    public ResponseEntity<List<AccountCategoryResource>> findAllAccountCategoriesByProjectType(@PathVariable String type) {
+
+        List<AccountCategoryResource> categoriasContabeis = categoriaContabilService
+                .findAllByProjectType(type)
+                .stream()
+                .map(AccountCategoryResource::new)
+                .collect(Collectors.toList());
+
         if (!categoriasContabeis.isEmpty()) {
             return ResponseEntity.ok().body(categoriasContabeis);
         }
         return ResponseEntity.noContent().build();
     }
-
 
     @GetMapping(value = "/segments")
     public ResponseEntity<List<SegmentResource>> findAllSegments() {
@@ -124,7 +128,11 @@ public class ProjetoController {
 
     @GetMapping(value = "/topics-{type}")
     public ResponseEntity<List<TopicResource>> findAllTopicsByProjectType(@PathVariable String type) {
-        List<TopicResource> resources = projetoService.findAllTopicsByProjectType(type).stream().map(TopicResource::new).collect(Collectors.toList());
+        List<TopicResource> resources = projetoService
+                .findAllTopicsByProjectType(type)
+                .stream()
+                .map(TopicResource::new)
+                .collect(Collectors.toList());
 
         if (!resources.isEmpty()) {
             return ResponseEntity.ok().body(resources);
@@ -186,5 +194,15 @@ public class ProjetoController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/{id}/enterprises")
+    @ApiOperation(value = "Encontrar Empresas do Projeto")
+    public ResponseEntity<List<ProjectEnterpriseResource>> listProjectEnterprises() {
+        return ResponseEntity.noContent().build();
+    }
 
+    @PostMapping("/{id}/enterprises")
+    @ApiOperation(value = "Adicionar Empresas do Projeto")
+    public ResponseEntity<List<ProjectEnterpriseResource>> addProjectEnterprises() {
+        return ResponseEntity.noContent().build();
+    }
 }

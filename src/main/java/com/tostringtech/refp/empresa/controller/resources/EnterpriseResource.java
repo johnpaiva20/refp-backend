@@ -37,7 +37,7 @@ public class EnterpriseResource {
         this.id = empresa.getCodigo();
         this.cnpj = empresa.getNumeroCnpj();
         this.company = empresa.getRazaoSocial();
-
+        this.trade = empresa.getNomeFantasia();
         this.initials = empresa.getSigla();
     }
 

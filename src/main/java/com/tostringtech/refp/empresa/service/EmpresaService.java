@@ -6,6 +6,10 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 import java.util.Optional;
 
+import com.tostringtech.refp.application.model.Empresa;
+
+import java.util.List;
+
 public interface EmpresaService {
 
     Empresa create(Empresa empresa);

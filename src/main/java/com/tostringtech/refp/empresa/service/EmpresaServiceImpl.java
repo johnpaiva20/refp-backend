@@ -1,6 +1,5 @@
 package com.tostringtech.refp.empresa.service;
 
-import com.tostringtech.refp.application.exceptions.ObjectNotFoundException;
 import com.tostringtech.refp.application.model.Empresa;
 import com.tostringtech.refp.empresa.repository.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,9 +5,7 @@ import com.tostringtech.refp.empresa.controller.resources.EnterpriseResource;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "EMPRESA",
-        uniqueConstraints = {
-                @UniqueConstraint(columnNames = "NR_CNPJ", name = "EMPRESA_UK_1")})
+@Table(name = "EMPRESA")
 public class Empresa {
 
     @Id
