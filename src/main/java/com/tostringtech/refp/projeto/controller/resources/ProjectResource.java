@@ -19,7 +19,7 @@ public class ProjectResource {
     private String title;
 
     @ApiModelProperty(position = 4)
-    private Date startDate;
+    private Date start;
 
     @ApiModelProperty(position = 5)
     private int duration;
@@ -51,11 +51,11 @@ public class ProjectResource {
     public ProjectResource() {
     }
 
-    public ProjectResource(Long id, String aneelId, String title, Date startDate, int duration, String serviceOrder, String status, String type, String topic, String subtopic, String segment, String innovationPhase, String product) {
+    public ProjectResource(Long id, String aneelId, String title, Date start, int duration, String serviceOrder, String status, String type, String topic, String subtopic, String segment, String innovationPhase, String product) {
         this.id = id;
         this.aneelId = aneelId;
         this.title = title;
-        this.startDate = startDate;
+        this.start = start;
         this.duration = duration;
         this.serviceOrder = serviceOrder;
         this.status = status;
@@ -71,7 +71,7 @@ public class ProjectResource {
         this.id = projeto.getCodigo();
         this.aneelId = projeto.getCodigoAneel();
         this.title = projeto.getTitulo();
-        this.startDate = projeto.getDataInicio();
+        this.start = projeto.getDataInicio();
         this.duration = projeto.getValorDuracaoMeses();
         this.serviceOrder = projeto.getOrdemServico();
         this.status = projeto.getStatus();
@@ -107,12 +107,12 @@ public class ProjectResource {
         this.title = title;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public Date getStart() {
+        return start;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setStart(Date start) {
+        this.start = start;
     }
 
     public int getDuration() {

@@ -4,6 +4,7 @@ import com.tostringtech.refp.categoria_contabil.service.CategoriaContabilService
 import com.tostringtech.refp.projeto.controller.resources.AccountCategoryResource;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,8 @@ import java.util.stream.Collectors;
 @Api(tags = "Categoria Contabil")
 public class CategoriaContabilController {
 
+
+    @Autowired
     CategoriaContabilService categoriaContabilService;
 
 

@@ -61,7 +61,7 @@ public class Projeto implements Serializable {
         this.codigo = resource.getId();
         this.codigoAneel = resource.getAneelId();
         this.titulo = resource.getTitle();
-        this.dataInicio = resource.getStartDate();
+        this.dataInicio = resource.getStart();
         this.valorDuracaoMeses = resource.getDuration();
         this.ordemServico = resource.getServiceOrder();
         this.status = resource.getStatus() != null ? resource.getStatus() : "ANDAMENTO";

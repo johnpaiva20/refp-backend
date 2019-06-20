@@ -4,7 +4,6 @@ import com.tostringtech.refp.application.domain.FaseInovacao;
 import com.tostringtech.refp.application.domain.Produto;
 import com.tostringtech.refp.application.domain.SegmentoSetorEletrico;
 import com.tostringtech.refp.application.domain.TipoProjeto;
-import com.tostringtech.refp.application.model.CategoriaContabil;
 import com.tostringtech.refp.application.model.Projeto;
 import com.tostringtech.refp.categoria_contabil.service.CategoriaContabilService;
 import com.tostringtech.refp.projeto.controller.resources.*;
@@ -111,7 +110,6 @@ public class ProjetoController {
         return ResponseEntity.noContent().build();
     }
 
-
     @GetMapping(value = "/segments")
     public ResponseEntity<List<SegmentResource>> findAllSegments() {
         List<SegmentResource> resources = new ArrayList<>();
@@ -196,5 +194,15 @@ public class ProjetoController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/{id}/enterprises")
+    @ApiOperation(value = "Encontrar Empresas do Projeto")
+    public ResponseEntity<List<ProjectEnterpriseResource>> listProjectEnterprises() {
+        return ResponseEntity.noContent().build();
+    }
 
+    @PostMapping("/{id}/enterprises")
+    @ApiOperation(value = "Adicionar Empresas do Projeto")
+    public ResponseEntity<List<ProjectEnterpriseResource>> addProjectEnterprises() {
+        return ResponseEntity.noContent().build();
+    }
 }
