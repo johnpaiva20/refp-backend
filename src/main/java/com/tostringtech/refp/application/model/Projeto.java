@@ -1,16 +1,16 @@
 package com.tostringtech.refp.application.model;
 
-import com.tostringtech.refp.application.domain.TipoProjeto;
-import com.tostringtech.refp.projeto.controller.resources.ProjectResource;
+import com.tostringtech.refp.projeto.api.rest.resources.ProjectResource;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "PROJETO")
 public class Projeto implements Serializable {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,54 +23,56 @@ public class Projeto implements Serializable {
     @Column(name = "DS_TITULO", nullable = false)
     private String titulo;
 
-    @Column(name = "DT_INICIO", nullable = false)
-    @Temporal(TemporalType.DATE)
-    private Date dataInicio;
-
     @Column(name = "VL_DURACAO", nullable = false)
     private int valorDuracaoMeses;
-
-    @Column(name = "DS_ORDEM_SERVICO", nullable = false)
-    private String ordemServico;
 
     @Column(name = "DS_STATUS", nullable = false)
     private String status;
 
-    @Column(name = "TP_PROJETO",  length = 2)
-    private String tipoProjeto;
+    @OneToOne
+    @JoinColumn(name = "CD_ORDEM_SERVICO")
+    private OrdemServico ordemServico;
 
-    @Column(name = "CD_SEGMENTO",  length = 1)
-    private String segmento;
+    @OneToOne
+    @JoinColumn(name = "CD_TIP_PRO")
+    private TipPro tipoProjeto;
 
-    @Column(name = "CD_TEMA",  length = 2)
-    private String tema;
+    @OneToOne
+    @JoinColumn(name = "CD_TEMA")
+    private Tema tema;
 
-    @Column(name = "CD_SUBTEMA",  length = 4)
-    private String subtema;
+    @OneToOne
+    @JoinColumn(name = "CD_SUBTEMA")
+    private Subtema subtema;
 
-    @Column(name = "TP_PRODUTO",  length = 2)
-    private String produto;
+    @OneToOne
+    @JoinColumn(name = "CD_SEGMENTO")
+    private Segmento segmento;
 
-    @Column(name = "TP_FASE_INOVACAO",  length = 2)
-    private String faseInovacao;
+    @OneToOne
+    @JoinColumn(name = "CD_PRODUTO")
+    private Produto produto;
+
+    @OneToOne
+    @JoinColumn(name = "CD_FASE_INOVA")
+    private FaseInova faseInovacao;
+
+    /*private TipCompartiResultados tipoCompartilhamento;*/
+
+    @OneToMany(mappedBy = "projeto")
+    private List<MembPro> membros = new ArrayList<>();
+
+    @OneToMany(mappedBy = "projeto")
+    private List<Despesa> despesas = new ArrayList<>();
+
+    @OneToMany(mappedBy = "projeto")
+    private List<EmpPro> empresas = new ArrayList<>();
 
     public Projeto() {
     }
 
     public Projeto(ProjectResource resource) {
-        this.codigo = resource.getId();
-        this.codigoAneel = resource.getAneelId();
-        this.titulo = resource.getTitle();
-        this.dataInicio = resource.getStart();
-        this.valorDuracaoMeses = resource.getDuration();
-        this.ordemServico = resource.getServiceOrder();
-        this.status = resource.getStatus() != null ? resource.getStatus() : "ANDAMENTO";
-        this.tipoProjeto = TipoProjeto.toEnum(resource.getType()).getCodigo();
-        this.produto = resource.getProduct();
-        this.faseInovacao = resource.getInnovationPhase();
-        this.tema = resource.getTopic();
-        this.subtema = resource.getSubtopic();
-        this.segmento = resource.getSegment();
+        this.setCodigo(resource.getId());
     }
 
     public Long getCodigo() {
@@ -97,28 +99,12 @@ public class Projeto implements Serializable {
         this.titulo = titulo;
     }
 
-    public Date getDataInicio() {
-        return dataInicio;
-    }
-
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
-    }
-
     public int getValorDuracaoMeses() {
         return valorDuracaoMeses;
     }
 
     public void setValorDuracaoMeses(int valorDuracaoMeses) {
         this.valorDuracaoMeses = valorDuracaoMeses;
-    }
-
-    public String getOrdemServico() {
-        return ordemServico;
-    }
-
-    public void setOrdemServico(String ordemServico) {
-        this.ordemServico = ordemServico;
     }
 
     public String getStatus() {
@@ -129,51 +115,83 @@ public class Projeto implements Serializable {
         this.status = status;
     }
 
-    public String getTipoProjeto() {
+    public OrdemServico getOrdemServico() {
+        return ordemServico;
+    }
+
+    public void setOrdemServico(OrdemServico ordemServico) {
+        this.ordemServico = ordemServico;
+    }
+
+    public TipPro getTipoProjeto() {
         return tipoProjeto;
     }
 
-    public void setTipoProjeto(String tipoProjeto) {
+    public void setTipoProjeto(TipPro tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
     }
 
-    public String getSegmento() {
-        return segmento;
-    }
-
-    public void setSegmento(String segmento) {
-        this.segmento = segmento;
-    }
-
-    public String getTema() {
+    public Tema getTema() {
         return tema;
     }
 
-    public void setTema(String tema) {
+    public void setTema(Tema tema) {
         this.tema = tema;
     }
 
-    public String getSubtema() {
+    public Subtema getSubtema() {
         return subtema;
     }
 
-    public void setSubtema(String subtema) {
+    public void setSubtema(Subtema subtema) {
         this.subtema = subtema;
     }
 
-    public String getProduto() {
+    public Segmento getSegmento() {
+        return segmento;
+    }
+
+    public void setSegmento(Segmento segmento) {
+        this.segmento = segmento;
+    }
+
+    public Produto getProduto() {
         return produto;
     }
 
-    public void setProduto(String produto) {
+    public void setProduto(Produto produto) {
         this.produto = produto;
     }
 
-    public String getFaseInovacao() {
+    public FaseInova getFaseInovacao() {
         return faseInovacao;
     }
 
-    public void setFaseInovacao(String faseInovacao) {
+    public void setFaseInovacao(FaseInova faseInovacao) {
         this.faseInovacao = faseInovacao;
+    }
+
+    public List<MembPro> getMembros() {
+        return membros;
+    }
+
+    public void setMembros(List<MembPro> membros) {
+        this.membros = membros;
+    }
+
+    public List<Despesa> getDespesas() {
+        return despesas;
+    }
+
+    public void setDespesas(List<Despesa> despesas) {
+        this.despesas = despesas;
+    }
+
+    public List<EmpPro> getEmpresas() {
+        return empresas;
+    }
+
+    public void setEmpresas(List<EmpPro> empresas) {
+        this.empresas = empresas;
     }
 }

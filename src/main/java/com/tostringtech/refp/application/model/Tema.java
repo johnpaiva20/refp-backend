@@ -8,8 +8,6 @@ import javax.persistence.*;
 @Table(name = "TEMA")
 public class Tema {
 
-    private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @ApiModelProperty(hidden = true)
@@ -19,21 +17,20 @@ public class Tema {
     @Column(name = "DS_TEMA")
     private String descricao;
 
-
-    @Column(name = "TP_PROJETO")
-    private String tipoProjeto;
-
+    @OneToOne()
+    @JoinColumn(name = "CD_TIP_PRO")
+    private TipPro tipoProjeto;
 
     @Column(name = "DS_SIGLA")
     private String sigla;
 
-    @Column(name = "SN_PRIORITARIO")
+    @Column(name = "SN_PRIORITARIO", length = 1)
     private String prioritario;
 
     public Tema() {
     }
 
-    public Tema(long codigo, String descricao, String tipoProjeto, String sigla, String prioritario) {
+    public Tema(long codigo, String descricao, TipPro tipoProjeto, String sigla, String prioritario) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.tipoProjeto = tipoProjeto;
@@ -57,11 +54,11 @@ public class Tema {
         this.descricao = descricao;
     }
 
-    public String getTipoProjeto() {
+    public TipPro getTipoProjeto() {
         return tipoProjeto;
     }
 
-    public void setTipoProjeto(String tipoProjeto) {
+    public void setTipoProjeto(TipPro tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
     }
 

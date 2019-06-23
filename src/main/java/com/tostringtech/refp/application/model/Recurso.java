@@ -1,6 +1,6 @@
 package com.tostringtech.refp.application.model;
 
-import com.tostringtech.refp.categoria_contabil.controller.resources.AssetResource;
+import com.tostringtech.refp.categoria_contabil.api.rest.resources.AssetResource;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
@@ -24,12 +24,14 @@ public class Recurso implements Serializable {
     @JoinColumn(name = "CD_CATEGORIA_CONTABIL", foreignKey = @ForeignKey(name = "CNT_RECURSO_RUBRICA_FK"))
     private CategoriaContabil categoriaContabil;
 
-    public Recurso(AssetResource resource) {
-        this.codigo=resource.getId();
-        this.categoriaContabil.setCodigo(resource.getIdAccountCategory());
-        this.descricao=resource.getDescription();
+    public Recurso() {
     }
 
+    public Recurso(AssetResource resource) {
+        this.codigo = resource.getId();
+        this.categoriaContabil.setCodigo(resource.getIdAccountCategory());
+        this.descricao = resource.getDescription();
+    }
 
     public long getCodigo() {
         return codigo;
