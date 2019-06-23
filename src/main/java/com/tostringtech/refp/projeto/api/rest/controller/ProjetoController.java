@@ -5,6 +5,7 @@ import com.tostringtech.refp.categoria_contabil.api.service.CategoriaContabilSer
 import com.tostringtech.refp.empresa.api.services.EmpresaService;
 import com.tostringtech.refp.projeto.api.rest.resources.*;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@Api(tags = {"Project"})
 public class ProjetoController {
 
     private static final Logger logger = Logger.getLogger(ProjetoController.class);
@@ -72,7 +74,7 @@ public class ProjetoController {
     }
 
 
-    @RequestMapping(value = "/projects/page", method = RequestMethod.GET)
+    @GetMapping(value = "/projects/page")
     @ApiOperation(tags = {"Project"}, value = "Encontrar Projeto")
     public ResponseEntity<Page<ProjectResource>> findPage(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -85,7 +87,7 @@ public class ProjetoController {
     }
 
 
-    @RequestMapping(value = "/projects/{id}", method = RequestMethod.PUT)
+    @PutMapping(value = "/projects/{id}")
     @ApiOperation(tags = {"Project"}, value = "Atualizar Projeto")
     public ResponseEntity<Void> updateProject(@RequestBody ProjectResource resoruce, @PathVariable Long id) {
         Projeto projeto = new Projeto();
