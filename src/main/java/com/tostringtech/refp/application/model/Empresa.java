@@ -1,6 +1,6 @@
 package com.tostringtech.refp.application.model;
 
-import com.tostringtech.refp.empresa.controller.resources.EnterpriseResource;
+import com.tostringtech.refp.empresa.api.rest.resources.EnterpriseResource;
 
 import javax.persistence.*;
 

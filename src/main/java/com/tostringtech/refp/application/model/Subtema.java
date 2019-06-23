@@ -23,13 +23,14 @@ public class Subtema {
     @Column(name = "SN_PRIORITARIO")
     private String prioritario;
 
-    @Column(name = "DS_SIGLA_TEMA")
-    private String tema;
+    @OneToOne()
+    @JoinColumn(name = "CD_TEMA")
+    private Tema tema;
 
     public Subtema() {
     }
 
-    public Subtema(long codigo, String descricao, String sigla, String prioritario, String tema) {
+    public Subtema(long codigo, String descricao, String sigla, String prioritario, Tema tema) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.sigla = sigla;
@@ -69,11 +70,11 @@ public class Subtema {
         this.prioritario = prioritario;
     }
 
-    public String getTema() {
+    public Tema getTema() {
         return tema;
     }
 
-    public void setTema(String tema) {
+    public void setTema(Tema tema) {
         this.tema = tema;
     }
 }
