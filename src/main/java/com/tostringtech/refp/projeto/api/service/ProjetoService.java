@@ -28,5 +28,5 @@ public interface ProjetoService {
 
     List<FaseInova> listAllInnovationPhases();
 
-    List<TipPro> listAllProjectTypes();
+    List<TipProj> listAllProjectTypes();
 }

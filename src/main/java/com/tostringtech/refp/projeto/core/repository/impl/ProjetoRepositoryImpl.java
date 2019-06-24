@@ -30,8 +30,8 @@ public class ProjetoRepositoryImpl implements ProjetoRepositoryCustom {
     }
 
     @Override
-    public List<TipPro> listAllProjectTypes() {
-        return this.entityManager.createQuery("From TipPro",TipPro.class).getResultList();
+    public List<TipProj> listAllProjectTypes() {
+        return this.entityManager.createQuery("From TipPro",TipProj.class).getResultList();
     }
 
     @Override

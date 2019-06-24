@@ -1,5 +1,6 @@
 package com.tostringtech.refp.application.model;
 
+import com.tostringtech.refp.projeto.api.rest.resources.TopicResource;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
@@ -18,8 +19,8 @@ public class Tema {
     private String descricao;
 
     @OneToOne()
-    @JoinColumn(name = "CD_TIP_PRO")
-    private TipPro tipoProjeto;
+    @JoinColumn(name = "CD_TIP_PROJ")
+    private TipProj tipoProjeto;
 
     @Column(name = "DS_SIGLA")
     private String sigla;
@@ -30,12 +31,12 @@ public class Tema {
     public Tema() {
     }
 
-    public Tema(long codigo, String descricao, TipPro tipoProjeto, String sigla, String prioritario) {
-        this.codigo = codigo;
-        this.descricao = descricao;
-        this.tipoProjeto = tipoProjeto;
-        this.sigla = sigla;
-        this.prioritario = prioritario;
+    public Tema(TopicResource topic) {
+        this.setCodigo(topic.getId());
+        this.setDescricao(topic.getDescription());
+        this.setTipoProjeto(new TipProj(topic.getProjectType()));
+        this.setSigla(topic.getInitials());
+        this.setPrioritario(topic.isPriority());
     }
 
     public long getCodigo() {
@@ -54,11 +55,11 @@ public class Tema {
         this.descricao = descricao;
     }
 
-    public TipPro getTipoProjeto() {
+    public TipProj getTipoProjeto() {
         return tipoProjeto;
     }
 
-    public void setTipoProjeto(TipPro tipoProjeto) {
+    public void setTipoProjeto(TipProj tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
     }
 
@@ -76,5 +77,9 @@ public class Tema {
 
     public void setPrioritario(String prioritario) {
         this.prioritario = prioritario;
+    }
+
+    public void setPrioritario(boolean prioritario) {
+        this.prioritario = prioritario ? "S" : "N";
     }
 }

@@ -64,7 +64,7 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     @Override
-    public List<TipPro> listAllProjectTypes() {
+    public List<TipProj> listAllProjectTypes() {
         return this.projetoRepository.listAllProjectTypes();
     }
 

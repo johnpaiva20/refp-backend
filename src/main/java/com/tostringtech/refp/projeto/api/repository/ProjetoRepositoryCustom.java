@@ -10,7 +10,7 @@ public interface ProjetoRepositoryCustom {
 
     List findAllTopicsByProjectType(String type);
 
-    List<TipPro> listAllProjectTypes();
+    List<TipProj> listAllProjectTypes();
 
     List<FaseInova> listAllInnovationPhases();
 

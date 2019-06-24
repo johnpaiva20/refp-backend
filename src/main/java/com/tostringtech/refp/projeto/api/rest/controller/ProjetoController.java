@@ -195,8 +195,8 @@ public class ProjetoController {
     public ResponseEntity<List<ProjectTypeResource>> listAllProjectTypes() {
         List<ProjectTypeResource> resources = new ArrayList<>();
 
-        List<TipPro> tipos = projetoService.listAllProjectTypes();
-        for (TipPro tipo : tipos) {
+        List<TipProj> tipos = projetoService.listAllProjectTypes();
+        for (TipProj tipo : tipos) {
             resources.add(new ProjectTypeResource(tipo));
         }
 

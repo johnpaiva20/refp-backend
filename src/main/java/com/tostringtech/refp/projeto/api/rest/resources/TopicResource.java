@@ -8,31 +8,22 @@ public class TopicResource {
 
     private String description;
 
-    private String projectType;
-
     private boolean priority;
 
     private String initials;
 
-    private ProjectTypeResource projectTypeResource;
+    private ProjectTypeResource projectType;
 
     public TopicResource() {
     }
 
-    public TopicResource(Long id, String description, String projectType, boolean priority, String initials) {
-        this.id = id;
-        this.description = description;
-        this.projectType = projectType;
-        this.priority = priority;
-        this.initials = initials;
-    }
 
     public TopicResource(Tema tema) {
         this.setId(tema.getCodigo());
         this.setDescription(tema.getDescricao());
         this.setPriority(tema.getPrioritario().equals("S"));
         this.setInitials(tema.getSigla());
-        this.setProjectTypeResource(new ProjectTypeResource(tema.getTipoProjeto()));
+        this.setProjectType(new ProjectTypeResource(tema.getTipoProjeto()));
     }
 
     public Long getId() {
@@ -51,11 +42,11 @@ public class TopicResource {
         this.description = description;
     }
 
-    public String getProjectType() {
+    public ProjectTypeResource getProjectType() {
         return projectType;
     }
 
-    public void setProjectType(String projectType) {
+    public void setProjectType(ProjectTypeResource projectType) {
         this.projectType = projectType;
     }
 
@@ -75,11 +66,5 @@ public class TopicResource {
         this.initials = initials;
     }
 
-    public ProjectTypeResource getProjectTypeResource() {
-        return projectTypeResource;
-    }
 
-    public void setProjectTypeResource(ProjectTypeResource projectTypeResource) {
-        this.projectTypeResource = projectTypeResource;
-    }
 }
