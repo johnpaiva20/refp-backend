@@ -12,12 +12,14 @@ import java.util.List;
 @Table(name = "PROJETO")
 public class Projeto implements Serializable {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CD_PROJETO")
     private Long codigo;
 
-    @Column(name = "CD_ANEEL", nullable = false)
+    @Column(name = "CD_ANEEL", nullable = false, unique = true, updatable = false)
     private String codigoAneel;
 
     @Column(name = "DS_TITULO", nullable = false)
@@ -29,13 +31,13 @@ public class Projeto implements Serializable {
     @Column(name = "DS_STATUS", nullable = false)
     private String status;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CD_ORDEM_SERVICO")
     private OrdemServico ordemServico;
 
     @OneToOne
-    @JoinColumn(name = "CD_TIP_PRO")
-    private TipPro tipoProjeto;
+    @JoinColumn(name = "CD_TIP_PROJ")
+    private TipProj tipoProjeto;
 
     @OneToOne
     @JoinColumn(name = "CD_TEMA")
@@ -73,6 +75,31 @@ public class Projeto implements Serializable {
 
     public Projeto(ProjectResource resource) {
         this.setCodigo(resource.getId());
+        this.setCodigoAneel(resource.getAneelId());
+        this.setTitulo(resource.getTitle());
+        this.setValorDuracaoMeses(resource.getDuration());
+        this.setStatus(resource.getStatus());
+        if (resource.getServiceOrder() != null) {
+            this.setOrdemServico(new OrdemServico(resource.getServiceOrder()));
+        }
+        if (resource.getType() != null) {
+            this.setTipoProjeto(new TipProj(resource.getType()));
+        }
+        if (resource.getTopic() != null) {
+            this.setTema(new Tema(resource.getTopic()));
+        }
+        if (resource.getSubtopic() != null) {
+            this.setSubtema(new Subtema(resource.getSubtopic()));
+        }
+        if (resource.getSegment() != null) {
+            this.setSegmento(new Segmento(resource.getSegment()));
+        }
+        if (resource.getProduct() != null) {
+            this.setProduto(new Produto(resource.getProduct()));
+        }
+        if (resource.getInnovationPhase() != null) {
+            this.setFaseInovacao(new FaseInova(resource.getInnovationPhase()));
+        }
     }
 
     public Long getCodigo() {
@@ -123,11 +150,11 @@ public class Projeto implements Serializable {
         this.ordemServico = ordemServico;
     }
 
-    public TipPro getTipoProjeto() {
+    public TipProj getTipoProjeto() {
         return tipoProjeto;
     }
 
-    public void setTipoProjeto(TipPro tipoProjeto) {
+    public void setTipoProjeto(TipProj tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
     }
 
