@@ -12,12 +12,14 @@ import java.util.List;
 @Table(name = "PROJETO")
 public class Projeto implements Serializable {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CD_PROJETO")
     private Long codigo;
 
-    @Column(name = "CD_ANEEL", nullable = false)
+    @Column(name = "CD_ANEEL", nullable = false, unique = true, updatable = false)
     private String codigoAneel;
 
     @Column(name = "DS_TITULO", nullable = false)

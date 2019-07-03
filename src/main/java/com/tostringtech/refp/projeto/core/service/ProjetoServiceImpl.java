@@ -1,4 +1,4 @@
-package com.tostringtech.refp.projeto.core.service.impl;
+package com.tostringtech.refp.projeto.core.service;
 
 import com.tostringtech.refp.application.model.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepository;
@@ -16,6 +16,11 @@ public class ProjetoServiceImpl implements ProjetoService {
     @Autowired
     private ProjetoRepository projetoRepository;
 
+    /**
+     * Cadastro de Projeto
+     * @param projeto
+     * @return Projeto cadastrado
+     */
     @Override
     public Projeto create(Projeto projeto) {
         return projetoRepository.save(projeto);
