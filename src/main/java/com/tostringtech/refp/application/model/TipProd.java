@@ -1,5 +1,7 @@
 package com.tostringtech.refp.application.model;
 
+import com.tostringtech.refp.projeto.api.rest.resources.ProductTypeResource;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,11 +10,16 @@ public class TipProd {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CD_TIP_PRO")
+    @Column(name = "CD_TIP_PROD")
     private Long codigo;
 
-    @Column(name = "DS_TIP_PRO")
+    @Column(name = "DS_TIP_PROD")
     private String descricao;
+
+    public TipProd(ProductTypeResource type) {
+        this.setCodigo(type.getId());
+        this.setDescricao(type.getDescription());
+    }
 
     public Long getCodigo() {
         return codigo;

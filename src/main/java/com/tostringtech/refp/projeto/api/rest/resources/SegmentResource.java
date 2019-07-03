@@ -4,29 +4,30 @@ import com.tostringtech.refp.application.model.Segmento;
 
 public class SegmentResource {
 
-    String value;
-    String name;
+    String id;
+    String description;
 
     public SegmentResource() {
     }
 
     public SegmentResource(Segmento segmento) {
-
+        this.setId(segmento.getCodigo());
+        this.setDescription(segmento.getDescricao());
     }
 
-    public String getValue() {
-        return value;
+    public String getId() {
+        return id;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

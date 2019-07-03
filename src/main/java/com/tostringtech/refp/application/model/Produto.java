@@ -1,5 +1,7 @@
 package com.tostringtech.refp.application.model;
 
+import com.tostringtech.refp.projeto.api.rest.resources.ProductResource;
+
 import javax.persistence.*;
 
 @Entity
@@ -20,6 +22,12 @@ public class Produto {
 
 
     public Produto() {
+    }
+
+    public Produto(ProductResource product) {
+        this.setCodigo(product.getId());
+        this.setDescricao(product.getDescription());
+        this.setTipoProduto(new TipProd(product.getType()));
     }
 
     public Long getCodigo() {
