@@ -1,7 +1,5 @@
 package com.tostringtech.refp.application.model;
 
-import com.tostringtech.refp.projeto.api.rest.resources.InnovationPhaseResource;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,11 +15,6 @@ public class FaseInova {
 
     @Column(name = "DS_FASE_INOVA", nullable = false)
     private String descricao;
-
-    public FaseInova(InnovationPhaseResource innovationPhase) {
-        this.setCodigo(innovationPhase.getId());
-        this.setDescricao(innovationPhase.getDescription());
-    }
 
     public String getCodigo() {
         return codigo;

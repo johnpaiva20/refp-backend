@@ -1,4 +1,4 @@
-package com.tostringtech.refp.projeto.core.repository;
+package com.tostringtech.refp.projeto.core.repository.impl;
 
 import com.tostringtech.refp.application.model.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepositoryCustom;
@@ -30,8 +30,8 @@ public class ProjetoRepositoryImpl implements ProjetoRepositoryCustom {
     }
 
     @Override
-    public List<TipProj> listAllProjectTypes() {
-        return this.entityManager.createQuery("From TipProj",TipProj.class).getResultList();
+    public List<TipPro> listAllProjectTypes() {
+        return this.entityManager.createQuery("From TipPro",TipPro.class).getResultList();
     }
 
     @Override

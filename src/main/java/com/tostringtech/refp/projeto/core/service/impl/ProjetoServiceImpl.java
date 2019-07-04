@@ -1,4 +1,4 @@
-package com.tostringtech.refp.projeto.core.service;
+package com.tostringtech.refp.projeto.core.service.impl;
 
 import com.tostringtech.refp.application.model.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepository;
@@ -16,11 +16,6 @@ public class ProjetoServiceImpl implements ProjetoService {
     @Autowired
     private ProjetoRepository projetoRepository;
 
-    /**
-     * Cadastro de Projeto
-     * @param projeto
-     * @return Projeto cadastrado
-     */
     @Override
     public Projeto create(Projeto projeto) {
         return projetoRepository.save(projeto);
@@ -69,7 +64,7 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     @Override
-    public List<TipProj> listAllProjectTypes() {
+    public List<TipPro> listAllProjectTypes() {
         return this.projetoRepository.listAllProjectTypes();
     }
 

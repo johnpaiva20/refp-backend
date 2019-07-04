@@ -4,29 +4,28 @@ import com.tostringtech.refp.application.model.FaseInova;
 
 public class InnovationPhaseResource {
 
-    private String id;
-    private String description;
+    private String value;
+    private String name;
 
 
     public InnovationPhaseResource(FaseInova faseInovacao) {
-        this.setId(faseInovacao.getDescricao());
-        this.setDescription(faseInovacao.getCodigo());
+        this.setName(faseInovacao.getDescricao());
+        this.setValue(faseInovacao.getCodigo());
     }
 
-    public String getId() {
-        return id;
+    public String getValue() {
+        return value;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
-
 }

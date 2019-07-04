@@ -1,4 +1,4 @@
-package com.tostringtech.refp.projeto.api.rest.enums;
+package com.tostringtech.refp.projeto.api.domain;
 
 public enum FaseInovacaoEnum {
 

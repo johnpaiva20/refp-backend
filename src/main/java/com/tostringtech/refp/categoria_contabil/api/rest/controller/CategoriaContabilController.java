@@ -2,7 +2,6 @@ package com.tostringtech.refp.categoria_contabil.api.rest.controller;
 
 import com.tostringtech.refp.categoria_contabil.api.service.CategoriaContabilService;
 import com.tostringtech.refp.projeto.api.rest.resources.AccountCategoryResource;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@Api(tags = {"Account"})
 public class CategoriaContabilController {
 
     @Autowired

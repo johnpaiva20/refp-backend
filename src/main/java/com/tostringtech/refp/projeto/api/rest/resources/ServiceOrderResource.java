@@ -6,38 +6,26 @@ import java.util.Date;
 
 public class ServiceOrderResource {
 
-    private Long id;
-
-    private String number;
+    private String id;
 
     private Date begin;
 
     private Date end;
 
-    public ServiceOrderResource() {
-    }
 
     public ServiceOrderResource(OrdemServico ordemServico) {
         this.setId(ordemServico.getCodigo());
-        this.setNumber(ordemServico.getNumero());
         this.setBegin(ordemServico.getDataInicio());
         this.setEnd(ordemServico.getDataFim());
+
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
     }
 
     public Date getBegin() {

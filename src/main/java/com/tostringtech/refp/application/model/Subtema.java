@@ -1,6 +1,5 @@
 package com.tostringtech.refp.application.model;
 
-import com.tostringtech.refp.projeto.api.rest.resources.SubtopicResource;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
@@ -39,14 +38,6 @@ public class Subtema {
         this.tema = tema;
     }
 
-    public Subtema(SubtopicResource subtopic) {
-        this.setCodigo(subtopic.getId());
-        this.setDescricao(subtopic.getDescription());
-        this.setSigla(subtopic.getInitials());
-        this.setPrioritario(subtopic.isPriority());
-        this.setTema(new Tema(subtopic.getTopic()));
-    }
-
     public long getCodigo() {
         return codigo;
     }
@@ -78,11 +69,6 @@ public class Subtema {
     public void setPrioritario(String prioritario) {
         this.prioritario = prioritario;
     }
-
-    public void setPrioritario(boolean prioritario) {
-        this.prioritario = prioritario ? "S" : "N";
-    }
-
 
     public Tema getTema() {
         return tema;

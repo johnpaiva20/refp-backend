@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Api(tags = {"Member"})
+@RequestMapping(value = "/members")
+@Api(tags = "Member", description = "Endpoints de membros")
 public class MembroController {
 
-    @PostMapping("/members")
-    @ApiOperation(tags = {"Member"}, value = "Cadastrar um novo membro")
+    @PostMapping("")
+    @ApiOperation(tags = {"Member"},value = "Cadastrar um novo membro")
     public ResponseEntity<MemberResource> createMember(@RequestBody MemberResource resource) {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

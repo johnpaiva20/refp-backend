@@ -5,7 +5,6 @@ import com.tostringtech.refp.categoria_contabil.api.service.CategoriaContabilSer
 import com.tostringtech.refp.empresa.api.services.EmpresaService;
 import com.tostringtech.refp.projeto.api.rest.resources.*;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@Api(tags = {"Project"})
 public class ProjetoController {
 
     private static final Logger logger = Logger.getLogger(ProjetoController.class);
@@ -74,7 +72,7 @@ public class ProjetoController {
     }
 
 
-    @GetMapping(value = "/projects/page")
+    @RequestMapping(value = "/projects/page", method = RequestMethod.GET)
     @ApiOperation(tags = {"Project"}, value = "Encontrar Projeto")
     public ResponseEntity<Page<ProjectResource>> findPage(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -87,7 +85,7 @@ public class ProjetoController {
     }
 
 
-    @PutMapping(value = "/projects/{id}")
+    @RequestMapping(value = "/projects/{id}", method = RequestMethod.PUT)
     @ApiOperation(tags = {"Project"}, value = "Atualizar Projeto")
     public ResponseEntity<Void> updateProject(@RequestBody ProjectResource resoruce, @PathVariable Long id) {
         Projeto projeto = new Projeto();
@@ -195,8 +193,8 @@ public class ProjetoController {
     public ResponseEntity<List<ProjectTypeResource>> listAllProjectTypes() {
         List<ProjectTypeResource> resources = new ArrayList<>();
 
-        List<TipProj> tipos = projetoService.listAllProjectTypes();
-        for (TipProj tipo : tipos) {
+        List<TipPro> tipos = projetoService.listAllProjectTypes();
+        for (TipPro tipo : tipos) {
             resources.add(new ProjectTypeResource(tipo));
         }
 
