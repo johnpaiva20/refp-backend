@@ -7,6 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,14 +16,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@Api(tags = {"Enterprise"})
+@Api(tags = {"Enterprises"})
 public class EnterpriseController {
 
     @Autowired
     private EmpresaService empresaService;
 
     @PostMapping("/enterprises")
-    @ApiOperation(tags = {"Enterprise"},value = "Cadastrar nova empresa")
+    @ApiOperation(tags = {"Enterprises"},value = "Cadastrar nova empresa")
     public ResponseEntity<EnterpriseResource> create(@RequestBody EnterpriseResource resource) {
         Empresa empresa = empresaService.create(new Empresa(resource));
         resource = new EnterpriseResource(empresa);
@@ -33,8 +34,8 @@ public class EnterpriseController {
     }
 
     @GetMapping("/enterprises")
-    @ApiOperation(tags = {"Enterprise"},value = "Encontrar todas as empresas cadastradas")
-    public ResponseEntity<List<EnterpriseResource>> findAll() {
+    @ApiOperation(tags = {"Enterprises"},value = "Encontrar todas as empresas cadastradas")
+    public ResponseEntity<List<EnterpriseResource>> findAll(Pageable pageable) {
 
         List<EnterpriseResource> resources;
         resources = empresaService.findAll()
@@ -49,7 +50,7 @@ public class EnterpriseController {
     }
 
     @GetMapping("/enterprises/{id}")
-    @ApiOperation(tags = {"Enterprise"},value = "Encontrar Empresa pelo ID")
+    @ApiOperation(tags = {"Enterprises"},value = "Encontrar Empresa pelo ID")
     public ResponseEntity<EnterpriseResource> findById(@PathVariable Long id) {
         Empresa empresa = empresaService.findById(id).orElse(null);
         EnterpriseResource resource = new EnterpriseResource(empresa);
@@ -61,7 +62,7 @@ public class EnterpriseController {
     }
 
     @GetMapping(value = "/enterprises/page")
-    @ApiOperation(tags = {"Enterprise"},value = "Listar empresas")
+    @ApiOperation(tags = {"Enterprises"},value = "Listar empresas")
     public ResponseEntity<Page<EnterpriseResource>> findPage(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
             @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,

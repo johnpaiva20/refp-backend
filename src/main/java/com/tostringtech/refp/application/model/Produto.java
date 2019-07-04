@@ -3,10 +3,11 @@ package com.tostringtech.refp.application.model;
 import com.tostringtech.refp.projeto.api.rest.resources.ProductResource;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "PRODUTO")
-public class Produto {
+public class Produto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,10 +17,8 @@ public class Produto {
     @Column(name = "DS_PRODUTO")
     private String descricao;
 
-    @OneToOne
-    @JoinColumn(name = "CD_TIP_PROD")
-    private TipProd tipoProduto;
-
+    @Column(name = "DS_TIP_PROD")
+    private String tipoProduto;
 
     public Produto() {
     }
@@ -27,7 +26,8 @@ public class Produto {
     public Produto(ProductResource product) {
         this.setCodigo(product.getId());
         this.setDescricao(product.getDescription());
-        this.setTipoProduto(new TipProd(product.getType()));
+        this.setTipoProduto(product.getType());
+
     }
 
     public Long getCodigo() {
@@ -46,11 +46,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public TipProd getTipoProduto() {
+    public String getTipoProduto() {
         return tipoProduto;
     }
 
-    public void setTipoProduto(TipProd tipoProduto) {
+    public void setTipoProduto(String tipoProduto) {
         this.tipoProduto = tipoProduto;
     }
 

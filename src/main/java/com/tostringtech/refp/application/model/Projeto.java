@@ -5,14 +5,11 @@ import com.tostringtech.refp.projeto.api.rest.resources.ProjectResource;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "PROJETO")
 public class Projeto implements Serializable {
-
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,22 +19,31 @@ public class Projeto implements Serializable {
     @Column(name = "CD_ANEEL", nullable = false, unique = true, updatable = false)
     private String codigoAneel;
 
-    @Column(name = "DS_TITULO", nullable = false)
+    @Column(name = "DS_TITULO", nullable = false,length = 200)
     private String titulo;
 
     @Column(name = "VL_DURACAO", nullable = false)
-    private int valorDuracaoMeses;
+    private int duracao;
+
+    @Column(name = "DS_SEGMENTO", length = 1)
+    private String segmento;
 
     @Column(name = "DS_STATUS", nullable = false)
     private String status;
+
+    @Column(name = "DS_FASE_INOVACAO")
+    private String faseInovacao;
+
+    @Column(name = "DS_TIPO_COMPARTILHAMENTO")
+    private String tipoCompartilhamento;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CD_ORDEM_SERVICO")
     private OrdemServico ordemServico;
 
     @OneToOne
-    @JoinColumn(name = "CD_TIP_PROJ")
-    private TipProj tipoProjeto;
+    @JoinColumn(name = "CD_TIPO_PROJETO")
+    private TipoProjeto tipoProjeto;
 
     @OneToOne
     @JoinColumn(name = "CD_TEMA")
@@ -47,19 +53,9 @@ public class Projeto implements Serializable {
     @JoinColumn(name = "CD_SUBTEMA")
     private Subtema subtema;
 
-    @OneToOne
-    @JoinColumn(name = "CD_SEGMENTO")
-    private Segmento segmento;
-
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CD_PRODUTO")
     private Produto produto;
-
-    @OneToOne
-    @JoinColumn(name = "CD_FASE_INOVA")
-    private FaseInova faseInovacao;
-
-    /*private TipCompartiResultados tipoCompartilhamento;*/
 
     @OneToMany(mappedBy = "projeto")
     private List<MembPro> membros = new ArrayList<>();
@@ -74,16 +70,21 @@ public class Projeto implements Serializable {
     }
 
     public Projeto(ProjectResource resource) {
+
         this.setCodigo(resource.getId());
         this.setCodigoAneel(resource.getAneelId());
         this.setTitulo(resource.getTitle());
-        this.setValorDuracaoMeses(resource.getDuration());
+        this.setDuracao(resource.getDuration());
         this.setStatus(resource.getStatus());
+        this.setSegmento(resource.getSegment());
+        this.setFaseInovacao(resource.getInnovationPhase());
+        this.setTipoCompartilhamento(resource.getSharingMethod());
+
         if (resource.getServiceOrder() != null) {
             this.setOrdemServico(new OrdemServico(resource.getServiceOrder()));
         }
         if (resource.getType() != null) {
-            this.setTipoProjeto(new TipProj(resource.getType()));
+            this.setTipoProjeto(new TipoProjeto(resource.getType()));
         }
         if (resource.getTopic() != null) {
             this.setTema(new Tema(resource.getTopic()));
@@ -91,14 +92,8 @@ public class Projeto implements Serializable {
         if (resource.getSubtopic() != null) {
             this.setSubtema(new Subtema(resource.getSubtopic()));
         }
-        if (resource.getSegment() != null) {
-            this.setSegmento(new Segmento(resource.getSegment()));
-        }
         if (resource.getProduct() != null) {
             this.setProduto(new Produto(resource.getProduct()));
-        }
-        if (resource.getInnovationPhase() != null) {
-            this.setFaseInovacao(new FaseInova(resource.getInnovationPhase()));
         }
     }
 
@@ -126,12 +121,20 @@ public class Projeto implements Serializable {
         this.titulo = titulo;
     }
 
-    public int getValorDuracaoMeses() {
-        return valorDuracaoMeses;
+    public int getDuracao() {
+        return duracao;
     }
 
-    public void setValorDuracaoMeses(int valorDuracaoMeses) {
-        this.valorDuracaoMeses = valorDuracaoMeses;
+    public void setDuracao(int duracao) {
+        this.duracao = duracao;
+    }
+
+    public String getSegmento() {
+        return segmento;
+    }
+
+    public void setSegmento(String segmento) {
+        this.segmento = segmento;
     }
 
     public String getStatus() {
@@ -142,6 +145,22 @@ public class Projeto implements Serializable {
         this.status = status;
     }
 
+    public String getFaseInovacao() {
+        return faseInovacao;
+    }
+
+    public void setFaseInovacao(String faseInovacao) {
+        this.faseInovacao = faseInovacao;
+    }
+
+    public String getTipoCompartilhamento() {
+        return tipoCompartilhamento;
+    }
+
+    public void setTipoCompartilhamento(String tipoCompartilhamento) {
+        this.tipoCompartilhamento = tipoCompartilhamento;
+    }
+
     public OrdemServico getOrdemServico() {
         return ordemServico;
     }
@@ -150,11 +169,11 @@ public class Projeto implements Serializable {
         this.ordemServico = ordemServico;
     }
 
-    public TipProj getTipoProjeto() {
+    public TipoProjeto getTipoProjeto() {
         return tipoProjeto;
     }
 
-    public void setTipoProjeto(TipProj tipoProjeto) {
+    public void setTipoProjeto(TipoProjeto tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
     }
 
@@ -174,28 +193,12 @@ public class Projeto implements Serializable {
         this.subtema = subtema;
     }
 
-    public Segmento getSegmento() {
-        return segmento;
-    }
-
-    public void setSegmento(Segmento segmento) {
-        this.segmento = segmento;
-    }
-
     public Produto getProduto() {
         return produto;
     }
 
     public void setProduto(Produto produto) {
         this.produto = produto;
-    }
-
-    public FaseInova getFaseInovacao() {
-        return faseInovacao;
-    }
-
-    public void setFaseInovacao(FaseInova faseInovacao) {
-        this.faseInovacao = faseInovacao;
     }
 
     public List<MembPro> getMembros() {

@@ -8,7 +8,7 @@ public class ServiceOrderResource {
 
     private Long id;
 
-    private String number;
+    private String order;
 
     private Date begin;
 
@@ -19,7 +19,7 @@ public class ServiceOrderResource {
 
     public ServiceOrderResource(OrdemServico ordemServico) {
         this.setId(ordemServico.getCodigo());
-        this.setNumber(ordemServico.getNumero());
+        this.setOrder(ordemServico.getOrdem());
         this.setBegin(ordemServico.getDataInicio());
         this.setEnd(ordemServico.getDataFim());
     }
@@ -32,12 +32,12 @@ public class ServiceOrderResource {
         this.id = id;
     }
 
-    public String getNumber() {
-        return number;
+    public String getOrder() {
+        return order;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setOrder(String order) {
+        this.order = order;
     }
 
     public Date getBegin() {

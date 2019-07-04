@@ -1,6 +1,7 @@
 package com.tostringtech.refp.projeto.api.service;
 
 import com.tostringtech.refp.application.model.*;
+import com.tostringtech.refp.projeto.api.rest.filters.ProjectTypeFilter;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface ProjetoService {
 
     List<Subtema> findAllSubtopicsByTopic(String topic);
 
-    List<Tema> findAllTopicsByProjectType(String type);
+    List<Tema> findAllTopicsByProjectType(ProjectTypeFilter filter);
 
     Optional<Projeto> findById(Long id);
 
@@ -27,11 +28,11 @@ public interface ProjetoService {
 
     Projeto update(Projeto projeto);
 
-    List<Segmento> listAllSegments();
+    List<TipoProjeto> listAllProjectTypes();
+
+   /* List<Segmento> listAllSegments();
 
     List<Produto> listAllProductsTypes();
 
-    List<FaseInova> listAllInnovationPhases();
-
-    List<TipProj> listAllProjectTypes();
+    List<FaseInova> listAllInnovationPhases();*/
 }

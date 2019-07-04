@@ -4,23 +4,23 @@ import com.tostringtech.refp.projeto.api.rest.resources.TopicResource;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "TEMA")
-public class Tema {
+public class Tema  implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(hidden = true)
     @Column(name = "CD_TEMA")
     private long codigo;
 
     @Column(name = "DS_TEMA")
     private String descricao;
 
-    @OneToOne()
-    @JoinColumn(name = "CD_TIP_PROJ")
-    private TipProj tipoProjeto;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CD_TIPO_PROJETO")
+    private TipoProjeto tipoProjeto;
 
     @Column(name = "DS_SIGLA")
     private String sigla;
@@ -34,9 +34,11 @@ public class Tema {
     public Tema(TopicResource topic) {
         this.setCodigo(topic.getId());
         this.setDescricao(topic.getDescription());
-        this.setTipoProjeto(new TipProj(topic.getProjectType()));
         this.setSigla(topic.getInitials());
         this.setPrioritario(topic.isPriority());
+        if (topic.getProjectType() != null) {
+            this.setTipoProjeto(new TipoProjeto(topic.getProjectType()));
+        }
     }
 
     public long getCodigo() {
@@ -55,11 +57,11 @@ public class Tema {
         this.descricao = descricao;
     }
 
-    public TipProj getTipoProjeto() {
+    public TipoProjeto getTipoProjeto() {
         return tipoProjeto;
     }
 
-    public void setTipoProjeto(TipProj tipoProjeto) {
+    public void setTipoProjeto(TipoProjeto tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
     }
 

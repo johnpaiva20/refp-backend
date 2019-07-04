@@ -1,20 +1,21 @@
 package com.tostringtech.refp.application.model;
 
 import com.tostringtech.refp.projeto.api.rest.resources.SegmentResource;
-import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
-@Table(name = "SEGMENTO")
+//@Entity
+//@Table(name = "SEGMENTO")
 public class Segmento {
 
-    @Id
-    @ApiModelProperty(hidden = true)
-    @Column(name = "CD_SEGMENTO")
+    //@Id
+    //@Column(name = "CD_SEGMENTO")
     private String codigo;
 
-    @Column(name = "DS_SEGMENTO")
+    //@Column(name = "DS_SEGMENTO")
     private String descricao;
 
     public Segmento() {

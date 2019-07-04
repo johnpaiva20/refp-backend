@@ -4,19 +4,22 @@ import com.tostringtech.refp.application.model.TipProd;
 
 public class ProductTypeResource {
 
-    private Long id;
+    private String id;
     private String description;
+
+    public ProductTypeResource() {
+    }
 
     public ProductTypeResource(TipProd tipoProduto) {
         this.setId(tipoProduto.getCodigo());
         this.setDescription(tipoProduto.getDescricao());
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

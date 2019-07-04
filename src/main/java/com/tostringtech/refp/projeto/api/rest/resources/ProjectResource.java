@@ -17,9 +17,15 @@ public class ProjectResource {
 
     private int duration;
 
-    private ServiceOrderResource serviceOrder;
-
     private String status;
+
+    private String segment;
+
+    private String innovationPhase;
+
+    private String sharingMethod;
+
+    private ProductResource product;
 
     private ProjectTypeResource type;
 
@@ -27,11 +33,7 @@ public class ProjectResource {
 
     private SubtopicResource subtopic;
 
-    private SegmentResource segment;
-
-    private InnovationPhaseResource innovationPhase;
-
-    private ProductResource product;
+    private ServiceOrderResource serviceOrder;
 
     public ProjectResource() {
     }
@@ -40,8 +42,11 @@ public class ProjectResource {
         this.setId(projeto.getCodigo());
         this.setAneelId(projeto.getCodigoAneel());
         this.setTitle(projeto.getTitulo());
-        this.setDuration(projeto.getValorDuracaoMeses());
-        this.setStatus("Andamento");
+        this.setDuration(projeto.getDuracao());
+        this.setSegment(projeto.getSegmento());
+        this.setInnovationPhase(projeto.getFaseInovacao());
+        this.setStatus(projeto.getStatus());
+        this.setSharingMethod(projeto.getTipoCompartilhamento());
 
         if (projeto.getOrdemServico() != null) {
             this.setServiceOrder(new ServiceOrderResource(projeto.getOrdemServico()));
@@ -54,12 +59,6 @@ public class ProjectResource {
         }
         if (projeto.getSubtema() != null) {
             this.setSubtopic(new SubtopicResource(projeto.getSubtema()));
-        }
-        if (projeto.getSegmento() != null) {
-            this.setSegment(new SegmentResource(projeto.getSegmento()));
-        }
-        if (projeto.getFaseInovacao() != null) {
-            this.setInnovationPhase(new InnovationPhaseResource(projeto.getFaseInovacao()));
         }
         if (projeto.getProduto() != null) {
             this.setProduct(new ProductResource(projeto.getProduto()));
@@ -98,20 +97,44 @@ public class ProjectResource {
         this.duration = duration;
     }
 
-    public ServiceOrderResource getServiceOrder() {
-        return serviceOrder;
-    }
-
-    public void setServiceOrder(ServiceOrderResource serviceOrder) {
-        this.serviceOrder = serviceOrder;
-    }
-
     public String getStatus() {
         return status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getSegment() {
+        return segment;
+    }
+
+    public void setSegment(String segment) {
+        this.segment = segment;
+    }
+
+    public String getInnovationPhase() {
+        return innovationPhase;
+    }
+
+    public void setInnovationPhase(String innovationPhase) {
+        this.innovationPhase = innovationPhase;
+    }
+
+    public String getSharingMethod() {
+        return sharingMethod;
+    }
+
+    public void setSharingMethod(String sharingMethod) {
+        this.sharingMethod = sharingMethod;
+    }
+
+    public ProductResource getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductResource product) {
+        this.product = product;
     }
 
     public ProjectTypeResource getType() {
@@ -138,27 +161,11 @@ public class ProjectResource {
         this.subtopic = subtopic;
     }
 
-    public SegmentResource getSegment() {
-        return segment;
+    public ServiceOrderResource getServiceOrder() {
+        return serviceOrder;
     }
 
-    public void setSegment(SegmentResource segment) {
-        this.segment = segment;
-    }
-
-    public InnovationPhaseResource getInnovationPhase() {
-        return innovationPhase;
-    }
-
-    public void setInnovationPhase(InnovationPhaseResource innovationPhase) {
-        this.innovationPhase = innovationPhase;
-    }
-
-    public ProductResource getProduct() {
-        return product;
-    }
-
-    public void setProduct(ProductResource product) {
-        this.product = product;
+    public void setServiceOrder(ServiceOrderResource serviceOrder) {
+        this.serviceOrder = serviceOrder;
     }
 }

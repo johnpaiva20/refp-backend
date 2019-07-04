@@ -20,7 +20,7 @@ public class CategoriaContabil implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "CD_TIP_PROJ")
-    private TipProj tipoProjeto;
+    private TipoProjeto tipoProjeto;
 
     @Column(name = "DS_SIGLA")
     private String sigla;
@@ -47,11 +47,11 @@ public class CategoriaContabil implements Serializable {
         this.descricao = descricao;
     }
 
-    public TipProj getTipoProjeto() {
+    public TipoProjeto getTipoProjeto() {
         return tipoProjeto;
     }
 
-    public void setTipoProjeto(TipProj tipoProjeto) {
+    public void setTipoProjeto(TipoProjeto tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
     }
 

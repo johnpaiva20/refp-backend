@@ -3,25 +3,26 @@ package com.tostringtech.refp.application.model;
 import com.tostringtech.refp.projeto.api.rest.resources.ProjectTypeResource;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "TIP_PROJ")
-public class TipProj {
+@Table(name = "TIPO_PROJETO")
+public class TipoProjeto implements Serializable {
 
     @Id
-    @Column(name = "CD_TIP_PROJ", length = 2)
+    @Column(name = "CD_TIPO_PROJETO", length = 2)
     private String codigo;
 
-    @Column(name = "DS_TIP_PROJ", nullable = false)
+    @Column(name = "DS_TIPO_PROJETO", nullable = false)
     private String descricao;
 
     @Column(name = "SN_ATIVO", nullable = false)
     private String ativo;
 
-    public TipProj() {
+    public TipoProjeto() {
     }
 
-    public TipProj(ProjectTypeResource type) {
+    public TipoProjeto(ProjectTypeResource type) {
         this.setCodigo(type.getId());
         this.setDescricao(type.getDescription());
         this.setAtivo(type.isActive());

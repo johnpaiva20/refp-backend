@@ -3,10 +3,11 @@ package com.tostringtech.refp.application.model;
 import com.tostringtech.refp.empresa.api.rest.resources.EnterpriseResource;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "EMPRESA")
-public class Empresa {
+public class Empresa implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,6 @@
-package com.tostringtech.refp.projeto.api.rest.enums;
+package com.tostringtech.refp.projeto.core.enums;
 
-public enum ProdutoEnum {
+public enum TipoProdutoEnum {
 
     CONCEITO_METODOLOGIA("CM", "Conceito ou Metodologia"),
     SOFTWARE("SW", "Software"),
@@ -12,8 +12,7 @@ public enum ProdutoEnum {
     private String codigo;
     private String produto;
 
-
-    ProdutoEnum(String codigo, String produto) {
+    TipoProdutoEnum(String codigo, String produto) {
         this.codigo = codigo;
         this.produto = produto;
     }
