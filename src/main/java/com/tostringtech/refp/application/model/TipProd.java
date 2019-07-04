@@ -4,16 +4,15 @@ import com.tostringtech.refp.projeto.api.rest.resources.ProductTypeResource;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "TIP_PROD")
+//@Entity
+//@Table(name = "TIP_PROD")
 public class TipProd {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CD_TIP_PROD")
-    private Long codigo;
+   // @Id
+    //@Column(name = "CD_TIP_PROD")
+    private String codigo;
 
-    @Column(name = "DS_TIP_PROD")
+    //@Column(name = "DS_TIP_PROD")
     private String descricao;
 
     public TipProd(ProductTypeResource type) {
@@ -21,11 +20,11 @@ public class TipProd {
         this.setDescricao(type.getDescription());
     }
 
-    public Long getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Long codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 

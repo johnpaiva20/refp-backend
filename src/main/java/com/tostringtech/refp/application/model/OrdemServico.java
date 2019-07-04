@@ -3,11 +3,12 @@ package com.tostringtech.refp.application.model;
 import com.tostringtech.refp.projeto.api.rest.resources.ServiceOrderResource;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "ORDEM_SERVICO")
-public class OrdemServico {
+public class OrdemServico implements Serializable {
 
     @Id
     @Column(name = "CD_ORDEM_SERVICO")
@@ -15,7 +16,7 @@ public class OrdemServico {
     private Long codigo;
 
     @Column(name = "NR_ORDEM_SERVICO", length = 20, unique = true, updatable = false)
-    private String numero;
+    private String ordem;
 
     @Column(name = "DT_INICIO")
     private Date dataInicio;
@@ -28,7 +29,7 @@ public class OrdemServico {
 
     public OrdemServico(ServiceOrderResource serviceOrder) {
         this.setCodigo(serviceOrder.getId());
-        this.setNumero(serviceOrder.getNumber());
+        this.setOrdem(serviceOrder.getOrder());
         this.setDataInicio(serviceOrder.getBegin());
         this.setDataFim(serviceOrder.getEnd());
     }
@@ -41,12 +42,12 @@ public class OrdemServico {
         this.codigo = codigo;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getOrdem() {
+        return ordem;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setOrdem(String ordem) {
+        this.ordem = ordem;
     }
 
     public Date getDataInicio() {

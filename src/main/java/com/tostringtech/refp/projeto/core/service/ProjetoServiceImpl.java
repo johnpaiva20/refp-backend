@@ -2,11 +2,14 @@ package com.tostringtech.refp.projeto.core.service;
 
 import com.tostringtech.refp.application.model.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepository;
+import com.tostringtech.refp.projeto.api.rest.filters.ProjectTypeFilter;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -54,6 +57,23 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     @Override
+    public List<TipoProjeto> listAllProjectTypes() {
+        return this.projetoRepository.listAllProjectTypes();
+    }
+
+    @Override
+    public List<Tema> findAllTopicsByProjectType(ProjectTypeFilter filter){
+        return projetoRepository.findAllTopicsByProjectType(filter);
+    }
+
+    public Date calculateCompletionDate(Projeto projeto){
+        Calendar end = Calendar.getInstance();
+        end.setTime(projeto.getOrdemServico().getDataInicio());
+        end.add(Calendar.DAY_OF_YEAR,projeto.getDuracao());
+        return end.getTime();
+    }
+
+    /*@Override
     public List<Segmento> listAllSegments() {
         return this.projetoRepository.listAllSegments();
     }
@@ -66,17 +86,7 @@ public class ProjetoServiceImpl implements ProjetoService {
     @Override
     public List<FaseInova> listAllInnovationPhases() {
         return this.projetoRepository.listAllInnovationPhases();
-    }
-
-    @Override
-    public List<TipProj> listAllProjectTypes() {
-        return this.projetoRepository.listAllProjectTypes();
-    }
-
-    @Override
-    public List<Tema> findAllTopicsByProjectType(String type){
-       return projetoRepository.findAllTopicsByProjectType(type);
-    }
+    }*/
 
 
 }

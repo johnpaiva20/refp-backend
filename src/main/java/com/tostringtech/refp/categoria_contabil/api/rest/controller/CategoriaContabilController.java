@@ -21,19 +21,19 @@ public class CategoriaContabilController {
     @Autowired
     CategoriaContabilService categoriaContabilService;
 
-    @GetMapping("/account-categories/{type}")
-    @ApiOperation(tags = {"Account"},value = "Encontrar todos as categorias cadastrados")
-    public ResponseEntity<List<AccountCategoryResource>> findAllByProjectType(@PathVariable String type) {
+    @GetMapping(value = "/account-categories-{type}")
+    @ApiOperation( value = "Listar categorias contabeis")
+    public ResponseEntity<List<AccountCategoryResource>> listAllAccountCategoriesByProjectType(@PathVariable String type) {
 
-        List<AccountCategoryResource> resources = categoriaContabilService
+        List<AccountCategoryResource> categoriasContabeis = categoriaContabilService
                 .findAllByProjectType(type)
                 .stream()
                 .map(AccountCategoryResource::new)
                 .collect(Collectors.toList());
 
-        if (!resources.isEmpty()) {
-            return new ResponseEntity<>(resources, HttpStatus.OK);
+        if (!categoriasContabeis.isEmpty()) {
+            return ResponseEntity.ok().body(categoriasContabeis);
         }
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.noContent().build();
     }
 }

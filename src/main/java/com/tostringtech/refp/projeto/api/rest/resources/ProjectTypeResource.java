@@ -1,6 +1,6 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.TipProj;
+import com.tostringtech.refp.application.model.TipoProjeto;
 
 public class ProjectTypeResource {
 
@@ -8,10 +8,12 @@ public class ProjectTypeResource {
     private String description;
     private boolean active;
 
+    public ProjectTypeResource() {
+    }
 
-    public ProjectTypeResource(TipProj tipoProjeto) {
-        this.setId(tipoProjeto.getDescricao());
-        this.setDescription(tipoProjeto.getCodigo());
+    public ProjectTypeResource(TipoProjeto tipoProjeto) {
+        this.setId(tipoProjeto.getCodigo());
+        this.setDescription(tipoProjeto.getDescricao());
         this.setActive(tipoProjeto.getAtivo().equals("S"));
     }
 

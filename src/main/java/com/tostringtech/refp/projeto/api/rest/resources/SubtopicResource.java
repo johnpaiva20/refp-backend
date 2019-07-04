@@ -24,7 +24,9 @@ public class SubtopicResource {
         this.description = subtema.getDescricao();
         this.priority = subtema.getPrioritario().equals("S");
         this.initials = subtema.getSigla();
-        this.setTopic(new TopicResource(subtema.getTema()));
+        if (subtema.getTema() != null) {
+            this.setTopic(new TopicResource(subtema.getTema()));
+        }
     }
 
     public Long getId() {

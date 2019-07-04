@@ -1,24 +1,23 @@
-package com.tostringtech.refp.projeto.api.rest.enums;
+package com.tostringtech.refp.projeto.core.enums;
 
 public enum TipoProjetoEnum {
-    PESQUISA_DESENVOLVIMENTO("PD", "Pesquisa e desenvolvimento"),
+    PESQUISA_DESENVOLVIMENTO("PD", "Pesquisa e Desenvolvimento"),
     EFICIENCIA_ENERGETICA("EE", "Eficiêcia Energética");
 
     String codigo;
-    String tipo;
+    String descricao;
 
-    TipoProjetoEnum(String codigo, String tipo) {
+    TipoProjetoEnum(String codigo, String descricao) {
         this.codigo = codigo;
-        this.tipo = tipo;
+        this.descricao = descricao;
     }
-
 
     public String getCodigo() {
         return codigo;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getDescricao() {
+        return descricao;
     }
 
     public static TipoProjetoEnum toEnum(String codigo) {

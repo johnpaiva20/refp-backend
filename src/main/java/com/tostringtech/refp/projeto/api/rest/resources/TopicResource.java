@@ -23,7 +23,9 @@ public class TopicResource {
         this.setDescription(tema.getDescricao());
         this.setPriority(tema.getPrioritario().equals("S"));
         this.setInitials(tema.getSigla());
-        this.setProjectType(new ProjectTypeResource(tema.getTipoProjeto()));
+        if(tema.getTipoProjeto()!=null) {
+            this.setProjectType(new ProjectTypeResource(tema.getTipoProjeto()));
+        }
     }
 
     public Long getId() {

@@ -7,6 +7,8 @@ public class InnovationPhaseResource {
     private String id;
     private String description;
 
+    public InnovationPhaseResource() {
+    }
 
     public InnovationPhaseResource(FaseInova faseInovacao) {
         this.setId(faseInovacao.getDescricao());

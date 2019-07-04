@@ -7,15 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "FASE_INOVA")
+//@Entity
+//@Table(name = "FASE_INOVA")
 public class FaseInova {
 
-    @Id
-    @Column(name = "CD_FASE_INOVA", length = 2)
+   // @Id
+    //@Column(name = "CD_FASE_INOVA", length = 2)
     private String codigo;
 
-    @Column(name = "DS_FASE_INOVA", nullable = false)
+    //@Column(name = "DS_FASE_INOVA", nullable = false)
     private String descricao;
 
     public FaseInova(InnovationPhaseResource innovationPhase) {

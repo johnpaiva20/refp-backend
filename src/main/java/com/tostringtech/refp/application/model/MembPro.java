@@ -1,10 +1,11 @@
 package com.tostringtech.refp.application.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "MEMB_PRO")
-public class MembPro {
+public class MembPro implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

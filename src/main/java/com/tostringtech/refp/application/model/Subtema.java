@@ -4,14 +4,14 @@ import com.tostringtech.refp.projeto.api.rest.resources.SubtopicResource;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "SUBTEMA")
-public class Subtema {
+public class Subtema implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(hidden = true)
     @Column(name = "CD_SUBTEMA")
     private long codigo;
 
@@ -25,7 +25,7 @@ public class Subtema {
     private String prioritario;
 
     @OneToOne()
-    @JoinColumn(name = "CD_TEMA")
+    @JoinColumn(name = "DS_SIGLA_TEMA", referencedColumnName = "DS_SIGLA")
     private Tema tema;
 
     public Subtema() {
@@ -44,7 +44,9 @@ public class Subtema {
         this.setDescricao(subtopic.getDescription());
         this.setSigla(subtopic.getInitials());
         this.setPrioritario(subtopic.isPriority());
-        this.setTema(new Tema(subtopic.getTopic()));
+        if (subtopic.getTopic() != null) {
+            this.setTema(new Tema(subtopic.getTopic()));
+        }
     }
 
     public long getCodigo() {
