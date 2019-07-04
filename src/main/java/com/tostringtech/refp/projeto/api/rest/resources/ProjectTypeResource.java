@@ -1,34 +1,38 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.TipProj;
+import com.tostringtech.refp.application.model.TipPro;
 
 public class ProjectTypeResource {
 
-    private String id;
-    private String description;
+    private String value;
+    private String name;
     private boolean active;
 
+    public ProjectTypeResource(String codigo, String nome) {
+        this.value = codigo;
+        this.name = nome;
+    }
 
-    public ProjectTypeResource(TipProj tipoProjeto) {
-        this.setId(tipoProjeto.getDescricao());
-        this.setDescription(tipoProjeto.getCodigo());
+    public ProjectTypeResource(TipPro tipoProjeto) {
+        this.setName(tipoProjeto.getDescricao());
+        this.setValue(tipoProjeto.getCodigo());
         this.setActive(tipoProjeto.getAtivo().equals("S"));
     }
 
-    public String getId() {
-        return id;
+    public String getValue() {
+        return value;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isActive() {

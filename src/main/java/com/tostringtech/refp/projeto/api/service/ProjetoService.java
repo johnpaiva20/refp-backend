@@ -8,11 +8,6 @@ import java.util.Optional;
 
 public interface ProjetoService {
 
-    /**
-     * Cadastro de Projeto
-     * @param projeto
-     * @return Projeto Cadastrado
-     */
     Projeto create(Projeto projeto);
 
     List<Projeto> findAll();
@@ -33,5 +28,5 @@ public interface ProjetoService {
 
     List<FaseInova> listAllInnovationPhases();
 
-    List<TipProj> listAllProjectTypes();
+    List<TipPro> listAllProjectTypes();
 }

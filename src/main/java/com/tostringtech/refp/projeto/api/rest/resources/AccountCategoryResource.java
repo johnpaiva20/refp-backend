@@ -8,22 +8,27 @@ public class AccountCategoryResource {
 
     private String description;
 
-    private ProjectTypeResource projectType;
+    private String projectType;
 
     private String initials;
 
     private String standard;
 
-    public AccountCategoryResource() {
-    }
 
     public AccountCategoryResource(CategoriaContabil categoriaContabil) {
-        this.setId(categoriaContabil.getCodigo());
-        this.setDescription(categoriaContabil.getDescricao());
-        this.setProjectType(new ProjectTypeResource(categoriaContabil.getTipoProjeto()));
-        this.setInitials(categoriaContabil.getSigla());
-        this.setStandard(categoriaContabil.getPadrao());
+        this.id = categoriaContabil.getCodigo();
+        this.description = categoriaContabil.getDescricao();
+        this.projectType = categoriaContabil.getTipoProjeto();
+        this.initials = categoriaContabil.getSigla();
+        this.standard = categoriaContabil.getPadrao();
+    }
 
+    public AccountCategoryResource(Long id, String description, String projectType, String initials, String standard) {
+        this.id = id;
+        this.description = description;
+        this.projectType = projectType;
+        this.initials = initials;
+        this.standard = standard;
     }
 
     public Long getId() {
@@ -42,11 +47,11 @@ public class AccountCategoryResource {
         this.description = description;
     }
 
-    public ProjectTypeResource getProjectType() {
+    public String getProjectType() {
         return projectType;
     }
 
-    public void setProjectType(ProjectTypeResource projectType) {
+    public void setProjectType(String projectType) {
         this.projectType = projectType;
     }
 

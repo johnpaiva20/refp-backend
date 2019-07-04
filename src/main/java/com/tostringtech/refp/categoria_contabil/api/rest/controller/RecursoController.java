@@ -3,8 +3,6 @@ package com.tostringtech.refp.categoria_contabil.api.rest.controller;
 import com.tostringtech.refp.application.model.Recurso;
 import com.tostringtech.refp.categoria_contabil.api.rest.resources.AssetResource;
 import com.tostringtech.refp.categoria_contabil.api.service.RecursoService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -14,14 +12,13 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@Api(tags = {"Asset"})
 public class RecursoController {
+
 
     @Autowired
     private RecursoService recursoService;
 
-    @GetMapping(value = "/assets/{id}")
-    @ApiOperation(tags = {"Asset"}, value = "Buscar um recurso")
+    @RequestMapping(value = "/assets/{id}", method = RequestMethod.GET)
     public ResponseEntity<AssetResource> findById(@PathVariable Long id) {
         Recurso rec = recursoService.findByCod(id);
         AssetResource resource = new AssetResource(rec);
@@ -36,8 +33,7 @@ public class RecursoController {
     }
 }*/
 
-    @GetMapping(value = "/assets/page")
-    @ApiOperation(tags = {"Asset"}, value = "Listar recursos")
+    @RequestMapping(value = "/assets/page", method = RequestMethod.GET)
     public ResponseEntity<Page<AssetResource>> findPage(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
             @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
@@ -49,24 +45,21 @@ public class RecursoController {
     }
 
 
-    @PostMapping("/assets")
-    @ApiOperation(tags = {"Asset"}, value = "Cadastrar um novo Recurso ")
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Void> create(@RequestBody AssetResource resource) {
         Recurso recurso = recursoService.create(new Recurso(resource));
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").build(recurso.getCodigo());
         return ResponseEntity.created(uri).build();
     }
 
-    @PutMapping(value = "/assets/{id}")
-    @ApiOperation(tags = {"Asset"}, value = "Alterar um Recurso ")
+    @RequestMapping(value = "/assets/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Void> update(@RequestBody Recurso recurso, @PathVariable Long id) {
         recurso.setCodigo(id);
         recurso = recursoService.update(recurso);
         return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping(value = "/assets/{id}")
-    @ApiOperation(tags = {"Asset"}, value = "Deletar um Recurso ")
+    @RequestMapping(value = "/assets/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         recursoService.delete(id);
         return ResponseEntity.noContent().build();

@@ -2,7 +2,10 @@ package com.tostringtech.refp.application.model;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity
@@ -18,18 +21,14 @@ public class CategoriaContabil implements Serializable {
     @Column(name = "DS_CATEGORIA_CONTABIL")
     private String descricao;
 
-    @OneToOne
-    @JoinColumn(name = "CD_TIP_PROJ")
-    private TipProj tipoProjeto;
+    @Column(name = "TP_PROJETO")
+    private String tipoProjeto;
 
     @Column(name = "DS_SIGLA")
     private String sigla;
 
     @Column(name = "SN_PADRAO")
     private String padrao;
-
-    public CategoriaContabil() {
-    }
 
     public Long getCodigo() {
         return codigo;
@@ -47,11 +46,11 @@ public class CategoriaContabil implements Serializable {
         this.descricao = descricao;
     }
 
-    public TipProj getTipoProjeto() {
+    public String getTipoProjeto() {
         return tipoProjeto;
     }
 
-    public void setTipoProjeto(TipProj tipoProjeto) {
+    public void setTipoProjeto(String tipoProjeto) {
         this.tipoProjeto = tipoProjeto;
     }
 
