@@ -1,4 +1,4 @@
-package com.tostringtech.refp.projeto.api.domain;
+package com.tostringtech.refp.projeto.api.rest.enums;
 
 public enum TipoProjetoEnum {
     PESQUISA_DESENVOLVIMENTO("PD", "Pesquisa e desenvolvimento"),
