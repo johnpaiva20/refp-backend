@@ -3,6 +3,7 @@ package com.tostringtech.refp.projeto.core.service;
 import com.tostringtech.refp.application.model.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepository;
 import com.tostringtech.refp.projeto.api.rest.filters.ProjectTypeFilter;
+import com.tostringtech.refp.projeto.api.rest.resources.ProjectResource;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
