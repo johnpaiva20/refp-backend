@@ -17,8 +17,9 @@ public class Produto implements Serializable {
     @Column(name = "DS_PRODUTO")
     private String descricao;
 
-    @Column(name = "DS_TIP_PROD")
-    private String tipoProduto;
+    @OneToOne()
+    @JoinColumn(name = "CD_TIPO_PRODUTO")
+    private TipoProduto tipoProduto;
 
     public Produto() {
     }
@@ -26,7 +27,9 @@ public class Produto implements Serializable {
     public Produto(ProductResource product) {
         this.setCodigo(product.getId());
         this.setDescricao(product.getDescription());
-        this.setTipoProduto(product.getType());
+        if (product.getType() != null) {
+            this.setTipoProduto(new TipoProduto(product.getType()));
+        }
 
     }
 
@@ -46,11 +49,11 @@ public class Produto implements Serializable {
         this.descricao = descricao;
     }
 
-    public String getTipoProduto() {
+    public TipoProduto getTipoProduto() {
         return tipoProduto;
     }
 
-    public void setTipoProduto(String tipoProduto) {
+    public void setTipoProduto(TipoProduto tipoProduto) {
         this.tipoProduto = tipoProduto;
     }
 

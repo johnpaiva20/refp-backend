@@ -2,8 +2,7 @@ package com.tostringtech.refp.projeto.core.service;
 
 import com.tostringtech.refp.application.model.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepository;
-import com.tostringtech.refp.projeto.api.rest.filters.ProjectTypeFilter;
-import com.tostringtech.refp.projeto.api.rest.resources.ProjectResource;
+import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,6 +21,7 @@ public class ProjetoServiceImpl implements ProjetoService {
 
     /**
      * Cadastro de Projeto
+     *
      * @param projeto
      * @return Projeto cadastrado
      */
@@ -63,17 +63,14 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     @Override
-    public List<Tema> findAllTopicsByProjectType(ProjectTypeFilter filter){
+    public List<Tema> findAllTopicsByProjectType(TopicFilter filter) {
         return projetoRepository.findAllTopicsByProjectType(filter);
     }
 
-    public Date calculateCompletionDate(Projeto projeto){
-        Calendar end = Calendar.getInstance();
-        end.setTime(projeto.getOrdemServico().getDataInicio());
-        end.add(Calendar.DAY_OF_YEAR,projeto.getDuracao());
-        return end.getTime();
+    @Override
+    public List<TipoProduto> listProductTypes() {
+        return this.projetoRepository.listProductsTypes();
     }
-
     /*@Override
     public List<Segmento> listAllSegments() {
         return this.projetoRepository.listAllSegments();

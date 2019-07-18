@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.tostringtech.refp.application.model.Subtema;
 
-public interface SubtemaService {
+public interface TemaService {
 	
 	/**
      * Cadastro de Subtema

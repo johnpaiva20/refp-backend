@@ -1,8 +1,8 @@
-package com.tostringtech.refp.projeto.api.rest.filters;
+package com.tostringtech.refp.categoria_contabil.api.rest.filters;
 
 import com.tostringtech.refp.projeto.api.rest.enums.ProjectTypeEnum;
 
-public class ProjectTypeFilter {
+public class AccountCategoryFilter {
 
     ProjectTypeEnum type;
 
@@ -13,5 +13,4 @@ public class ProjectTypeFilter {
     public void setType(ProjectTypeEnum type) {
         this.type = type;
     }
-
 }
