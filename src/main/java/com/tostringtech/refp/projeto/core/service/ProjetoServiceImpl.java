@@ -1,11 +1,15 @@
 package com.tostringtech.refp.projeto.core.service;
 
+import com.tostringtech.refp.application.exceptions.StandardError;
+import com.tostringtech.refp.application.exceptions.StandardException;
 import com.tostringtech.refp.application.model.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepository;
 import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
+import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Calendar;
@@ -27,7 +31,22 @@ public class ProjetoServiceImpl implements ProjetoService {
      */
     @Override
     public Projeto create(Projeto projeto) {
+
+        if (projeto.getTitulo().length() > 200) {
+            throw new StandardException("Título não deve ultrapassar 200 caracteres");
+        }
+        if (projeto.getTema() == null) {
+            throw new StandardException("Deve-se selecionar o tema do projeto");
+        }
+
+        if (projeto.getDuracao() > 48) {
+            throw new StandardException("Duração não deve ultrapassar 48 meses");
+        }
+        if (projeto.getOrdemServico().getOrdem().length() > 20) {
+            throw new StandardException("Ordem de serviço não deve ultrapassar 20 caracteres");
+        }
         return projetoRepository.save(projeto);
+
     }
 
     @Override
