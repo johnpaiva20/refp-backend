@@ -5,6 +5,8 @@ import com.tostringtech.refp.projeto.api.rest.resources.ProjectResource;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -81,7 +83,9 @@ public class Projeto implements Serializable {
         this.setTipoCompartilhamento(resource.getSharingMethod());
 
         if (resource.getServiceOrder() != null) {
-            this.setOrdemServico(new OrdemServico(resource.getServiceOrder()));
+            OrdemServico ordemServico = new OrdemServico(resource.getServiceOrder());
+            ordemServico.setDataFim(this.calculateCompletionDate(ordemServico,getDuracao()));
+            this.setOrdemServico(ordemServico);
         }
         if (resource.getType() != null) {
             this.setTipoProjeto(new TipoProjeto(resource.getType()));
@@ -223,5 +227,12 @@ public class Projeto implements Serializable {
 
     public void setEmpresas(List<EmpPro> empresas) {
         this.empresas = empresas;
+    }
+
+    public Date calculateCompletionDate(OrdemServico ordemServico, int duracao) {
+        Calendar end = Calendar.getInstance();
+        end.setTime(ordemServico.getDataInicio());
+        end.add(Calendar.MONTH, duracao);
+        return end.getTime();
     }
 }

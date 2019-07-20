@@ -6,7 +6,7 @@ public class ProductResource {
 
     private Long id;
     private String description;
-    private String type;
+    private ProductTypeResource type;
 
     public ProductResource() {
     }
@@ -14,7 +14,9 @@ public class ProductResource {
     public ProductResource(Produto produto) {
         this.setId(produto.getCodigo());
         this.setDescription(produto.getDescricao());
-        this.setType(produto.getTipoProduto());
+        if(produto.getTipoProduto()!=null){
+            this.setType(new ProductTypeResource(produto.getTipoProduto()));
+        }
     }
 
     public Long getId() {
@@ -33,11 +35,11 @@ public class ProductResource {
         this.description = description;
     }
 
-    public String getType() {
+    public ProductTypeResource getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(ProductTypeResource type) {
         this.type = type;
     }
 }

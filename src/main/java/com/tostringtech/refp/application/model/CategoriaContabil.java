@@ -19,7 +19,7 @@ public class CategoriaContabil implements Serializable {
     private String descricao;
 
     @OneToOne
-    @JoinColumn(name = "CD_TIP_PROJ")
+    @JoinColumn(name = "CD_TIPO_PROJETO")
     private TipoProjeto tipoProjeto;
 
     @Column(name = "DS_SIGLA")

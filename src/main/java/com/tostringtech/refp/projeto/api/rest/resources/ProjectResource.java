@@ -1,9 +1,11 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
+import com.tostringtech.refp.application.model.OrdemServico;
 import com.tostringtech.refp.application.model.Projeto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.util.Calendar;
 import java.util.Date;
 
 @ApiModel(value = "Project")

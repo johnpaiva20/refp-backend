@@ -21,7 +21,7 @@ public class Subtema implements Serializable {
     @Column(name = "DS_SIGLA")
     private String sigla;
 
-    @Column(name = "SN_PRIORITARIO")
+    @Column(name = "SN_PRIORITARIO", length = 1, columnDefinition = "String default N")
     private String prioritario;
 
     @OneToOne()
