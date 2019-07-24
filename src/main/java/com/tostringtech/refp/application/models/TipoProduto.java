@@ -1,4 +1,4 @@
-package com.tostringtech.refp.application.models;
+package com.tostringtech.refp.application.model;
 
 import com.tostringtech.refp.projeto.api.rest.resources.ProductTypeResource;
 

@@ -13,7 +13,6 @@ public class ProductTypeResource {
 
     public ProductTypeResource(TipoProduto tipoProduto) {
         this.setId(tipoProduto.getCodigo());
-        this.setInitials(tipoProduto.getSigla());
         this.setDescription(tipoProduto.getDescricao());
     }
 
