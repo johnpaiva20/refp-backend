@@ -1,6 +1,6 @@
 package com.tostringtech.refp.categoria_contabil.api.rest.resources;
 
-import com.tostringtech.refp.application.model.Recurso;
+import com.tostringtech.refp.application.models.Recurso;
 
 public class AssetResource {
 

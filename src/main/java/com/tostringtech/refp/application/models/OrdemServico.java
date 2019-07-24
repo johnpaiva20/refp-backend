@@ -1,4 +1,4 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import com.tostringtech.refp.projeto.api.rest.resources.ServiceOrderResource;
 

@@ -1,7 +1,6 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import com.tostringtech.refp.projeto.api.rest.resources.SubtopicResource;
-import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,7 +12,7 @@ public class Subtema implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CD_SUBTEMA")
-    private long codigo;
+    private Long codigo;
 
     @Column(name = "DS_SUBTEMA")
     private String descricao;
@@ -21,7 +20,7 @@ public class Subtema implements Serializable {
     @Column(name = "DS_SIGLA")
     private String sigla;
 
-    @Column(name = "SN_PRIORITARIO")
+    @Column(name = "SN_PRIORITARIO", length = 1)
     private String prioritario;
 
     @OneToOne()
@@ -31,7 +30,7 @@ public class Subtema implements Serializable {
     public Subtema() {
     }
 
-    public Subtema(long codigo, String descricao, String sigla, String prioritario, Tema tema) {
+    public Subtema(Long codigo, String descricao, String sigla, String prioritario, Tema tema) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.sigla = sigla;
@@ -49,11 +48,11 @@ public class Subtema implements Serializable {
         }
     }
 
-    public long getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(long codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 

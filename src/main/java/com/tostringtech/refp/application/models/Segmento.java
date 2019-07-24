@@ -1,11 +1,6 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import com.tostringtech.refp.projeto.api.rest.resources.SegmentResource;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 //@Entity
 //@Table(name = "SEGMENTO")

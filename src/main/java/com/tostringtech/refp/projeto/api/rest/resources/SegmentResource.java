@@ -1,6 +1,6 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.Segmento;
+import com.tostringtech.refp.application.models.Segmento;
 
 public class SegmentResource {
 

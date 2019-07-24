@@ -1,7 +1,7 @@
 package com.tostringtech.refp.empresa.core.service.impl;
 
-import com.tostringtech.refp.application.model.EmpPro;
-import com.tostringtech.refp.application.model.Empresa;
+import com.tostringtech.refp.application.models.EmpPro;
+import com.tostringtech.refp.application.models.Empresa;
 import com.tostringtech.refp.empresa.api.repository.EmpresaRepository;
 import com.tostringtech.refp.empresa.api.services.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;

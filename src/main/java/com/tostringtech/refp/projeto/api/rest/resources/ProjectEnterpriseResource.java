@@ -1,9 +1,7 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.EmpPro;
+import com.tostringtech.refp.application.models.EmpPro;
 import com.tostringtech.refp.empresa.api.rest.resources.EnterpriseResource;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 
 public class ProjectEnterpriseResource {
@@ -23,10 +21,14 @@ public class ProjectEnterpriseResource {
 
     public ProjectEnterpriseResource(EmpPro empPro) {
         this.setId(empPro.getCodigo());
-        this.setEnterprise(new EnterpriseResource(empPro.getEmpresa()));
-        this.setProject(new ProjectResource(empPro.getProjeto()));
         this.setActive(empPro.getAtivo());
         this.setType(empPro.getTipoEmpresa());
+        if (empPro.getEmpresa() != null) {
+            this.setEnterprise(new EnterpriseResource(empPro.getEmpresa()));
+        }
+        if (empPro.getProjeto() != null) {
+            this.setProject(new ProjectResource(empPro.getProjeto()));
+        }
     }
 
 

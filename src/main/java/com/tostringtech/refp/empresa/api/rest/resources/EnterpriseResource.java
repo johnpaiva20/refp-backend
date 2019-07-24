@@ -1,8 +1,7 @@
 package com.tostringtech.refp.empresa.api.rest.resources;
 
-import com.tostringtech.refp.application.model.Empresa;
+import com.tostringtech.refp.application.models.Empresa;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value = "Enterprise")
 public class EnterpriseResource {

@@ -1,14 +1,11 @@
 package com.tostringtech.refp.projeto.api.rest.controller;
 
-import com.tostringtech.refp.application.model.EmpPro;
-import com.tostringtech.refp.application.model.Projeto;
-import com.tostringtech.refp.application.model.TipoProjeto;
+import com.tostringtech.refp.application.models.EmpPro;
+import com.tostringtech.refp.application.models.Projeto;
+import com.tostringtech.refp.application.models.TipoProjeto;
 import com.tostringtech.refp.categoria_contabil.api.service.CategoriaContabilService;
 import com.tostringtech.refp.empresa.api.services.EmpresaService;
-import com.tostringtech.refp.projeto.api.rest.resources.AccountCategoryResource;
-import com.tostringtech.refp.projeto.api.rest.resources.ProjectEnterpriseResource;
-import com.tostringtech.refp.projeto.api.rest.resources.ProjectResource;
-import com.tostringtech.refp.projeto.api.rest.resources.ProjectTypeResource;
+import com.tostringtech.refp.projeto.api.rest.resources.*;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,9 +22,9 @@ import java.util.stream.Collectors;
 
 @RestController()
 @Api(tags = "Projects")
-public class ProjetoController {
+public class ProjectController {
 
-    private static final Logger logger = Logger.getLogger(ProjetoController.class);
+    private static final Logger logger = Logger.getLogger(ProjectController.class);
 
     @Autowired
     private ProjetoService projetoService;
@@ -117,6 +114,47 @@ public class ProjetoController {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping(value = "projects/products/types")
+    @ApiOperation(tags = {"Product"}, value = "Listar tipos de produto")
+    public ResponseEntity<List<ProductTypeResource>> listAllProductsTypes() {
+        List<ProductTypeResource> resources = projetoService
+                .listProductTypes()
+                .stream()
+                .map(ProductTypeResource::new)
+                .collect(Collectors.toList());
+
+        if (!resources.isEmpty()) {
+            return ResponseEntity.ok().body(resources);
+        }
+        return ResponseEntity.noContent().build();
+    }
+
+    /*@GetMapping(value = "/projects/page")
+    @ApiOperation(tags = {"Project"}, value = "Encontrar Projeto")
+    public ResponseEntity<Page<ProjectResource>> findPage(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
+            @RequestParam(value = "orderBy", defaultValue = "descricaoRecurso") String orderBy,
+            @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
+        Page<Projeto> list = projetoService.findPage(page, linesPerPage, orderBy, direction);
+        Page<ProjectResource> listDto = list.map(ProjectResource::new);
+        return ResponseEntity.ok().body(listDto);
+    }*/
+    /*@GetMapping(value = "/segments")
+    @ApiOperation(tags = {"Segment"}, value = "Listar segmentos do setor eletrico")
+    public ResponseEntity<List<SegmentResource>> listAllProjectSegments() {
+        List<SegmentResource> resources = new ArrayList<>();
+
+        List<Segmento> segmentos = projetoService.listAllSegments();
+        for (Segmento segmento : segmentos) {
+            resources.add(new SegmentResource(segmento));
+        }
+
+        if (!resources.isEmpty()) {
+            return ResponseEntity.ok().body(resources);
+        }
+        return ResponseEntity.noContent().build();
+    }*/
     /*@GetMapping(value = "/innovation-phases")
     @ApiOperation(tags = {"Innovation Phase"}, value = "Listar fases de inovação")
     public ResponseEntity<List<InnovationPhaseResource>> listAllInnovationPhases() {
@@ -134,47 +172,4 @@ public class ProjetoController {
         return ResponseEntity.noContent().build();
     }*/
 
-    /*@GetMapping(value = "/products-types")
-    @ApiOperation(tags = {"Product"}, value = "Listar tipos de produto")
-    public ResponseEntity<List<ProductResource>> listAllProductsTypes() {
-        List<ProductResource> resources = new ArrayList<>();
-
-        List<Produto> produtos = this.projetoService.listAllProductsTypes();
-        for (Produto produto : produtos) {
-            resources.add(new ProductResource(produto));
-        }
-
-        if (!resources.isEmpty()) {
-            return ResponseEntity.ok().body(resources);
-        }
-        return ResponseEntity.noContent().build();
-    }*/
-
-    /*@GetMapping(value = "/segments")
-    @ApiOperation(tags = {"Segment"}, value = "Listar segmentos do setor eletrico")
-    public ResponseEntity<List<SegmentResource>> listAllProjectSegments() {
-        List<SegmentResource> resources = new ArrayList<>();
-
-        List<Segmento> segmentos = projetoService.listAllSegments();
-        for (Segmento segmento : segmentos) {
-            resources.add(new SegmentResource(segmento));
-        }
-
-        if (!resources.isEmpty()) {
-            return ResponseEntity.ok().body(resources);
-        }
-        return ResponseEntity.noContent().build();
-    }*/
-
-    /*@GetMapping(value = "/projects/page")
-    @ApiOperation(tags = {"Project"}, value = "Encontrar Projeto")
-    public ResponseEntity<Page<ProjectResource>> findPage(
-            @RequestParam(value = "page", defaultValue = "0") Integer page,
-            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
-            @RequestParam(value = "orderBy", defaultValue = "descricaoRecurso") String orderBy,
-            @RequestParam(value = "direction", defaultValue = "ASC") String direction) {
-        Page<Projeto> list = projetoService.findPage(page, linesPerPage, orderBy, direction);
-        Page<ProjectResource> listDto = list.map(ProjectResource::new);
-        return ResponseEntity.ok().body(listDto);
-    }*/
 }

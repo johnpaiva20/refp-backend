@@ -1,6 +1,6 @@
 package com.tostringtech.refp.empresa.api.repository;
 
-import com.tostringtech.refp.application.model.EmpPro;
+import com.tostringtech.refp.application.models.EmpPro;
 
 import java.util.List;
 

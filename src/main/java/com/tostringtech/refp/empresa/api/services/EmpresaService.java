@@ -1,7 +1,7 @@
 package com.tostringtech.refp.empresa.api.services;
 
-import com.tostringtech.refp.application.model.EmpPro;
-import com.tostringtech.refp.application.model.Empresa;
+import com.tostringtech.refp.application.models.EmpPro;
+import com.tostringtech.refp.application.models.Empresa;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
