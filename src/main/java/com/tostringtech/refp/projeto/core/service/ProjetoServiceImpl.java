@@ -1,10 +1,7 @@
 package com.tostringtech.refp.projeto.core.service;
 
 import com.tostringtech.refp.application.exceptions.StandardException;
-import com.tostringtech.refp.application.models.Projeto;
-import com.tostringtech.refp.application.models.Subtema;
-import com.tostringtech.refp.application.models.Tema;
-import com.tostringtech.refp.application.models.TipoProjeto;
+import com.tostringtech.refp.application.models.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepository;
 import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
@@ -23,6 +20,7 @@ public class ProjetoServiceImpl implements ProjetoService {
 
     /**
      * Cadastro de Projeto
+     *
      * @param projeto
      * @return Projeto cadastrado
      */

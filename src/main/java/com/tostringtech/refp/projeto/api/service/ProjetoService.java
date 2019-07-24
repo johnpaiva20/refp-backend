@@ -1,9 +1,6 @@
 package com.tostringtech.refp.projeto.api.service;
 
-import com.tostringtech.refp.application.models.Projeto;
-import com.tostringtech.refp.application.models.Subtema;
-import com.tostringtech.refp.application.models.Tema;
-import com.tostringtech.refp.application.models.TipoProjeto;
+import com.tostringtech.refp.application.models.*;
 import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import org.springframework.data.domain.Page;
 
@@ -14,10 +11,11 @@ public interface ProjetoService {
 
     /**
      * Cadastro de Projeto
+     *
      * @param projeto
      * @return Projeto Cadastrado
      */
-    Projeto create(Projeto projeto) ;
+    Projeto create(Projeto projeto);
 
     List<Projeto> findAll();
 
