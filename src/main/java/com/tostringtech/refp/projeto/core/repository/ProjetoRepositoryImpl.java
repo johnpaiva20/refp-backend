@@ -1,9 +1,9 @@
 package com.tostringtech.refp.projeto.core.repository;
 
-import com.tostringtech.refp.application.model.Subtema;
-import com.tostringtech.refp.application.model.Tema;
-import com.tostringtech.refp.application.model.TipoProduto;
-import com.tostringtech.refp.application.model.TipoProjeto;
+import com.tostringtech.refp.application.models.Subtema;
+import com.tostringtech.refp.application.models.Tema;
+import com.tostringtech.refp.application.models.TipoProduto;
+import com.tostringtech.refp.application.models.TipoProjeto;
 import com.tostringtech.refp.projeto.api.repository.custom.ProjetoRepositoryCustom;
 import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import org.springframework.stereotype.Repository;

@@ -1,19 +1,18 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import com.tostringtech.refp.projeto.api.rest.resources.TopicResource;
-import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "TEMA")
-public class Tema  implements Serializable {
+public class Tema implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CD_TEMA")
-    private long codigo;
+    private Long codigo;
 
     @Column(name = "DS_TEMA")
     private String descricao;
@@ -41,11 +40,11 @@ public class Tema  implements Serializable {
         }
     }
 
-    public long getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(long codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
 

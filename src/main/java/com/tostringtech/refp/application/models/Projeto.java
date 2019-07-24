@@ -1,4 +1,4 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import com.tostringtech.refp.projeto.api.rest.resources.ProjectResource;
 
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "PROJETO")
@@ -18,10 +19,10 @@ public class Projeto implements Serializable {
     @Column(name = "CD_PROJETO")
     private Long codigo;
 
-    @Column(name = "CD_ANEEL", nullable = false, unique = true, updatable = false)
+    @Column(name = "CD_ANEEL", nullable = false, unique = true, updatable = false, length = 20)
     private String codigoAneel;
 
-    @Column(name = "DS_TITULO", nullable = false,length = 200)
+    @Column(name = "DS_TITULO", nullable = false, length = 200)
     private String titulo;
 
     @Column(name = "VL_DURACAO", nullable = false)
@@ -84,7 +85,7 @@ public class Projeto implements Serializable {
 
         if (resource.getServiceOrder() != null) {
             OrdemServico ordemServico = new OrdemServico(resource.getServiceOrder());
-            ordemServico.setDataFim(this.calculateCompletionDate(ordemServico,getDuracao()));
+            ordemServico.setDataFim(this.calculateCompletionDate(ordemServico, getDuracao()));
             this.setOrdemServico(ordemServico);
         }
         if (resource.getType() != null) {
@@ -98,6 +99,10 @@ public class Projeto implements Serializable {
         }
         if (resource.getProduct() != null) {
             this.setProduto(new Produto(resource.getProduct()));
+        }
+        if (resource.getEnterprises() != null) {
+            List<EmpPro> empresas = resource.getEnterprises().stream().map(EmpPro::new).collect(Collectors.toList());
+            this.setEmpresas(empresas);
         }
     }
 

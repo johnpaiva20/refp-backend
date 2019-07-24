@@ -1,6 +1,6 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.TipoProjeto;
+import com.tostringtech.refp.application.models.TipoProjeto;
 
 public class ProjectTypeResource {
 

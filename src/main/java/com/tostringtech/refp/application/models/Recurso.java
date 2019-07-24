@@ -1,4 +1,4 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import com.tostringtech.refp.categoria_contabil.api.rest.resources.AssetResource;
 import io.swagger.annotations.ApiModelProperty;

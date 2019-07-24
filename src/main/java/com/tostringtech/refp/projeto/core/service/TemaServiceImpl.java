@@ -1,6 +1,6 @@
 package com.tostringtech.refp.projeto.core.service;
 
-import com.tostringtech.refp.application.model.Subtema;
+import com.tostringtech.refp.application.models.Subtema;
 import com.tostringtech.refp.projeto.api.repository.TemaRepository;
 import com.tostringtech.refp.projeto.api.service.TemaService;
 import org.springframework.beans.factory.annotation.Autowired;

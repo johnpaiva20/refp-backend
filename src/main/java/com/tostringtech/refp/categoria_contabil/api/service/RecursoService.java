@@ -1,9 +1,7 @@
 package com.tostringtech.refp.categoria_contabil.api.service;
 
-import com.tostringtech.refp.application.model.Recurso;
+import com.tostringtech.refp.application.models.Recurso;
 import org.springframework.data.domain.Page;
-
-import java.util.List;
 
 public interface RecursoService {
 

@@ -1,6 +1,6 @@
 package com.tostringtech.refp.empresa.api.rest.controller;
 
-import com.tostringtech.refp.application.model.Empresa;
+import com.tostringtech.refp.application.models.Empresa;
 import com.tostringtech.refp.empresa.api.rest.resources.EnterpriseResource;
 import com.tostringtech.refp.empresa.api.services.EmpresaService;
 import io.swagger.annotations.Api;

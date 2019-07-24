@@ -1,6 +1,6 @@
 package com.tostringtech.refp.projeto.api.rest.controller;
 
-import com.tostringtech.refp.application.model.Subtema;
+import com.tostringtech.refp.application.models.Subtema;
 import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import com.tostringtech.refp.projeto.api.rest.resources.SubtopicResource;
 import com.tostringtech.refp.projeto.api.rest.resources.TopicResource;

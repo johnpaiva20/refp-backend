@@ -1,19 +1,14 @@
 package com.tostringtech.refp.projeto.core.service;
 
-import com.tostringtech.refp.application.exceptions.StandardError;
 import com.tostringtech.refp.application.exceptions.StandardException;
-import com.tostringtech.refp.application.model.*;
+import com.tostringtech.refp.application.models.*;
 import com.tostringtech.refp.projeto.api.repository.ProjetoRepository;
 import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
-import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 

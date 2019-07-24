@@ -1,7 +1,7 @@
 package com.tostringtech.refp.categoria_contabil.core.service.impl;
 
 import com.tostringtech.refp.application.exceptions.ObjectNotFoundException;
-import com.tostringtech.refp.application.model.Recurso;
+import com.tostringtech.refp.application.models.Recurso;
 import com.tostringtech.refp.categoria_contabil.api.repository.RecursoRepository;
 import com.tostringtech.refp.categoria_contabil.api.service.RecursoService;
 import org.springframework.beans.factory.annotation.Autowired;

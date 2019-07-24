@@ -1,6 +1,6 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.Subtema;
+import com.tostringtech.refp.application.models.Subtema;
 
 public class SubtopicResource {
 

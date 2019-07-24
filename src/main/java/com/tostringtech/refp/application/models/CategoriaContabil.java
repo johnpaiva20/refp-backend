@@ -1,4 +1,4 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import io.swagger.annotations.ApiModelProperty;
 

@@ -1,9 +1,8 @@
 package com.tostringtech.refp.projeto.api.rest.controller;
 
-import com.tostringtech.refp.application.model.EmpPro;
-import com.tostringtech.refp.application.model.Projeto;
-import com.tostringtech.refp.application.model.TipoProduto;
-import com.tostringtech.refp.application.model.TipoProjeto;
+import com.tostringtech.refp.application.models.EmpPro;
+import com.tostringtech.refp.application.models.Projeto;
+import com.tostringtech.refp.application.models.TipoProjeto;
 import com.tostringtech.refp.categoria_contabil.api.service.CategoriaContabilService;
 import com.tostringtech.refp.empresa.api.services.EmpresaService;
 import com.tostringtech.refp.projeto.api.rest.resources.*;

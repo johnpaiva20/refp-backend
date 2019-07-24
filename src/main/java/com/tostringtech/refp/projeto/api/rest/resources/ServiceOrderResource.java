@@ -1,6 +1,6 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.OrdemServico;
+import com.tostringtech.refp.application.models.OrdemServico;
 
 import java.util.Date;
 

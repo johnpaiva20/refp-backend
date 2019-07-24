@@ -1,12 +1,10 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.OrdemServico;
-import com.tostringtech.refp.application.model.Projeto;
+import com.tostringtech.refp.application.models.Projeto;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @ApiModel(value = "Project")
 public class ProjectResource {
@@ -37,6 +35,8 @@ public class ProjectResource {
 
     private ServiceOrderResource serviceOrder;
 
+    private List<ProjectEnterpriseResource> enterprises;
+
     public ProjectResource() {
     }
 
@@ -64,6 +64,10 @@ public class ProjectResource {
         }
         if (projeto.getProduto() != null) {
             this.setProduct(new ProductResource(projeto.getProduto()));
+        }
+        if (projeto.getEmpresas() != null) {
+            List<ProjectEnterpriseResource> enterprises = projeto.getEmpresas().stream().map(ProjectEnterpriseResource::new).collect(Collectors.toList());
+            this.setEnterprises(enterprises);
         }
     }
 
@@ -169,5 +173,13 @@ public class ProjectResource {
 
     public void setServiceOrder(ServiceOrderResource serviceOrder) {
         this.serviceOrder = serviceOrder;
+    }
+
+    public List<ProjectEnterpriseResource> getEnterprises() {
+        return enterprises;
+    }
+
+    public void setEnterprises(List<ProjectEnterpriseResource> enterprises) {
+        this.enterprises = enterprises;
     }
 }

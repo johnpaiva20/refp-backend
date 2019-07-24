@@ -1,6 +1,6 @@
 package com.tostringtech.refp.projeto.api.rest.resources;
 
-import com.tostringtech.refp.application.model.TipoProduto;
+import com.tostringtech.refp.application.models.TipoProduto;
 
 public class ProductTypeResource {
 
@@ -13,7 +13,6 @@ public class ProductTypeResource {
 
     public ProductTypeResource(TipoProduto tipoProduto) {
         this.setId(tipoProduto.getCodigo());
-        this.setInitials(tipoProduto.getSigla());
         this.setDescription(tipoProduto.getDescricao());
     }
 

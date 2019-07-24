@@ -1,6 +1,6 @@
 package com.tostringtech.refp.empresa.core.repository.impl;
 
-import com.tostringtech.refp.application.model.EmpPro;
+import com.tostringtech.refp.application.models.EmpPro;
 import com.tostringtech.refp.empresa.api.repository.EmpresaRepositoryCustom;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

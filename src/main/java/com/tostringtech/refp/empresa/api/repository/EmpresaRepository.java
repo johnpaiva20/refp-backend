@@ -1,6 +1,6 @@
 package com.tostringtech.refp.empresa.api.repository;
 
-import com.tostringtech.refp.application.model.Empresa;
+import com.tostringtech.refp.application.models.Empresa;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

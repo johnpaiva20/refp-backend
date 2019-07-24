@@ -1,7 +1,6 @@
 package com.tostringtech.refp.categoria_contabil.core.repository.impl;
 
-import com.tostringtech.refp.application.model.CategoriaContabil;
-import com.tostringtech.refp.application.model.Tema;
+import com.tostringtech.refp.application.models.CategoriaContabil;
 import com.tostringtech.refp.categoria_contabil.api.repository.CategoriaContabilRepositoryCustom;
 import com.tostringtech.refp.categoria_contabil.api.rest.filters.AccountCategoryFilter;
 import org.springframework.stereotype.Repository;
@@ -9,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;

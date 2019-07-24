@@ -1,4 +1,4 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import javax.persistence.*;
 import java.io.Serializable;

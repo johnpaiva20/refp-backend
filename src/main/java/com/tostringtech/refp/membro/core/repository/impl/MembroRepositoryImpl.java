@@ -1,6 +1,6 @@
 package com.tostringtech.refp.membro.core.repository.impl;
 
-import com.tostringtech.refp.application.model.Membro;
+import com.tostringtech.refp.application.models.Membro;
 import com.tostringtech.refp.membro.api.repository.MembroRepositoryCustom;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

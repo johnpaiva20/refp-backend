@@ -1,4 +1,4 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import com.tostringtech.refp.projeto.api.rest.resources.ProjectEnterpriseResource;
 
@@ -34,10 +34,14 @@ public class EmpPro implements Serializable {
 
     public EmpPro(ProjectEnterpriseResource resource) {
         this.setCodigo(resource.getId());
-        this.setEmpresa(new Empresa(resource.getEnterprise()));
-        this.setProjeto(new Projeto(resource.getProject()));
         this.setAtivo(resource.getActive() ? "S" : "N");
         this.setTipoEmpresa(resource.getType());
+        if (resource.getEnterprise() != null) {
+            this.setEmpresa(new Empresa(resource.getEnterprise()));
+        }
+        if (resource.getProject() != null) {
+            this.setProjeto(new Projeto(resource.getProject()));
+        }
     }
 
     public Long getCodigo() {

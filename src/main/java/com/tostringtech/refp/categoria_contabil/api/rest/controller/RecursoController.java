@@ -1,6 +1,6 @@
 package com.tostringtech.refp.categoria_contabil.api.rest.controller;
 
-import com.tostringtech.refp.application.model.Recurso;
+import com.tostringtech.refp.application.models.Recurso;
 import com.tostringtech.refp.categoria_contabil.api.rest.resources.AssetResource;
 import com.tostringtech.refp.categoria_contabil.api.service.RecursoService;
 import io.swagger.annotations.Api;

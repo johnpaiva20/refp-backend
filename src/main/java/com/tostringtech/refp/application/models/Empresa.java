@@ -1,4 +1,4 @@
-package com.tostringtech.refp.application.model;
+package com.tostringtech.refp.application.models;
 
 import com.tostringtech.refp.empresa.api.rest.resources.EnterpriseResource;
 
@@ -39,11 +39,11 @@ public class Empresa implements Serializable {
     }
 
     public Empresa(EnterpriseResource resource) {
-        this.codigo = resource.getId();
-        this.numeroCnpj = resource.getCnpj();
-        this.razaoSocial = resource.getCompany();
-        this.nomeFantasia = resource.getTrade();
-        this.sigla = resource.getInitials();
+        this.setCodigo(resource.getId());
+        this.setNumeroCnpj(resource.getCnpj());
+        this.setRazaoSocial(resource.getCompany());
+        this.setNomeFantasia(resource.getTrade());
+        this.setSigla(resource.getInitials());
     }
 
     public Long getCodigo() {
