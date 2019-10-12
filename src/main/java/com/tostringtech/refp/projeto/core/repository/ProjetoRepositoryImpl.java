@@ -63,16 +63,18 @@ public class ProjetoRepositoryImpl implements ProjetoRepositoryCustom {
     }
 
     @Override
-    public List<Subtema> findAllSubtopicsByTopic(String tema) {
+    public List<Subtema> findAllSubtopicsByTopic(Long tema) {
         StringBuilder sql = new StringBuilder();
-        if (!tema.equals("OU")) {
-            sql.append(" from Subtema where tema.sigla = :tema ");
+        if (tema != null) {
+                sql.append(" from Subtema where tema.codigo = :tema ");
+
         } else {
             sql.append(" from Subtema ");
         }
 
         TypedQuery<Subtema> query = entityManager.createQuery(sql.toString(), Subtema.class);
-        if (!tema.equals("OU")) {
+
+        if (tema != null) {
             query.setParameter("tema", tema);
         }
 

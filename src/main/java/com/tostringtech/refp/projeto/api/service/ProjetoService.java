@@ -3,6 +3,7 @@ package com.tostringtech.refp.projeto.api.service;
 import com.tostringtech.refp.application.models.*;
 import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +18,9 @@ public interface ProjetoService {
      */
     Projeto create(Projeto projeto);
 
-    List<Projeto> findAll();
+    List<Projeto> findAll(Pageable pageable);
 
-    List<Subtema> findAllSubtopicsByTopic(String topic);
+    List<Subtema> findAllSubtopicsByTopic(Long topic);
 
     List<Tema> findAllTopicsByProjectType(TopicFilter filter);
 

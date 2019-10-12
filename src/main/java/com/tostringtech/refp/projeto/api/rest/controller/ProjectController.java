@@ -48,7 +48,7 @@ public class ProjectController {
     public ResponseEntity<List<ProjectResource>> listAllProjects(Pageable pageable) {
 
         List<ProjectResource> resources = projetoService
-                .findAll()
+                .findAll(pageable)
                 .stream()
                 .map(ProjectResource::new)
                 .collect(Collectors.toList());

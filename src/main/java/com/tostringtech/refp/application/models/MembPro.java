@@ -26,4 +26,6 @@ public class MembPro implements Serializable {
     @Column(name = "TP_TITULACAO", nullable = false, length = 1)
     private String titulacao;
 
+
+
 }

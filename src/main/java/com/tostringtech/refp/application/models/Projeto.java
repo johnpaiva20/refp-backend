@@ -66,7 +66,9 @@ public class Projeto implements Serializable {
     @OneToMany(mappedBy = "projeto")
     private List<Despesa> despesas = new ArrayList<>();
 
-    @OneToMany(mappedBy = "projeto")
+    @Embedded
+    @ElementCollection
+    @OneToMany(mappedBy = "projeto", cascade = CascadeType.PERSIST)
     private List<EmpPro> empresas = new ArrayList<>();
 
     public Projeto() {

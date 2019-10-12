@@ -46,8 +46,11 @@ public class TopicController {
 
     @GetMapping(value = "/subtopics")
     @ApiOperation(tags = {"Topics"}, value = "Listar subtemas")
-    public ResponseEntity<List<SubtopicResource>> listAllSubtopicsByTopic(String topic) {
-        List<SubtopicResource> resources = projetoService.findAllSubtopicsByTopic(topic).stream().map(SubtopicResource::new).collect(Collectors.toList());
+    public ResponseEntity<List<SubtopicResource>> listAllSubtopicsByTopic(Long topic) {
+        List<SubtopicResource> resources = projetoService.findAllSubtopicsByTopic(topic)
+                                                         .stream()
+                                                         .map(SubtopicResource::new)
+                                                         .collect(Collectors.toList());
 
         if (!resources.isEmpty()) {
             return ResponseEntity.ok().body(resources);

@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface ProjetoRepositoryCustom {
 
-    List<Subtema> findAllSubtopicsByTopic(String type);
+    List<Subtema> findAllSubtopicsByTopic(Long type);
 
     List findAllTopicsByProjectType(TopicFilter filter);
 

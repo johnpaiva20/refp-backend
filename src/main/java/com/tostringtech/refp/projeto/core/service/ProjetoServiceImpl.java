@@ -7,6 +7,7 @@ import com.tostringtech.refp.projeto.api.rest.filters.TopicFilter;
 import com.tostringtech.refp.projeto.api.service.ProjetoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,12 +46,12 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     @Override
-    public List<Projeto> findAll() {
-        return projetoRepository.findAll();
+    public List<Projeto> findAll(Pageable pageable) {
+        return projetoRepository.findAll(pageable).getContent();
     }
 
     @Override
-    public List<Subtema> findAllSubtopicsByTopic(String topic) {
+    public List<Subtema> findAllSubtopicsByTopic(Long topic) {
         return projetoRepository.findAllSubtopicsByTopic(topic);
     }
 
