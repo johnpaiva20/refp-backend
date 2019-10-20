@@ -65,10 +65,10 @@ public class ProjectResource {
         if (projeto.getProduto() != null) {
             this.setProduct(new ProductResource(projeto.getProduto()));
         }
-        if (projeto.getEmpresas() != null) {
+       /* if (projeto.getEmpresas() != null) {
             List<ProjectEnterpriseResource> enterprises = projeto.getEmpresas().stream().map(ProjectEnterpriseResource::new).collect(Collectors.toList());
             this.setEnterprises(enterprises);
-        }
+        }*/
     }
 
     public Long getId() {

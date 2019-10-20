@@ -23,7 +23,7 @@ public class ProjetoServiceImpl implements ProjetoService {
      * Cadastro de Projeto
      *
      * @param projeto
-     * @return Projeto cadastrado
+     * @return Projeto
      */
     @Override
     public Projeto create(Projeto projeto) {
@@ -46,8 +46,8 @@ public class ProjetoServiceImpl implements ProjetoService {
     }
 
     @Override
-    public List<Projeto> findAll(Pageable pageable) {
-        return projetoRepository.findAll(pageable).getContent();
+    public List<Projeto> findAll() {
+        return projetoRepository.findAll();
     }
 
     @Override

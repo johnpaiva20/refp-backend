@@ -18,7 +18,7 @@ public interface ProjetoService {
      */
     Projeto create(Projeto projeto);
 
-    List<Projeto> findAll(Pageable pageable);
+    List<Projeto> findAll();
 
     List<Subtema> findAllSubtopicsByTopic(Long topic);
 

@@ -66,10 +66,8 @@ public class Projeto implements Serializable {
     @OneToMany(mappedBy = "projeto")
     private List<Despesa> despesas = new ArrayList<>();
 
-    @Embedded
-    @ElementCollection
-    @OneToMany(mappedBy = "projeto", cascade = CascadeType.PERSIST)
-    private List<EmpPro> empresas = new ArrayList<>();
+    //@OneToMany(mappedBy = "projeto", cascade = CascadeType.PERSIST)
+   // private List<EmpPro> empresas = new ArrayList<>();
 
     public Projeto() {
     }
@@ -104,7 +102,7 @@ public class Projeto implements Serializable {
         }
         if (resource.getEnterprises() != null) {
             List<EmpPro> empresas = resource.getEnterprises().stream().map(EmpPro::new).collect(Collectors.toList());
-            this.setEmpresas(empresas);
+           // this.setEmpresas(empresas);
         }
     }
 
@@ -228,14 +226,14 @@ public class Projeto implements Serializable {
         this.despesas = despesas;
     }
 
-    public List<EmpPro> getEmpresas() {
+ /*   public List<EmpPro> getEmpresas() {
         return empresas;
     }
 
     public void setEmpresas(List<EmpPro> empresas) {
         this.empresas = empresas;
     }
-
+*/
     public Date calculateCompletionDate(OrdemServico ordemServico, int duracao) {
         Calendar end = Calendar.getInstance();
         end.setTime(ordemServico.getDataInicio());
