@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "EMP_PRO")
+@Table(name = "EMP_PRO", uniqueConstraints = {@UniqueConstraint(columnNames = {"CD_EMP_PRO", "CD_PROJETO", "CD_EMPRESA"})})
 public class EmpPro implements Serializable {
 
     @Id
@@ -15,7 +15,7 @@ public class EmpPro implements Serializable {
     private Long codigo;
 
     @ManyToOne
-    @JoinColumn(name = "CD_PROJETO")
+    @JoinColumn(name = "CD_PROJETO", referencedColumnName = "CD_PROJETO")
     private Projeto projeto;
 
     @ManyToOne
@@ -43,7 +43,6 @@ public class EmpPro implements Serializable {
             this.setProjeto(new Projeto(resource.getProject()));
         }
     }
-
 
 
     public Long getCodigo() {

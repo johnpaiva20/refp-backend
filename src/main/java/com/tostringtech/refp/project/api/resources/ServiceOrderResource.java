@@ -10,6 +10,8 @@ public class ServiceOrderResource {
 
     private String order;
 
+    private int duration;
+
     private Date begin;
 
     private Date end;
@@ -22,6 +24,7 @@ public class ServiceOrderResource {
         this.setOrder(ordemServico.getOrdem());
         this.setBegin(ordemServico.getDataInicio());
         this.setEnd(ordemServico.getDataFim());
+        this.setDuration(ordemServico.getDuracao());
     }
 
     public Long getId() {
@@ -38,6 +41,14 @@ public class ServiceOrderResource {
 
     public void setOrder(String order) {
         this.order = order;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     public Date getBegin() {

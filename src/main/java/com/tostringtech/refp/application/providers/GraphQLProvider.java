@@ -3,6 +3,8 @@ package com.tostringtech.refp.application.providers;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
 import com.tostringtech.refp.application.scalars.DateScalar;
+import com.tostringtech.refp.enterprise.graphql.datafetchers.EnterpriseMutationDatafetcher;
+import com.tostringtech.refp.enterprise.graphql.datafetchers.EnterpriseQueryDatafetcher;
 import com.tostringtech.refp.project.graphql.datafetchers.ProjectMutationDatafetcher;
 import com.tostringtech.refp.project.graphql.datafetchers.ProjectQueryDatafetcher;
 import graphql.GraphQL;
@@ -30,7 +32,14 @@ public class GraphQLProvider {
     private ProjectQueryDatafetcher projectQueryDatafetcher;
 
     @Autowired
-    ProjectMutationDatafetcher projectMutationDatafetcher;
+    private ProjectMutationDatafetcher projectMutationDatafetcher;
+
+    @Autowired
+    private EnterpriseQueryDatafetcher enterpriseQueryDatafetcher;
+
+    @Autowired
+    private EnterpriseMutationDatafetcher enterpriseMutationDatafetcher;
+
 
     @Bean
     public GraphQL graphQL() {
@@ -53,6 +62,11 @@ public class GraphQLProvider {
         String autheticationSd = Resources.toString(autheticationUrl, Charsets.UTF_8);
         typeRegistry.merge(schemaParser.parse(autheticationSd));
 
+
+        URL enterpriseUrl = Resources.getResource("schemas/enterprise.graphql");
+        String enterpiseSd = Resources.toString(enterpriseUrl, Charsets.UTF_8);
+        typeRegistry.merge(schemaParser.parse(enterpiseSd));
+
         RuntimeWiring runtimeWiring = buildWiring();
         SchemaGenerator schemaGenerator = new SchemaGenerator();
         return schemaGenerator.makeExecutableSchema(typeRegistry, runtimeWiring);
@@ -61,9 +75,11 @@ public class GraphQLProvider {
     private RuntimeWiring buildWiring() {
         return RuntimeWiring.newRuntimeWiring()
                 .scalar(DateScalar.DATE)
-                .type(newTypeWiring("ProjectQuery")
+                .type(newTypeWiring("Query")
                         .dataFetchers(projectQueryDatafetcher.getDataFetcherMap()))
-                .type(newTypeWiring("ProjectMutation")
+                .type(newTypeWiring("Query")
+                        .dataFetchers(enterpriseQueryDatafetcher.getDataFetcherMap()))
+                .type(newTypeWiring("Mutation")
                         .dataFetchers(projectMutationDatafetcher.getDataFetcherMap()))
                 .build();
     }

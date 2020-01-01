@@ -18,10 +18,6 @@ public class CategoriaContabil implements Serializable {
     @Column(name = "DS_CATEGORIA_CONTABIL")
     private String descricao;
 
-    @OneToOne
-    @JoinColumn(name = "CD_TIPO_PROJETO")
-    private TipoProjeto tipoProjeto;
-
     @Column(name = "DS_SIGLA")
     private String sigla;
 
@@ -45,14 +41,6 @@ public class CategoriaContabil implements Serializable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public TipoProjeto getTipoProjeto() {
-        return tipoProjeto;
-    }
-
-    public void setTipoProjeto(TipoProjeto tipoProjeto) {
-        this.tipoProjeto = tipoProjeto;
     }
 
     public String getSigla() {

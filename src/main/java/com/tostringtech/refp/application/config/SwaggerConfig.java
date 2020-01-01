@@ -2,6 +2,7 @@ package com.tostringtech.refp.application.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.Pageable;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -17,6 +18,7 @@ public class SwaggerConfig {
 	 @Bean
 	    public Docket productApi() {
          return new Docket(DocumentationType.SWAGGER_12)
+				 .ignoredParameterTypes(Pageable.class)
 	                .select()
                  .apis(basePackage("com.tostringtech.refp"))
 	                .build()

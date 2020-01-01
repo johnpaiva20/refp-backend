@@ -8,7 +8,7 @@ public class ProjectEnterpriseResource {
 
     private Long id;
 
-    private ProjectResource project;
+    private Long project;
 
     private EnterpriseResource enterprise;
 
@@ -26,9 +26,7 @@ public class ProjectEnterpriseResource {
         if (empPro.getEmpresa() != null) {
             this.setEnterprise(new EnterpriseResource(empPro.getEmpresa()));
         }
-        if (empPro.getProjeto() != null) {
-            this.setProject(new ProjectResource(empPro.getProjeto()));
-        }
+        this.setProject(empPro.getProjeto().getCodigo());
     }
 
 
@@ -40,11 +38,11 @@ public class ProjectEnterpriseResource {
         this.id = id;
     }
 
-    public ProjectResource getProject() {
+    public Long getProject() {
         return project;
     }
 
-    public void setProject(ProjectResource project) {
+    public void setProject(Long project) {
         this.project = project;
     }
 
@@ -74,7 +72,7 @@ public class ProjectEnterpriseResource {
 
     public void setActive(String active) {
         if (!(active == null || (!active.equals("S") && !active.equals("N")))) {
-            this.active = active.equals("S") ? true : false;
+            this.active = active.equals("S");
         }
     }
 

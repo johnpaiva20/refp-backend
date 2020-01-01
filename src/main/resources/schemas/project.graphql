@@ -1,12 +1,8 @@
-schema{
-    query: ProjectQuery
-    mutation: ProjectMutation
-}
-type ProjectQuery{
+ type Query{
     listProjects: [Project]
     project(id: Int): Project
 }
-type ProjectMutation{
+type Mutation{
     createProject(project:ProjectInput):Project
 }
 
@@ -23,6 +19,7 @@ type ServiceOrder{
     order: String
     begin: Date
     end : Date
+    duration:Int
 }
 
 type Project{
@@ -31,9 +28,9 @@ type Project{
     aneelId:String
     type:ProjectType
     title:String
-    duration:Int
     status:String
     serviceOrder:ServiceOrder
+    enterprises:[ProjectEnterprise]
 }
 
 input ProjectInput {

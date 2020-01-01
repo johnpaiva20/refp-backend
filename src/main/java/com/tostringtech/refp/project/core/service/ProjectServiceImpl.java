@@ -1,12 +1,15 @@
 package com.tostringtech.refp.project.core.service;
 
 import com.tostringtech.refp.application.exceptions.StandardException;
+import com.tostringtech.refp.application.models.EmpPro;
+import com.tostringtech.refp.application.models.OrdemServico;
 import com.tostringtech.refp.application.models.Projeto;
-import com.tostringtech.refp.application.models.TipoProjeto;
 import com.tostringtech.refp.project.api.repository.ProjectRepository;
 import com.tostringtech.refp.project.api.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -20,7 +23,7 @@ public class ProjectServiceImpl implements ProjectService {
     /**
      * Cadastro de Projeto
      *
-     * @param  projeto - Projeto
+     * @param projeto - Projeto
      * @return Projeto
      */
     @Override
@@ -35,13 +38,15 @@ public class ProjectServiceImpl implements ProjectService {
             throw new StandardException("Titulo deve ser preenchido");
         }
 
-        if (projeto.getDuracao() > 48) {
-            throw new StandardException("Duração não deve ultrapassar 48 meses");
-        }
-
         if (projeto.getOrdemServico() != null) {
-            if (projeto.getOrdemServico().getOrdem().length() > 100) {
+            OrdemServico ordemServico = projeto.getOrdemServico();
+
+            if (ordemServico.getOrdem().length() > 100) {
                 throw new StandardException("Ordem de serviço não deve ultrapassar 100 caracteres");
+            }
+
+            if (ordemServico.getDuracao() > 48) {
+                throw new StandardException("Duração não deve ultrapassar 48 meses");
             }
         }
         return projectRepository.save(projeto);
@@ -51,6 +56,31 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<Projeto> findAll() {
         return projectRepository.findAll();
+    }
+
+    @Override
+    public void addEnterprises(List<EmpPro> empresas, Long id) {
+        if (this.findById(id).isEmpty()) {
+            throw new StandardException("Projeto não encontrado");
+        }
+        Projeto projeto = this.findById(id).get();
+        empresas.forEach(empPro -> empPro.setProjeto(projeto));
+        projeto.getEmpresas().addAll(empresas);
+        this.projectRepository.save(projeto);
+    }
+
+    @Override
+    public List<EmpPro> findAllProjectEnterprises(Long id) {
+        if (this.findById(id).isEmpty()) {
+            throw new StandardException("Projeto não encontrado");
+        }
+        Projeto projeto = this.findById(id).get();
+        return projeto.getEmpresas();
+    }
+
+    @Override
+    public List<Projeto> findAll(Pageable pageable) {
+        return projectRepository.findAll(pageable).toList();
     }
 
     @Override
@@ -66,14 +96,8 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public Projeto delete(Projeto projeto) {
-        //TODO
+        projectRepository.delete(projeto);
         return null;
     }
-
-    @Override
-    public List<TipoProjeto> listAllProjectTypes() {
-        return projectRepository.listAllProjectTypes();
-    }
-
 
 }

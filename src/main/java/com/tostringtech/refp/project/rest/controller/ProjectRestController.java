@@ -1,9 +1,9 @@
 package com.tostringtech.refp.project.rest.controller;
 
+import com.tostringtech.refp.application.models.EmpPro;
 import com.tostringtech.refp.application.models.Projeto;
-import com.tostringtech.refp.application.models.TipoProjeto;
+import com.tostringtech.refp.project.api.resources.ProjectEnterpriseResource;
 import com.tostringtech.refp.project.api.resources.ProjectResource;
-import com.tostringtech.refp.project.api.resources.ProjectTypeResource;
 import com.tostringtech.refp.project.api.service.ProjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController()
@@ -40,7 +41,7 @@ public class ProjectRestController {
     public ResponseEntity<List<ProjectResource>> listProjects(Pageable pageable) {
 
         List<ProjectResource> resources = projectService
-                .findAll()
+                .findAll(pageable)
                 .stream()
                 .map(ProjectResource::new)
                 .collect(Collectors.toList());
@@ -81,19 +82,22 @@ public class ProjectRestController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping(value = "/types")
-    @ApiOperation(tags = {"Project"}, value = "Listar os tipos de projeto")
-    public ResponseEntity<List<ProjectTypeResource>> listProjectTypes() {
-        List<ProjectTypeResource> resources = new ArrayList<>();
+    @PostMapping(value = "/projects/{id}/enterprises")
+    @ApiOperation(tags = {"Project"}, value = "Adicionar Empresas")
+    public ResponseEntity<List<ProjectEnterpriseResource>> addEnterprises(@PathVariable Long id, @RequestBody List<ProjectEnterpriseResource> resources) {
+        List<EmpPro> empresas = resources.stream().map(EmpPro::new).collect(Collectors.toList());
+        projectService.addEnterprises(empresas, id);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
-        List<TipoProjeto> tipos = projectService.listAllProjectTypes();
-        for (TipoProjeto tipo : tipos) {
-            resources.add(new ProjectTypeResource(tipo));
-        }
-
-        if (!resources.isEmpty()) {
-            return ResponseEntity.ok().body(resources);
-        }
-        return ResponseEntity.noContent().build();
+    @GetMapping(value = "/projects/{id}/enterprises")
+    @ApiOperation(tags = {"Project"}, value = "Listar Empresas do Projeto")
+    public ResponseEntity<List<ProjectEnterpriseResource>> listProjectEnterprises(@PathVariable Long id) {
+        List<ProjectEnterpriseResource> resources = projectService
+                .findAllProjectEnterprises(id)
+                .stream()
+                .map(ProjectEnterpriseResource::new)
+                .collect(Collectors.toList());
+        return new ResponseEntity<>(resources, HttpStatus.OK);
     }
 }
