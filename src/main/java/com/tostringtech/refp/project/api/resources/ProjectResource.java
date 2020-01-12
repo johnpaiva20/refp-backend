@@ -1,6 +1,7 @@
 package com.tostringtech.refp.project.api.resources;
 
 import com.tostringtech.refp.application.models.Projeto;
+import com.tostringtech.refp.project.api.enums.ProjectType;
 import io.swagger.annotations.ApiModel;
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ public class ProjectResource {
 
     private String title;
 
+    private ProjectType type;
+
     private ServiceOrderResource serviceOrder;
 
     private List<ProjectEnterpriseResource> enterprises = new ArrayList<>();
@@ -28,7 +31,7 @@ public class ProjectResource {
         this.setId(projeto.getCodigo());
         this.setAneelId(projeto.getCodigoAneel());
         this.setTitle(projeto.getTitulo());
-
+        this.setType(ProjectType.getProjectType(projeto.getTipo()));
         if (projeto.getOrdemServico() != null) {
             this.setServiceOrder(new ServiceOrderResource(projeto.getOrdemServico()));
         }
@@ -39,9 +42,6 @@ public class ProjectResource {
                 .collect(Collectors.toList());
 
         this.getEnterprises().addAll(resourceList);
-
-
-
 
     }
 
@@ -73,6 +73,14 @@ public class ProjectResource {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public ProjectType getType() {
+        return type;
+    }
+
+    public void setType(ProjectType type) {
+        this.type = type;
     }
 
     public ServiceOrderResource getServiceOrder() {

@@ -1,5 +1,6 @@
 package com.tostringtech.refp.application.models;
 
+import com.tostringtech.refp.project.api.enums.ProjectType;
 import com.tostringtech.refp.project.api.resources.ProjectResource;
 
 import javax.persistence.*;
@@ -21,6 +22,9 @@ public class Projeto implements Serializable {
 
     @Column(name = "DS_TITULO", nullable = false, length = 200)
     private String titulo;
+
+    @Column(name = "TP_PROJETO", nullable = false, length = 2)
+    private String tipo;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CD_ORDEM_SERVICO", nullable = false)
@@ -44,6 +48,7 @@ public class Projeto implements Serializable {
         this.setCodigo(resource.getId());
         this.setCodigoAneel(resource.getAneelId());
         this.setTitulo(resource.getTitle());
+        this.setTipo(resource.getType().getType());
         if (resource.getServiceOrder() != null) {
             this.setOrdemServico(new OrdemServico(resource.getServiceOrder()));
         }
@@ -75,6 +80,14 @@ public class Projeto implements Serializable {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public OrdemServico getOrdemServico() {
