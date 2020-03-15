@@ -8,6 +8,8 @@ import com.tostringtech.refp.project.api.resources.ProjectResource;
 import com.tostringtech.refp.project.api.service.ProjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -45,11 +47,15 @@ public class ProjectRestController {
                 .map(ProjectResource::new)
                 .collect(Collectors.toList());
 
-        return new ResponseEntity<>(resources,HttpStatus.OK);
+        return new ResponseEntity<>(resources, HttpStatus.OK);
     }
 
     @GetMapping("/projects/{id}")
     @ApiOperation(tags = {"Project"}, value = "Encontrar um Projeto")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Successfully retrieved object"),
+            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+    })
     public ResponseEntity<ProjectResource> findProjectById(@PathVariable Long id) {
 
         Projeto projeto = projectService.findById(id).orElseThrow(() -> {
@@ -58,13 +64,13 @@ public class ProjectRestController {
 
         ProjectResource resource = new ProjectResource(projeto);
 
-        return new ResponseEntity<>(resource, HttpStatus.FOUND);
+        return new ResponseEntity<>(resource, HttpStatus.OK);
     }
 
-    @GetMapping("/projects/count")
-    @ApiOperation(tags = {"Project"}, value = "Encontrar um Projeto")
-    public ResponseEntity<Long> countProjects() {
-        Long count = projectService.countProjects();
+    @GetMapping("/projects/pages")
+    @ApiOperation(tags = {"Project"}, value = "Paginas de Projeto")
+    public ResponseEntity<Integer> countProjects(Pageable pageable) {
+        int count = projectService.getTotalProjectPages(pageable);
         return new ResponseEntity<>(count, HttpStatus.OK);
     }
 

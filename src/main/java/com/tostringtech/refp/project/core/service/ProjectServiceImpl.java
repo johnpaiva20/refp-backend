@@ -28,48 +28,45 @@ public class ProjectServiceImpl implements ProjectService {
      * @return Projeto
      */
     @Override
-    public Projeto create(Projeto projeto) {
+    public Projeto create(Projeto projeto) throws StandardException {
 
         if (projeto.getTitulo() != null) {
-            if (projeto.getTitulo().length() > 200) {
+
+            if (projeto.getTitulo().length() > 200)
                 throw new StandardException("Título não deve ultrapassar 200 caracteres");
-            }
 
         } else {
             throw new StandardException("Titulo deve ser preenchido");
         }
 
-        if(projeto.getCodigoAneel() == null){
+        if (projeto.getCodigoAneel() == null)
             throw new StandardException("Código ANEEL deve ser preenchido");
-        }
 
         if (projeto.getOrdemServico() != null) {
             OrdemServico ordemServico = projeto.getOrdemServico();
 
-            if (ordemServico.getOrdem().length() > 100) {
+            if (ordemServico.getNumero() == null)
+                throw new StandardException("Número da ordem de serviço deve ser preenchida");
+            else if (ordemServico.getNumero().length() > 100)
                 throw new StandardException("Ordem de serviço não deve ultrapassar 100 caracteres");
-            }
 
-            if (ordemServico.getDuracao() > 48) {
+            if (ordemServico.getDataInicio() == null)
+                throw new StandardException("Data de inicio deve ser preenchida");
+
+            if (ordemServico.getDuracao() == 0)
+                throw new StandardException("Duração não pode ser de nenhum mês ");
+            else if (ordemServico.getDuracao() > 48)
                 throw new StandardException("Duração não deve ultrapassar 48 meses");
-            }
+
         }
         return projectRepository.save(projeto);
 
     }
 
     @Override
-    public List<Projeto> findAllProjects() {
-        return projectRepository.findAll();
+    public Long countProjects() {
+        return projectRepository.count();
     }
-
-    @Override
-    public Page<Projeto> findAllPages(Pageable pageable) {
-        return projectRepository.findAll(pageable);
-    }
-
-    @Override
-    public Long countProjects() { return projectRepository.count(); }
 
     @Override
     public void addEnterprises(List<EmpPro> empresas, Long id) {
@@ -94,6 +91,11 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public List<Projeto> findAll(Pageable pageable) {
         return projectRepository.findAll(pageable).toList();
+    }
+
+    @Override
+    public int getTotalProjectPages(Pageable pageable) {
+        return projectRepository.findAll(pageable).getTotalPages();
     }
 
     @Override

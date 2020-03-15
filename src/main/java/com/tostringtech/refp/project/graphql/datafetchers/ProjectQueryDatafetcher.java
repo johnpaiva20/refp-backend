@@ -4,6 +4,8 @@ import com.tostringtech.refp.project.api.resources.ProjectResource;
 import com.tostringtech.refp.project.api.service.ProjectService;
 import graphql.schema.DataFetcher;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -18,7 +20,8 @@ public class ProjectQueryDatafetcher {
 
     public DataFetcher listProjects() {
         return dataFetchingEnvironment -> {
-            return projectService.findAll().stream().map(ProjectResource::new).collect(Collectors.toList());
+            Pageable pageable =  PageRequest.of(0, 20);
+            return projectService.findAll(pageable).stream().map(ProjectResource::new).collect(Collectors.toList());
         };
     }
 

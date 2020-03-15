@@ -16,7 +16,7 @@ public class OrdemServico implements Serializable {
     private Long codigo;
 
     @Column(name = "NR_ORDEM_SERVICO", unique = true, updatable = false, nullable = false)
-    private String ordem;
+    private String numero;
 
     @Column(name = "NR_MESES", nullable = false)
     private int duracao;
@@ -32,7 +32,7 @@ public class OrdemServico implements Serializable {
 
     public OrdemServico(ServiceOrderResource serviceOrder) {
         this.setCodigo(serviceOrder.getId());
-        this.setOrdem(serviceOrder.getOrder());
+        this.setNumero(serviceOrder.getNumber());
         this.setDataInicio(serviceOrder.getBegin());
         this.setDataFim(serviceOrder.getEnd());
         this.setDuracao(serviceOrder.getDuration());
@@ -46,12 +46,12 @@ public class OrdemServico implements Serializable {
         this.codigo = codigo;
     }
 
-    public String getOrdem() {
-        return ordem;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setOrdem(String ordem) {
-        this.ordem = ordem;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
     public int getDuracao() {
