@@ -2,6 +2,7 @@ package com.tostringtech.refp.project.api.service;
 
 import com.tostringtech.refp.application.models.EmpPro;
 import com.tostringtech.refp.application.models.Projeto;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 
@@ -14,15 +15,21 @@ public interface ProjectService {
 
     Projeto update(Projeto projeto);
 
-    Projeto delete(Projeto projeto);
+    void delete(Projeto projeto);
 
     List<EmpPro> findAllProjectEnterprises(Long id);
 
-    List<Projeto> findAll(Pageable pageable);
+    abstract Page<Projeto> findAll(Pageable pageable);
 
     Optional<Projeto> findById(Long id);
 
-    List<Projeto> findAll();
+    abstract Page<Projeto> findAll();
+
+    List<Projeto> findAllProjects();
+
+    Page<Projeto> findAllPages(Pageable pageable);
+
+    Long countProjects();
 
     void addEnterprises(List<EmpPro> empresas, Long id);
 }

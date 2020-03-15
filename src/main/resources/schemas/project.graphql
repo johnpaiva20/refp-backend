@@ -1,5 +1,5 @@
  type Query{
-    listProjects: [Project]
+    projects: [Project]
     project(id: Int): Project
 }
 type Mutation{

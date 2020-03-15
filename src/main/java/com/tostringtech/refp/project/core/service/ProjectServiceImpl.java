@@ -7,6 +7,7 @@ import com.tostringtech.refp.application.models.Projeto;
 import com.tostringtech.refp.project.api.repository.ProjectRepository;
 import com.tostringtech.refp.project.api.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +39,10 @@ public class ProjectServiceImpl implements ProjectService {
             throw new StandardException("Titulo deve ser preenchido");
         }
 
+        if(projeto.getCodigoAneel() == null){
+            throw new StandardException("Código ANEEL deve ser preenchido");
+        }
+
         if (projeto.getOrdemServico() != null) {
             OrdemServico ordemServico = projeto.getOrdemServico();
 
@@ -54,9 +59,17 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public List<Projeto> findAll() {
+    public List<Projeto> findAllProjects() {
         return projectRepository.findAll();
     }
+
+    @Override
+    public Page<Projeto> findAllPages(Pageable pageable) {
+        return projectRepository.findAll(pageable);
+    }
+
+    @Override
+    public Long countProjects() { return projectRepository.count(); }
 
     @Override
     public void addEnterprises(List<EmpPro> empresas, Long id) {
@@ -95,9 +108,8 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Projeto delete(Projeto projeto) {
+    public void delete(Projeto projeto) {
         projectRepository.delete(projeto);
-        return null;
     }
 
 }

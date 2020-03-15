@@ -1,5 +1,6 @@
 package com.tostringtech.refp.project.rest.controller;
 
+import com.tostringtech.refp.application.exceptions.ObjectNotFoundException;
 import com.tostringtech.refp.application.models.EmpPro;
 import com.tostringtech.refp.application.models.Projeto;
 import com.tostringtech.refp.project.api.resources.ProjectEnterpriseResource;
@@ -14,9 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController()
@@ -46,40 +45,55 @@ public class ProjectRestController {
                 .map(ProjectResource::new)
                 .collect(Collectors.toList());
 
-        if (!resources.isEmpty()) {
-            return new ResponseEntity<>(resources, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(resources,HttpStatus.OK);
     }
 
     @GetMapping("/projects/{id}")
     @ApiOperation(tags = {"Project"}, value = "Encontrar um Projeto")
     public ResponseEntity<ProjectResource> findProjectById(@PathVariable Long id) {
-        Projeto projeto = projectService.findById(id).orElse(null);
+
+        Projeto projeto = projectService.findById(id).orElseThrow(() -> {
+            return new ObjectNotFoundException("Projeto não encontrado");
+        });
+
         ProjectResource resource = new ProjectResource(projeto);
 
-        if (resource != null) {
-            return new ResponseEntity<>(resource, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(resource, HttpStatus.FOUND);
+    }
+
+    @GetMapping("/projects/count")
+    @ApiOperation(tags = {"Project"}, value = "Encontrar um Projeto")
+    public ResponseEntity<Long> countProjects() {
+        Long count = projectService.countProjects();
+        return new ResponseEntity<>(count, HttpStatus.OK);
     }
 
     @PutMapping(value = "/projects/{id}")
     @ApiOperation(tags = {"Project"}, value = "Atualizar um Projeto")
-    public ResponseEntity<Void> updateProject(@RequestBody ProjectResource resoruce, @PathVariable Long id) {
-        Projeto projeto = new Projeto();
-        projeto.setCodigo(id);
+    public ResponseEntity<ProjectResource> updateProject(@RequestBody ProjectResource resoruce, @PathVariable Long id) {
+
+        Projeto projeto = projectService.findById(id).orElseThrow(() -> {
+            return new ObjectNotFoundException("Projeto não encontrado");
+        });
+
         projeto = projectService.update(projeto);
-        return ResponseEntity.noContent().build();
+
+        ProjectResource resource = new ProjectResource(projeto);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/projects/{id}")
     @ApiOperation(tags = {"Project"}, value = "Deletar um Projeto")
     public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
-        Projeto projeto = new Projeto();
-        projeto.setCodigo(id);
-        projeto = projectService.delete(projeto);
-        return ResponseEntity.noContent().build();
+
+        Projeto projeto = projectService.findById(id).orElseThrow(() -> {
+            return new ObjectNotFoundException("Projeto não encontrado");
+        });
+
+        projectService.delete(projeto);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping(value = "/projects/{id}/enterprises")
