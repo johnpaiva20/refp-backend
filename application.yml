@@ -1,0 +1,9 @@
+spring:  
+  jpa:  
+    hibernate:  
+      ddl-auto: create  
+    database-platform: org.hibernate.dialect.PostgreSQLDialect  
+  datasource:  
+    url: postgres://xoqashkspyfoxj:4e6f81858302d514fe86b2da9936dd4fb27cce0e0e90c53e541fe790a3df63e3@ec2-174-129-33-84.compute-1.amazonaws.com
+    username: xoqashkspyfoxj
+    password: 4e6f81858302d514fe86b2da9936dd4fb27cce0e0e90c53e541fe790a3df63e3
