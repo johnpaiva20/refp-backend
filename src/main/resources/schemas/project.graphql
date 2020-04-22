@@ -1,0 +1,53 @@
+ type Query{
+    projects: [Project]
+    project(id: Int): Project
+}
+type Mutation{
+    createProject(project:ProjectInput):Project
+}
+
+scalar Date
+
+type ProjectType {
+    id:String
+    description:String
+    active:Boolean
+}
+
+type ServiceOrder{
+    id: Int
+    order: String
+    begin: Date
+    end : Date
+    duration:Int
+}
+
+type Project{
+    # Project id
+    id:Int
+    aneelId:String
+    type:ProjectType
+    title:String
+    status:String
+    serviceOrder:ServiceOrder
+    enterprises:[ProjectEnterprise]
+}
+
+input ProjectInput {
+    aneelId:String
+    type:ProjectTypeInput
+    title:String
+    duration:Int
+    status:String
+    serviceOrder:ServiceOrderInput
+}
+
+input ProjectTypeInput{
+    id:String
+}
+
+input ServiceOrderInput{
+    order: String
+    begin: Date
+}
+
