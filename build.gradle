@@ -7,7 +7,7 @@ plugins {
 
 group = 'com.tostringtech'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '12'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
@@ -22,7 +22,9 @@ dependencies {
 	runtimeOnly 'com.oracle.ojdbc:ojdbc8'
 	runtimeOnly 'mysql:mysql-connector-java'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-
+	
+	compile group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.1.0'
+	compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
 	compile group: 'com.graphql-java', name: 'graphql-java', version: '13.0'
 	compile group: 'com.graphql-java', name: 'graphql-java-tools', version: '5.2.4'
 	compile group: 'com.graphql-java', name: 'graphql-java-servlet', version: '6.1.3'

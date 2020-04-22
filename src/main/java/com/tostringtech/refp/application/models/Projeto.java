@@ -1,5 +1,9 @@
 package com.tostringtech.refp.application.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.tostringtech.refp.project.api.enums.ProjectType;
 import com.tostringtech.refp.project.api.resources.ProjectResource;
 
@@ -33,9 +37,11 @@ public class Projeto implements Serializable {
     @OneToMany(mappedBy = "projeto")
     private List<MembPro> membros = new ArrayList<>();
 
+    @JsonIgnoreProperties("projeto")
     @OneToMany(mappedBy = "projeto")
     private List<Despesa> despesas = new ArrayList<>();
 
+    @JsonIgnoreProperties("projeto")
     @OneToMany(mappedBy = "projeto", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn(name = "CD_PROJETO", referencedColumnName = "CD_PROJETO")
     private List<EmpPro> empresas = new ArrayList<>();
