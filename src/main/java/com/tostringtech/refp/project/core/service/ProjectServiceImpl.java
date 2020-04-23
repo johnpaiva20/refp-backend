@@ -70,7 +70,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void addEnterprises(List<EmpPro> empresas, Long id) {
-        if (this.findById(id).isEmpty()) {
+        if (this.findById(id).isPresent()) {
             throw new StandardException("Projeto não encontrado");
         }
         Projeto projeto = this.findById(id).get();
@@ -81,7 +81,7 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public List<EmpPro> findAllProjectEnterprises(Long id) {
-        if (this.findById(id).isEmpty()) {
+        if (this.findById(id).isPresent()) {
             throw new StandardException("Projeto não encontrado");
         }
         Projeto projeto = this.findById(id).get();

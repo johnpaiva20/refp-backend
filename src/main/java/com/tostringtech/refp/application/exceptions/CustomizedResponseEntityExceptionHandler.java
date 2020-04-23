@@ -33,7 +33,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     public final ResponseEntity<ErrorDetails> handleStandardException(StandardException ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
                 request.getDescription(false));
-        return new ResponseEntity<>(errorDetails, HttpStatus.OK);
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
@@ -41,6 +41,5 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
                 request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
-
     }
 }

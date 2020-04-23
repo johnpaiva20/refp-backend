@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.tostringtech.refp.expense.api.resources;
 
 import java.util.Date;
@@ -78,3 +79,14 @@ public class ExpenseResource {
     
     
 }
+=======
+package com.tostringtech.refp.expense.api.resources;
+
+import com.tostringtech.refp.application.models.Despesa;
+
+public class ExpenseResource {
+    public ExpenseResource(Despesa despesa) {
+
+    }
+}
+>>>>>>> 65bf307dfdf65769f165a97dda841d4e2cc34860
