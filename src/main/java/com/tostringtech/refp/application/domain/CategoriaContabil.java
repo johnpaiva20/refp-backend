@@ -36,6 +36,16 @@ public enum CategoriaContabil {
         }
         throw new IllegalArgumentException("O código da categoria contábil inválido: " + codigo);
     }
-
+    
+    public static CategoriaContabil toEnum(String codigo) {
+        if (codigo == null || codigo.isEmpty()) return null;
+  
+        for (CategoriaContabil rub : CategoriaContabil.values()) {
+            if (codigo.equalsIgnoreCase(rub.getCod())) {
+                return rub;
+            }
+        }
+        throw new IllegalArgumentException("O código da categoria contábil inválido: " + codigo);
+    }
 
 }

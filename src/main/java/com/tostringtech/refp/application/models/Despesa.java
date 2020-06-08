@@ -1,14 +1,20 @@
 package com.tostringtech.refp.application.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.tostringtech.refp.expense.api.resources.ExpenseResource;
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.tostringtech.refp.expense.api.resources.ExpenseResource;
 
 @Entity
 @Table(name = "DESPESA")
@@ -21,6 +27,21 @@ public class Despesa implements Serializable {
 
     @Column(name = "NR_DOCUMENTO")
     private String numeroDocumento;
+    
+    @Column(name = "BENEFICIARIO")
+    private String beneficiario;
+    
+    @Column(name = "CPF_CNPJ")
+    private String cpfCnpj;
+    
+    @Column(name = "TIPO_DOCUMENTO")
+    private String tipoDocumento;
+    
+    @Column(name = "JST_DESPESA")
+    private String justificativa;
+    
+    @Column(name = "RB_DESPESA", nullable = false, length = 2)
+    private String tipoRubrica;
 
     @Column(name = "VL_DESPESA")
     private double valor;
@@ -40,6 +61,11 @@ public class Despesa implements Serializable {
     public Despesa(ExpenseResource resource) {
     	this.setCodigo(resource.getId());
     	this.setNumeroDocumento(resource.getDocumentNumber());
+    	this.setBeneficiario(resource.getRecipient());
+    	this.setCpfCnpj(resource.getCpfCnpj());
+    	this.setTipoDocumento(resource.getDocumentType().getTipo());
+    	this.setJustificativa(resource.getJustify());
+    	this.setTipoRubrica(resource.getExpenseType().getTipo());
     	this.setValor(resource.getValue());
     	this.setData(resource.getData());
     	this.setProjeto(resource.getProjResource());
@@ -57,8 +83,48 @@ public class Despesa implements Serializable {
 		return numeroDocumento;
 	}
 
+	public String getBeneficiario() {
+		return beneficiario;
+	}
+
+	public void setBeneficiario(String beneficiario) {
+		this.beneficiario = beneficiario;
+	}
+
+	public String getCpfCnpj() {
+		return cpfCnpj;
+	}
+
+	public void setCpfCnpj(String cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
+	}
+
+	public String getTipoDocumento() {
+		return tipoDocumento;
+	}
+
+	public void setTipoDocumento(String tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
+
+	public String getJustificativa() {
+		return justificativa;
+	}
+
+	public void setJustificativa(String justificativa) {
+		this.justificativa = justificativa;
+	}
+
 	public void setNumeroDocumento(String numeroDocumento) {
 		this.numeroDocumento = numeroDocumento;
+	}
+
+	public String getTipoRubrica() {
+		return tipoRubrica;
+	}
+
+	public void setTipoRubrica(String tipoRubrica) {
+		this.tipoRubrica = tipoRubrica;
 	}
 
 	public double getValor() {

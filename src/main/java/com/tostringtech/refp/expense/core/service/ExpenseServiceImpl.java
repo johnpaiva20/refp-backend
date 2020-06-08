@@ -1,16 +1,17 @@
 package com.tostringtech.refp.expense.core.service;
 
-import com.tostringtech.refp.application.exceptions.ObjectNotFoundException;
-import com.tostringtech.refp.application.models.Despesa;
-import com.tostringtech.refp.expense.api.repository.ExpenseRepository;
-import com.tostringtech.refp.expense.api.service.ExpenseService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import com.tostringtech.refp.application.exceptions.ObjectNotFoundException;
+import com.tostringtech.refp.application.models.Despesa;
+import com.tostringtech.refp.application.models.Projeto;
+import com.tostringtech.refp.expense.api.repository.ExpenseRepository;
+import com.tostringtech.refp.expense.api.service.ExpenseService;
 
 @Service
 public class ExpenseServiceImpl implements ExpenseService {
@@ -31,6 +32,11 @@ public class ExpenseServiceImpl implements ExpenseService {
 	@Override
 	public List<Despesa> findAll(Pageable pageable) {
 		return expenseRepository.findAll(pageable).toList();
+	}
+	
+	@Override
+	public List<Despesa> findAllByProject(Projeto projeto) {
+		return expenseRepository.findAllByProjeto(projeto);
 	}
 
 	@Override

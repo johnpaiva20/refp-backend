@@ -17,6 +17,18 @@ public class ProjectResource {
     private String aneelId;
 
     private String title;
+    
+    private Double rbRH;
+    
+    private Double rbMatPerm;
+    
+    private Double rbMatCons;
+    
+    private Double rbServTerc;
+    
+    private Double rbViaDia;
+    
+    private Double rbOutros;
 
     private ProjectType type;
 
@@ -31,6 +43,12 @@ public class ProjectResource {
         this.setId(projeto.getCodigo());
         this.setAneelId(projeto.getCodigoAneel());
         this.setTitle(projeto.getTitulo());
+        this.setRbRH(projeto.getRbRH());
+        this.setRbMatPerm(projeto.getRbMateriaisPermanentes());
+        this.setRbMatCons(projeto.getRbMateriaisConsumo());
+        this.setRbServTerc(projeto.getRbServicoTerceiros());
+        this.setRbViaDia(projeto.getRbViagensDiarias());
+        this.setRbOutros(projeto.getRbOutros());
         this.setType(ProjectType.getProjectType(projeto.getTipo()));
         if (projeto.getOrdemServico() != null) {
             this.setServiceOrder(new ServiceOrderResource(projeto.getOrdemServico()));
@@ -75,7 +93,55 @@ public class ProjectResource {
         this.title = title;
     }
 
-    public ProjectType getType() {
+    public Double getRbRH() {
+		return rbRH;
+	}
+
+	public void setRbRH(Double rbRH) {
+		this.rbRH = rbRH;
+	}
+
+	public Double getRbMatPerm() {
+		return rbMatPerm;
+	}
+
+	public void setRbMatPerm(Double rbMatPerm) {
+		this.rbMatPerm = rbMatPerm;
+	}
+
+	public Double getRbMatCons() {
+		return rbMatCons;
+	}
+
+	public void setRbMatCons(Double rbMatCons) {
+		this.rbMatCons = rbMatCons;
+	}
+
+	public Double getRbServTerc() {
+		return rbServTerc;
+	}
+
+	public void setRbServTerc(Double rbServTerc) {
+		this.rbServTerc = rbServTerc;
+	}
+
+	public Double getRbViaDia() {
+		return rbViaDia;
+	}
+
+	public void setRbViaDia(Double rbViaDia) {
+		this.rbViaDia = rbViaDia;
+	}
+
+	public Double getRbOutros() {
+		return rbOutros;
+	}
+
+	public void setRbOutros(Double rbOutros) {
+		this.rbOutros = rbOutros;
+	}
+
+	public ProjectType getType() {
         return type;
     }
 
