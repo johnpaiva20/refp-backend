@@ -1,0 +1,103 @@
+package com.tostringtech.refp.expense.api.resources;
+
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.tostringtech.refp.application.models.Despesa;
+import com.tostringtech.refp.application.models.Projeto;
+import com.tostringtech.refp.project.api.resources.ProjectResource;
+
+import io.swagger.annotations.ApiModel;
+
+@ApiModel(value = "Expense")
+public class ExpenseResource {
+	
+	private Long id;
+	
+	private String documentNumber;
+	
+	private double value;
+	
+	private Date data;
+
+	private String nomeBeneficiado;
+
+	private String inscricaoBeneficiado;
+
+	private String justificativaDespesa;
+
+
+	@JsonIgnore
+	private Projeto projResource;
+	
+    public ExpenseResource() {
+    }
+    
+    public ExpenseResource(Despesa despesa) {
+    	this.setId(despesa.getCodigo());
+    	this.setDocumentNumber(despesa.getNumeroDocumento());
+    	this.setValue(despesa.getValor());
+    	this.setData(despesa.getData());
+    	this.setProjResource(despesa.getProjeto());
+    	this.setNomeBeneficiado(despesa.getNomeBeneficiado());
+		this.setNomeBeneficiado(despesa.getInscricaoBeneficado());
+		this.setJustificativaDespesa(despesa.getJustificativaDespesa());
+
+    }
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDocumentNumber() {
+		return documentNumber;
+	}
+
+	public void setDocumentNumber(String documentNumber) {
+		this.documentNumber = documentNumber;
+	}
+
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public Projeto getProjResource() {
+		return projResource;
+	}
+
+	public void setProjResource(Projeto projResource) {
+		this.projResource = projResource;
+	}
+
+	public String getNomeBeneficiado() { return nomeBeneficiado; }
+
+	public void setNomeBeneficiado(String nomeBeneficiado) { this.nomeBeneficiado = nomeBeneficiado; }
+
+	public String getInscricaoBeneficiado() {	return inscricaoBeneficiado; }
+
+	public void setInscricaoBeneficiado(String inscricaoBeneficiado) { this.inscricaoBeneficiado = inscricaoBeneficiado; }
+
+	public String getJustificativaDespesa() { return justificativaDespesa; 	}
+
+	public void setJustificativaDespesa(String justificativaDespesa) { this.justificativaDespesa = justificativaDespesa; }
+
+
+}
