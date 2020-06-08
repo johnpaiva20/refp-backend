@@ -41,7 +41,25 @@ public class ProjectServiceImpl implements ProjectService {
 
         if (projeto.getCodigoAneel() == null)
             throw new StandardException("CÃ³digo ANEEL deve ser preenchido");
-
+        
+        if (projeto.getRbRH() == null)
+        	throw new StandardException("Rubrica RH deve ser preenchida");
+        
+        if (projeto.getRbMateriaisPermanentes() == null)
+        	throw new StandardException("Rubrica Materiais permanentes deve ser preenchida");
+        
+        if (projeto.getRbMateriaisConsumo() == null)
+        	throw new StandardException("Rubrica Materiais de consumo deve ser preenchida");
+        
+        if (projeto.getRbServicoTerceiros() == null)
+        	throw new StandardException("Rubrica Serviços de terceiros deve ser preenchida");
+        
+        if (projeto.getRbViagensDiarias() == null)
+        	throw new StandardException("Rubrica Viagens e Diárias deve ser preenchida");
+        
+        if (projeto.getRbOutros() == null)
+        	throw new StandardException("Rubrica Outros deve ser preenchida");
+        	
         if (projeto.getOrdemServico() != null) {
             OrdemServico ordemServico = projeto.getOrdemServico();
 

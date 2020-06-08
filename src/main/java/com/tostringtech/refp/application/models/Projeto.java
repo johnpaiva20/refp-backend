@@ -29,7 +29,25 @@ public class Projeto implements Serializable {
 
     @Column(name = "TP_PROJETO", nullable = false, length = 2)
     private String tipo;
+    
+    @Column(name = "RB_RH", nullable = false, length = 2)
+    private Double rbRH;
+    
+    @Column(name = "RB_MAT_PERM", nullable = false, length = 2)
+    private Double rbMateriaisPermanentes;
 
+    @Column(name = "RB_MAT_CONS", nullable = false, length = 2)
+    private Double rbMateriaisConsumo;
+
+    @Column(name = "RB_SERV_TERC", nullable = false, length = 2)
+    private Double rbServicoTerceiros;
+    
+    @Column(name = "RB_VIA_DIA", nullable = false, length = 2)
+    private Double rbViagensDiarias;
+
+    @Column(name = "RB_OUTROS", nullable = false, length = 2)
+    private Double rbOutros;
+    
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CD_ORDEM_SERVICO", nullable = false)
     private OrdemServico ordemServico;
@@ -55,6 +73,12 @@ public class Projeto implements Serializable {
         this.setCodigoAneel(resource.getAneelId());
         this.setTitulo(resource.getTitle());
         this.setTipo(resource.getType().getType());
+        this.setRbRH(resource.getRbRH());
+        this.setRbMateriaisPermanentes(resource.getRbMatPerm());
+        this.setRbMateriaisConsumo(resource.getRbMatCons());
+        this.setRbServicoTerceiros(resource.getRbServTerc());
+        this.setRbViagensDiarias(resource.getRbViaDia());
+        this.setRbOutros(resource.getRbOutros());
         if (resource.getServiceOrder() != null) {
             this.setOrdemServico(new OrdemServico(resource.getServiceOrder()));
         }
@@ -96,7 +120,55 @@ public class Projeto implements Serializable {
         this.tipo = tipo;
     }
 
-    public OrdemServico getOrdemServico() {
+    public Double getRbRH() {
+		return rbRH;
+	}
+
+	public void setRbRH(Double rbRH) {
+		this.rbRH = rbRH;
+	}
+
+	public Double getRbMateriaisPermanentes() {
+		return rbMateriaisPermanentes;
+	}
+
+	public void setRbMateriaisPermanentes(Double rbMateriaisPermanentes) {
+		this.rbMateriaisPermanentes = rbMateriaisPermanentes;
+	}
+
+	public Double getRbMateriaisConsumo() {
+		return rbMateriaisConsumo;
+	}
+
+	public void setRbMateriaisConsumo(Double rbMateriaisConsumo) {
+		this.rbMateriaisConsumo = rbMateriaisConsumo;
+	}
+
+	public Double getRbServicoTerceiros() {
+		return rbServicoTerceiros;
+	}
+
+	public void setRbServicoTerceiros(Double rbServicoTerceiros) {
+		this.rbServicoTerceiros = rbServicoTerceiros;
+	}
+
+	public Double getRbViagensDiarias() {
+		return rbViagensDiarias;
+	}
+
+	public void setRbViagensDiarias(Double rbViagensDiarias) {
+		this.rbViagensDiarias = rbViagensDiarias;
+	}
+
+	public Double getRbOutros() {
+		return rbOutros;
+	}
+
+	public void setRbOutros(Double rbOutros) {
+		this.rbOutros = rbOutros;
+	}
+
+	public OrdemServico getOrdemServico() {
         return ordemServico;
     }
 

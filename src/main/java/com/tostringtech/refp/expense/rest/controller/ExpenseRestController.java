@@ -28,12 +28,6 @@ public class ExpenseRestController {
 
     @Autowired
     private ExpenseService expenseService;
-    
-    @Autowired
-    private ExpenseRepository repo;
-    
-//    @Autowired
-//    private ReportService reportService;
 
     @PostMapping("/expenses")
     @ApiOperation(tags = {"Expense"}, value = "Cadastrar uma nova Despesa ")
@@ -97,8 +91,4 @@ public class ExpenseRestController {
         return ResponseEntity.noContent().build();
     }
     
-//    @GetMapping(value = "/expenses/report/")
-//    public String generateExpenseReport(Pageable pageable) throws FileNotFoundException, JRException{
-//    	return reportService.exportReport(pageable);
-//    }
 }
