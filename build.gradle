@@ -35,7 +35,7 @@ dependencies {
 	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-fonts
 	compile group: 'net.sf.jasperreports', name: 'jasperreports-fonts', version: '6.11.0'
 	// https://mvnrepository.com/artifact/com.github.gmazelier/jasperreports-gradle-plugin
-	compile group: 'com.github.gmazelier', name: 'jasperreports-gradle-plugin', version: '0.4'
+	// compile group: 'com.github.gmazelier', name: 'jasperreports-gradle-plugin', version: '0.4'
 	// https://mvnrepository.com/artifact/org.codehaus.gpars/gpars
 	compile group: 'org.codehaus.gpars', name: 'gpars', version: '1.2.1'
 	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-functions
