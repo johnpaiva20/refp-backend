@@ -40,7 +40,7 @@ public class Despesa implements Serializable {
     @Column(name = "JST_DESPESA")
     private String justificativa;
     
-    @Column(name = "RB_DESPESA", nullable = false, length = 2)
+    @Column(name = "RB_DESPESA")
     private String tipoRubrica;
 
     @Column(name = "VL_DESPESA")
