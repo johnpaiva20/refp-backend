@@ -8,6 +8,9 @@ import com.tostringtech.refp.project.api.enums.ProjectType;
 import com.tostringtech.refp.project.api.resources.ProjectResource;
 
 import javax.persistence.*;
+
+import org.springframework.beans.factory.annotation.Value;
+
 import java.io.Serializable;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -30,22 +33,28 @@ public class Projeto implements Serializable {
     @Column(name = "TP_PROJETO", nullable = false, length = 2)
     private String tipo;
     
-    @Column(name = "RB_RH", nullable = false, length = 2)
+    @Column(name = "RB_RH")
+    @Value("0")
     private Double rbRH;
     
-    @Column(name = "RB_MAT_PERM", nullable = false, length = 2)
+    @Column(name = "RB_MAT_PERM")
+    @Value("0")
     private Double rbMateriaisPermanentes;
 
-    @Column(name = "RB_MAT_CONS", nullable = false, length = 2)
+    @Column(name = "RB_MAT_CONS")
+    @Value("0")
     private Double rbMateriaisConsumo;
 
-    @Column(name = "RB_SERV_TERC", nullable = false, length = 2)
+    @Column(name = "RB_SERV_TERC")
+    @Value("0")
     private Double rbServicoTerceiros;
     
-    @Column(name = "RB_VIA_DIA", nullable = false, length = 2)
+    @Column(name = "RB_VIA_DIA")
+    @Value("0")
     private Double rbViagensDiarias;
 
-    @Column(name = "RB_OUTROS", nullable = false, length = 2)
+    @Column(name = "RB_OUTROS")
+    @Value("0")
     private Double rbOutros;
     
     @OneToOne(cascade = CascadeType.PERSIST)
