@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -162,7 +163,7 @@ public class ReportService {
 	private LocalDate parseDateToLocalDate(Date date) {
 		LocalDate parseDate = date
 			.toInstant()
-			.atZone(ZoneId.systemDefault())
+			.atZone(ZoneId.of("America/Sao_Paulo"))
 			.toLocalDate();
 		return parseDate;
 	}
