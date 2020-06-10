@@ -1,30 +1,30 @@
-2020-06-08 19:54:34,051 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 14368 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 19:54:34,053 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 19:54:34,770 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 19:54:34,850 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 74ms. Found 5 JPA repository interfaces.
-2020-06-08 19:54:35,097 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 19:54:35,265 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 19:54:35,271 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 19:54:35,271 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 19:54:35,272 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 19:54:35,353 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 19:54:35,354 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1139 ms
-2020-06-08 19:54:35,507 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 19:54:35,551 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 19:54:35,643 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 19:54:35,705 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 19:54:36,001 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 19:54:36,016 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 19:54:36,654 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 19:54:36,660 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 19:54:37,355 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 19:54:37,498 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 19:54:37,546 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 19:54:37,655 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 19:54:37,661 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 19:54:37,662 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 19:54:37,662 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 19:54:37,663 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2020-06-10 15:25:30,256 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 2860 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
+2020-06-10 15:25:30,259 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-06-10 15:25:31,351 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-10 15:25:31,434 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 74ms. Found 5 JPA repository interfaces.
+2020-06-10 15:25:31,722 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-10 15:25:31,894 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-06-10 15:25:31,900 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-10 15:25:31,901 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-06-10 15:25:31,901 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-06-10 15:25:31,988 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-06-10 15:25:31,988 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1536 ms
+2020-06-10 15:25:32,164 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-10 15:25:32,243 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
+2020-06-10 15:25:32,387 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-10 15:25:32,483 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-06-10 15:25:32,790 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-06-10 15:25:32,806 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-06-10 15:25:33,532 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-10 15:25:33,539 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-10 15:25:34,259 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-10 15:25:34,396 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-10 15:25:34,441 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 15:25:34,549 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
+2020-06-10 15:25:34,559 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-10 15:25:34,560 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
+2020-06-10 15:25:34,560 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
+2020-06-10 15:25:34,561 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -32,181 +32,62 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-06-08 19:54:37,663 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 19:54:37,663 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 19:54:37,663 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@50013a15
-2020-06-08 19:54:37,693 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 19:54:37,701 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 19:54:37,732 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 19:54:37,840 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 19:54:37,865 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 19:54:37,870 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 19:54:37,874 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 19:54:37,896 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 19:54:37,896 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 19:54:37,901 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 19:54:37,917 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 19:54:37,919 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 4.138 seconds (JVM running for 4.667)
-2020-06-08 19:54:41,475 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(3)-127.0.0.1] Application shutdown requested.
-2020-06-08 19:54:41,477 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 19:54:41,477 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 19:54:41,478 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 19:54:41,478 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 19:54:41,478 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 19:54:41,479 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(3)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 19:54:41,482 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 19:54:41,484 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 19:54:41,486 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown completed.
-2020-06-08 19:54:49,259 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 2040 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 19:54:49,261 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 19:54:49,952 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 19:54:50,031 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 73ms. Found 5 JPA repository interfaces.
-2020-06-08 19:54:50,270 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 19:54:50,422 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 19:54:50,428 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 19:54:50,428 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 19:54:50,429 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 19:54:50,512 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 19:54:50,512 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1098 ms
-2020-06-08 19:54:50,662 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 19:54:50,710 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 19:54:50,806 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 19:54:50,870 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 19:54:51,149 ERROR com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Exception during pool initialization.
-java.sql.SQLException: Access denied for user 'refp'@'localhost' (using password: YES)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.tostringtech.refp.RefpApplication.main(RefpApplication.java:10)
-2020-06-08 19:54:51,150 WARN org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata : Access denied for user 'refp'@'localhost' (using password: YES)
-2020-06-08 19:54:51,151 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-2020-06-08 19:54:51,153 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
-2020-06-08 19:54:51,160 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-06-08 19:54:51,166 ERROR org.springframework.boot.SpringApplication [main] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.tostringtech.refp.RefpApplication.main(RefpApplication.java:10)
-Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:275)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175)
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
-	... 16 common frames omitted
-Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:100)
-	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:54)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:137)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
-	... 33 common frames omitted
-2020-06-08 20:00:39,517 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 16324 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 20:00:39,519 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 20:00:40,210 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 20:00:40,286 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 71ms. Found 5 JPA repository interfaces.
-2020-06-08 20:00:40,514 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 20:00:40,657 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 20:00:40,663 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:00:40,664 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 20:00:40,664 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 20:00:40,744 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 20:00:40,744 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1070 ms
-2020-06-08 20:00:40,890 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 20:00:40,936 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 20:00:41,029 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 20:00:41,089 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 20:00:41,346 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 20:00:41,359 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 20:00:42,004 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 20:00:42,009 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:00:42,650 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 20:00:42,772 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 20:00:42,812 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:00:42,905 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 20:00:42,912 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 20:00:42,912 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 20:00:42,912 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 20:00:42,913 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+2020-06-10 15:25:34,561 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-06-10 15:25:34,561 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
+2020-06-10 15:25:34,561 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@7057dbda
+2020-06-10 15:25:34,598 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2020-06-10 15:25:34,611 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2020-06-10 15:25:34,648 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2020-06-10 15:25:34,775 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
+2020-06-10 15:25:34,799 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
+2020-06-10 15:25:34,804 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
+2020-06-10 15:25:34,809 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
+2020-06-10 15:25:34,831 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2020-06-10 15:25:34,831 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-06-10 15:25:34,836 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-06-10 15:25:34,860 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 15:25:34,862 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 4.923 seconds (JVM running for 7.661)
+2020-06-10 15:26:01,723 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 15:26:01,723 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-06-10 15:26:01,728 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 5 ms
+2020-06-10 15:26:11,513 WARN net.sf.jasperreports.engine.export.PdfGlyphRenderer [http-nio-8080-exec-7] Unpatched iText found, cannot use glyph rendering
+2020-06-10 15:30:56,918 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
+2020-06-10 15:30:56,920 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-06-10 15:30:56,920 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Shutting down Quartz Scheduler
+2020-06-10 15:30:56,921 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-06-10 15:30:56,921 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-06-10 15:30:56,921 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-06-10 15:30:56,922 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-10 15:30:56,924 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-10 15:30:56,926 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-06-10 15:30:56,928 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-06-10 15:57:38,352 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 15648 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
+2020-06-10 15:57:38,354 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2020-06-10 15:57:39,111 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-10 15:57:39,188 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 72ms. Found 5 JPA repository interfaces.
+2020-06-10 15:57:39,411 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-10 15:57:39,552 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2020-06-10 15:57:39,557 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-10 15:57:39,558 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2020-06-10 15:57:39,558 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-06-10 15:57:39,635 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2020-06-10 15:57:39,636 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1134 ms
+2020-06-10 15:57:39,778 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-06-10 15:57:39,823 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
+2020-06-10 15:57:39,911 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-06-10 15:57:39,970 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-06-10 15:57:40,232 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-06-10 15:57:40,245 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-06-10 15:57:40,838 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-06-10 15:57:40,844 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-10 15:57:41,444 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-10 15:57:41,564 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-06-10 15:57:41,602 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 15:57:41,691 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
+2020-06-10 15:57:41,697 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-10 15:57:41,698 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
+2020-06-10 15:57:41,698 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
+2020-06-10 15:57:41,699 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -214,705 +95,32 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-2020-06-08 20:00:42,913 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 20:00:42,913 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 20:00:42,913 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@62e99458
-2020-06-08 20:00:42,943 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 20:00:42,950 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 20:00:42,980 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 20:00:43,084 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 20:00:43,108 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 20:00:43,113 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 20:00:43,118 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 20:00:43,139 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 20:00:43,139 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 20:00:43,144 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:00:43,159 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 20:00:43,160 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 3.894 seconds (JVM running for 4.385)
-2020-06-08 20:01:00,632 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-08 20:01:00,633 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-08 20:01:00,637 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
-2020-06-08 20:04:03,296 WARN net.sf.jasperreports.engine.export.PdfGlyphRenderer [http-nio-8080-exec-2] Unpatched iText found, cannot use glyph rendering
-2020-06-08 20:05:31,583 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
-2020-06-08 20:05:31,585 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:05:31,586 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 20:05:31,586 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 20:05:31,586 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:05:31,586 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 20:05:31,586 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:05:31,589 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:05:31,591 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 20:05:31,593 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
-2020-06-08 20:05:58,437 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 15760 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 20:05:58,439 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 20:05:59,131 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 20:05:59,212 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 70ms. Found 5 JPA repository interfaces.
-2020-06-08 20:05:59,394 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 20:05:59,581 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 20:05:59,587 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:05:59,588 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 20:05:59,588 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 20:05:59,676 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 20:05:59,677 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1079 ms
-2020-06-08 20:05:59,726 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalArgumentException: URL must start with 'jdbc'
-2020-06-08 20:05:59,728 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
-2020-06-08 20:05:59,764 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-06-08 20:05:59,770 ERROR org.springframework.boot.SpringApplication [main] Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalArgumentException: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:228)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1358)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.tostringtech.refp.RefpApplication.main(RefpApplication.java:10)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalArgumentException: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
-	... 28 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalArgumentException: URL must start with 'jdbc'
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
-	... 42 common frames omitted
-Caused by: java.lang.IllegalArgumentException: URL must start with 'jdbc'
-	at org.springframework.util.Assert.isTrue(Assert.java:118)
-	at org.springframework.boot.jdbc.DatabaseDriver.fromJdbcUrl(DatabaseDriver.java:271)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:227)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.initializeDataSourceBuilder(DataSourceProperties.java:174)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:43)
-	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:85)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	... 43 common frames omitted
-2020-06-08 20:13:47,141 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 3112 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 20:13:47,143 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 20:13:47,851 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 20:13:47,928 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 72ms. Found 5 JPA repository interfaces.
-2020-06-08 20:13:48,168 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 20:13:48,320 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 20:13:48,326 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:13:48,326 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 20:13:48,327 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 20:13:48,409 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 20:13:48,409 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1102 ms
-2020-06-08 20:13:48,557 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 20:13:48,604 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 20:13:48,697 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 20:13:48,759 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 20:13:49,037 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 20:13:49,053 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 20:13:49,732 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 20:13:49,738 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:13:50,405 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 20:13:50,533 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 20:13:50,575 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:13:50,673 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 20:13:50,679 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 20:13:50,679 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 20:13:50,680 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 20:13:50,680 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 20:13:50,680 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 20:13:50,681 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 20:13:50,681 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@b5390
-2020-06-08 20:13:50,709 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 20:13:50,717 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 20:13:50,746 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 20:13:50,851 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 20:13:50,874 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 20:13:50,878 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 20:13:50,882 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 20:13:50,902 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 20:13:50,902 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 20:13:50,908 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:13:50,923 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 20:13:50,925 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 4.054 seconds (JVM running for 4.556)
-2020-06-08 20:13:59,190 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-08 20:13:59,190 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-08 20:13:59,195 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
-2020-06-08 20:13:59,743 WARN net.sf.jasperreports.engine.export.PdfGlyphRenderer [http-nio-8080-exec-1] Unpatched iText found, cannot use glyph rendering
-2020-06-08 20:16:40,498 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
-2020-06-08 20:16:40,500 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:16:40,500 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 20:16:40,501 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 20:16:40,501 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:16:40,501 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 20:16:40,501 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:16:40,505 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:16:40,506 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 20:16:40,509 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
-2020-06-08 20:17:19,196 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 4380 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 20:17:19,197 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 20:17:19,870 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 20:17:19,946 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 71ms. Found 5 JPA repository interfaces.
-2020-06-08 20:17:20,175 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 20:17:20,319 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 20:17:20,324 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:17:20,325 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 20:17:20,325 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 20:17:20,403 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 20:17:20,403 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1056 ms
-2020-06-08 20:17:20,563 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 20:17:20,610 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 20:17:20,704 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 20:17:20,765 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 20:17:21,031 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 20:17:21,044 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 20:17:21,649 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 20:17:21,654 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:17:22,281 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 20:17:22,404 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 20:17:22,443 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:17:22,538 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 20:17:22,544 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 20:17:22,544 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 20:17:22,544 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 20:17:22,545 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 20:17:22,545 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 20:17:22,545 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 20:17:22,545 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@535a6697
-2020-06-08 20:17:22,575 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 20:17:22,582 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 20:17:22,611 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 20:17:22,713 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 20:17:22,738 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 20:17:22,743 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 20:17:22,747 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 20:17:22,768 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 20:17:22,768 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 20:17:22,774 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:17:22,789 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 20:17:22,790 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 3.844 seconds (JVM running for 4.339)
-2020-06-08 20:17:55,609 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-08 20:17:55,610 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-08 20:17:55,614 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
-2020-06-08 20:18:01,602 WARN net.sf.jasperreports.engine.export.PdfGlyphRenderer [http-nio-8080-exec-9] Unpatched iText found, cannot use glyph rendering
-2020-06-08 20:19:10,769 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(3)-127.0.0.1] Application shutdown requested.
-2020-06-08 20:19:10,771 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:19:10,771 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 20:19:10,771 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 20:19:10,771 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:19:10,772 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 20:19:10,772 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(3)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:19:10,775 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:19:10,776 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 20:19:10,779 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown completed.
-2020-06-08 20:19:15,694 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 11672 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 20:19:15,697 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 20:19:16,365 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 20:19:16,441 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 71ms. Found 5 JPA repository interfaces.
-2020-06-08 20:19:16,669 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 20:19:16,811 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 20:19:16,817 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:19:16,817 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 20:19:16,817 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 20:19:16,896 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 20:19:16,896 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1050 ms
-2020-06-08 20:19:17,041 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 20:19:17,087 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 20:19:17,183 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 20:19:17,242 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 20:19:17,507 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 20:19:17,521 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 20:19:18,119 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 20:19:18,125 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:19:18,752 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 20:19:18,873 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 20:19:18,913 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:19:19,006 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 20:19:19,012 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 20:19:19,012 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 20:19:19,012 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 20:19:19,013 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 20:19:19,013 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 20:19:19,013 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 20:19:19,013 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@64af5454
-2020-06-08 20:19:19,042 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 20:19:19,049 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 20:19:19,078 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 20:19:19,190 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 20:19:19,216 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 20:19:19,221 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 20:19:19,225 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 20:19:19,247 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 20:19:19,247 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 20:19:19,252 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:19:19,267 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 20:19:19,269 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 3.821 seconds (JVM running for 4.307)
-2020-06-08 20:19:29,136 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-08 20:19:29,136 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-08 20:19:29,140 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
-2020-06-08 20:19:29,688 WARN net.sf.jasperreports.engine.export.PdfGlyphRenderer [http-nio-8080-exec-1] Unpatched iText found, cannot use glyph rendering
-2020-06-08 20:22:35,756 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
-2020-06-08 20:22:35,758 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:22:35,758 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 20:22:35,758 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 20:22:35,759 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:22:35,759 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 20:22:35,759 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:22:35,761 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:22:35,763 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 20:22:35,766 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
-2020-06-08 20:32:50,804 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 11120 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 20:32:50,806 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 20:32:51,494 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 20:32:51,573 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 73ms. Found 5 JPA repository interfaces.
-2020-06-08 20:32:51,808 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 20:32:51,959 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 20:32:51,965 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:32:51,965 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 20:32:51,966 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 20:32:52,049 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 20:32:52,049 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1087 ms
-2020-06-08 20:32:52,195 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 20:32:52,241 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 20:32:52,335 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 20:32:52,396 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 20:32:52,663 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 20:32:52,677 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 20:32:53,278 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 20:32:53,284 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:32:53,919 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 20:32:54,042 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 20:32:54,082 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:32:54,174 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 20:32:54,181 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 20:32:54,181 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 20:32:54,181 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 20:32:54,182 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 20:32:54,182 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 20:32:54,182 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 20:32:54,182 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@16c9e378
-2020-06-08 20:32:54,213 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 20:32:54,220 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 20:32:54,249 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 20:32:54,350 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 20:32:54,374 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 20:32:54,379 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 20:32:54,383 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 20:32:54,404 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 20:32:54,404 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 20:32:54,410 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:32:54,424 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 20:32:54,425 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 3.88 seconds (JVM running for 4.378)
-2020-06-08 20:33:03,330 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-08 20:33:03,331 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-08 20:33:03,335 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
-2020-06-08 20:33:11,137 WARN net.sf.jasperreports.engine.export.PdfGlyphRenderer [http-nio-8080-exec-7] Unpatched iText found, cannot use glyph rendering
-2020-06-08 20:43:27,786 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 3736 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 20:43:27,788 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 20:43:28,501 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 20:43:28,575 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 68ms. Found 5 JPA repository interfaces.
-2020-06-08 20:43:28,755 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 20:43:28,941 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 20:43:28,947 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:43:28,947 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 20:43:28,947 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 20:43:29,028 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 20:43:29,028 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1083 ms
-2020-06-08 20:43:29,174 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 20:43:29,219 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 20:43:29,311 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 20:43:29,379 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 20:43:29,657 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 20:43:29,671 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 20:43:30,282 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 20:43:30,287 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:43:30,936 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 20:43:31,058 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 20:43:31,097 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:43:31,191 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 20:43:31,197 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 20:43:31,197 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 20:43:31,198 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 20:43:31,198 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 20:43:31,198 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 20:43:31,198 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 20:43:31,199 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2fb70301
-2020-06-08 20:43:31,227 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 20:43:31,235 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 20:43:31,264 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 20:43:31,369 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 20:43:31,395 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 20:43:31,400 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 20:43:31,405 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 20:43:31,427 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 20:43:31,427 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 20:43:31,432 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:43:31,441 INFO org.apache.juli.logging.DirectJDKLog [main] Pausing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:43:31,441 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
-2020-06-08 20:43:31,443 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:43:31,444 INFO org.apache.juli.logging.DirectJDKLog [main] Destroying ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:43:31,445 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-06-08 20:43:31,449 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2020-06-08 20:43:31,451 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:43:31,451 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Shutting down Quartz Scheduler
-2020-06-08 20:43:31,451 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 20:43:31,451 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:43:31,451 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 20:43:31,451 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:43:31,454 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:43:31,455 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
-2020-06-08 20:43:31,457 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown completed.
-2020-06-08 20:43:40,362 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
-2020-06-08 20:43:40,363 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:43:40,364 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 20:43:40,364 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 20:43:40,364 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:43:40,364 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 20:43:40,365 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:43:40,368 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:43:40,370 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 20:43:40,372 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
-2020-06-08 20:43:44,587 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 14652 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 20:43:44,589 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 20:43:45,267 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 20:43:45,341 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 69ms. Found 5 JPA repository interfaces.
-2020-06-08 20:43:45,567 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 20:43:45,713 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 20:43:45,719 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:43:45,719 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 20:43:45,719 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 20:43:45,799 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 20:43:45,799 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1061 ms
-2020-06-08 20:43:45,949 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 20:43:45,996 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 20:43:46,086 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 20:43:46,146 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 20:43:46,409 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 20:43:46,421 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 20:43:47,035 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 20:43:47,041 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:43:47,668 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 20:43:47,791 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 20:43:47,832 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:43:47,925 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 20:43:47,931 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 20:43:47,931 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 20:43:47,932 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 20:43:47,932 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 20:43:47,932 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 20:43:47,932 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 20:43:47,932 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@18c60d81
-2020-06-08 20:43:47,961 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 20:43:47,968 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 20:43:47,997 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 20:43:48,097 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 20:43:48,120 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 20:43:48,125 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 20:43:48,130 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 20:43:48,150 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 20:43:48,150 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 20:43:48,156 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 20:43:48,170 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 20:43:48,171 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 3.835 seconds (JVM running for 4.325)
-2020-06-08 20:43:53,623 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-08 20:43:53,623 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-08 20:43:53,627 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
-2020-06-08 20:44:24,184 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(3)-127.0.0.1] Application shutdown requested.
-2020-06-08 20:44:24,186 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:44:24,186 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 20:44:24,186 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 20:44:24,186 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 20:44:24,187 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 20:44:24,187 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(3)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 20:44:24,189 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 20:44:24,191 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 20:44:24,193 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown completed.
-2020-06-08 21:08:58,091 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 11044 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 21:08:58,093 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 21:08:58,768 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 21:08:58,844 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 71ms. Found 5 JPA repository interfaces.
-2020-06-08 21:08:59,068 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 21:08:59,211 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 21:08:59,217 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:08:59,217 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 21:08:59,217 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 21:08:59,296 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 21:08:59,296 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1054 ms
-2020-06-08 21:08:59,443 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 21:08:59,488 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 21:08:59,578 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 21:08:59,638 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 21:08:59,898 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 21:08:59,912 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 21:09:00,516 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 21:09:00,522 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 21:09:01,133 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 21:09:01,255 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 21:09:01,295 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 21:09:01,386 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 21:09:01,392 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 21:09:01,392 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 21:09:01,393 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 21:09:01,393 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 21:09:01,393 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 21:09:01,393 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 21:09:01,394 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@94aeba1
-2020-06-08 21:09:01,422 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 21:09:01,429 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 21:09:01,458 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 21:09:01,569 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 21:09:01,592 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 21:09:01,597 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 21:09:01,602 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 21:09:01,621 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 21:09:01,621 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 21:09:01,626 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:09:01,640 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 21:09:01,641 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 3.801 seconds (JVM running for 4.288)
-2020-06-08 21:09:17,944 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-08 21:09:17,945 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-08 21:09:17,950 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 5 ms
-2020-06-08 21:29:35,304 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 4372 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 21:29:35,305 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 21:29:36,012 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 21:29:36,091 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 74ms. Found 5 JPA repository interfaces.
-2020-06-08 21:29:36,325 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 21:29:36,476 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 21:29:36,482 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:29:36,482 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 21:29:36,482 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 21:29:36,562 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 21:29:36,562 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1101 ms
-2020-06-08 21:29:36,708 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 21:29:36,755 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 21:29:36,845 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 21:29:36,907 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 21:29:37,188 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 21:29:37,201 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 21:29:37,808 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 21:29:37,813 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 21:29:38,457 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 21:29:38,579 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 21:29:38,618 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 21:29:38,711 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 21:29:38,717 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 21:29:38,717 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 21:29:38,718 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 21:29:38,718 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 21:29:38,718 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 21:29:38,718 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 21:29:38,718 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@183a508b
-2020-06-08 21:29:38,749 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 21:29:38,756 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 21:29:38,786 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 21:29:38,889 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 21:29:38,914 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 21:29:38,919 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 21:29:38,924 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 21:29:38,943 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 21:29:38,943 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 21:29:38,948 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:29:38,955 INFO org.apache.juli.logging.DirectJDKLog [main] Pausing ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:29:38,956 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
-2020-06-08 21:29:38,958 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:29:38,958 INFO org.apache.juli.logging.DirectJDKLog [main] Destroying ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:29:38,960 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-06-08 21:29:38,963 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2020-06-08 21:29:38,965 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 21:29:38,965 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Shutting down Quartz Scheduler
-2020-06-08 21:29:38,965 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 21:29:38,965 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 21:29:38,965 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 21:29:38,965 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 21:29:38,968 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 21:29:38,969 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
-2020-06-08 21:29:38,971 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown completed.
-2020-06-08 21:29:47,493 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
-2020-06-08 21:29:47,495 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 21:29:47,495 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 21:29:47,496 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 21:29:47,496 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 21:29:47,496 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(4)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 21:29:47,496 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 21:29:47,499 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 21:29:47,501 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 21:29:47,503 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
-2020-06-08 21:29:51,576 INFO org.springframework.boot.StartupInfoLogger [main] Starting RefpApplication on DESKTOP-ERNB8HD with PID 5660 (C:\Users\alber\Documents\python\refp-backend\bin\main started by alber in C:\Users\alber\Documents\python\refp-backend)
-2020-06-08 21:29:51,578 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2020-06-08 21:29:52,245 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-06-08 21:29:52,321 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 72ms. Found 5 JPA repository interfaces.
-2020-06-08 21:29:52,549 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-06-08 21:29:52,696 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2020-06-08 21:29:52,702 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:29:52,702 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2020-06-08 21:29:52,703 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.29]
-2020-06-08 21:29:52,781 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2020-06-08 21:29:52,782 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1058 ms
-2020-06-08 21:29:52,927 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-06-08 21:29:52,973 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.9.Final}
-2020-06-08 21:29:53,068 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-06-08 21:29:53,127 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2020-06-08 21:29:53,387 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2020-06-08 21:29:53,399 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2020-06-08 21:29:53,989 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-06-08 21:29:53,994 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 21:29:54,602 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-06-08 21:29:54,723 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-06-08 21:29:54,767 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-08 21:29:54,867 INFO org.quartz.impl.StdSchedulerFactory [main] Using default implementation for ThreadExecutor
-2020-06-08 21:29:54,875 INFO org.quartz.core.SchedulerSignalerImpl [main] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-2020-06-08 21:29:54,875 INFO org.quartz.core.QuartzScheduler [main] Quartz Scheduler v.2.3.2 created.
-2020-06-08 21:29:54,876 INFO org.quartz.simpl.RAMJobStore [main] RAMJobStore initialized.
-2020-06-08 21:29:54,876 INFO org.quartz.core.QuartzScheduler [main] Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
-  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
-  NOT STARTED.
-  Currently in standby mode.
-  Number of jobs executed: 0
-  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
-  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
-
-2020-06-08 21:29:54,876 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
-2020-06-08 21:29:54,876 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
-2020-06-08 21:29:54,876 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4eb73cc8
-2020-06-08 21:29:54,906 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
-2020-06-08 21:29:54,913 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2020-06-08 21:29:54,942 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
-2020-06-08 21:29:55,043 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
-2020-06-08 21:29:55,067 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
-2020-06-08 21:29:55,071 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
-2020-06-08 21:29:55,075 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
-2020-06-08 21:29:55,096 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
-2020-06-08 21:29:55,097 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
-2020-06-08 21:29:55,102 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2020-06-08 21:29:55,116 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2020-06-08 21:29:55,118 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 3.796 seconds (JVM running for 4.283)
-2020-06-08 21:30:37,301 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-08 21:30:37,302 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2020-06-08 21:30:37,306 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
-2020-06-08 21:31:18,127 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(3)-127.0.0.1] Application shutdown requested.
-2020-06-08 21:31:18,129 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 21:31:18,129 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Shutting down Quartz Scheduler
-2020-06-08 21:31:18,129 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
-2020-06-08 21:31:18,129 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
-2020-06-08 21:31:18,129 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(3)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
-2020-06-08 21:31:18,130 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(3)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-08 21:31:18,132 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-06-08 21:31:18,134 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown initiated...
-2020-06-08 21:31:18,136 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-06-10 15:57:41,699 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-06-10 15:57:41,699 INFO org.quartz.impl.StdSchedulerFactory [main] Quartz scheduler version: 2.3.2
+2020-06-10 15:57:41,699 INFO org.quartz.core.QuartzScheduler [main] JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3f33bb6f
+2020-06-10 15:57:41,727 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2020-06-10 15:57:41,734 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2020-06-10 15:57:41,762 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2020-06-10 15:57:41,862 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_1
+2020-06-10 15:57:41,884 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: deleteProjectUsingDELETE_2
+2020-06-10 15:57:41,888 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: findProjectByIdUsingGET_1
+2020-06-10 15:57:41,892 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: updateProjectUsingPUT_1
+2020-06-10 15:57:41,912 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [main] Starting Quartz Scheduler now
+2020-06-10 15:57:41,912 INFO org.quartz.core.QuartzScheduler [main] Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-06-10 15:57:41,917 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2020-06-10 15:57:41,932 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 15:57:41,934 INFO org.springframework.boot.StartupInfoLogger [main] Started RefpApplication in 3.831 seconds (JVM running for 4.34)
+2020-06-10 15:58:09,531 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 15:58:09,532 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-06-10 15:58:09,536 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 4 ms
+2020-06-10 15:58:10,123 WARN net.sf.jasperreports.engine.export.PdfGlyphRenderer [http-nio-8080-exec-1] Unpatched iText found, cannot use glyph rendering
+2020-06-10 16:02:58,789 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(5)-127.0.0.1] Application shutdown requested.
+2020-06-10 16:02:58,791 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(5)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-06-10 16:02:58,791 INFO org.springframework.scheduling.quartz.SchedulerFactoryBean [RMI TCP Connection(5)-127.0.0.1] Shutting down Quartz Scheduler
+2020-06-10 16:02:58,792 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(5)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-06-10 16:02:58,792 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(5)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-06-10 16:02:58,792 INFO org.quartz.core.QuartzScheduler [RMI TCP Connection(5)-127.0.0.1] Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-06-10 16:02:58,792 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(5)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-10 16:02:58,796 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(5)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-10 16:02:58,798 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(5)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-06-10 16:02:58,800 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(5)-127.0.0.1] HikariPool-1 - Shutdown completed.
