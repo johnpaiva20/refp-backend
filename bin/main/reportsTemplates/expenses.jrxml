@@ -249,7 +249,7 @@ beneficiado]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{tipoDocumento}]]></textFieldExpression>
 			</textField>
-			<textField isBlankWhenNull="true">
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="0" y="0" width="64" height="30" isPrintWhenDetailOverflows="true" uuid="9459d613-b040-4d25-a36d-a9007dce974b"/>
 				<box>
 					<pen lineWidth="1.0"/>

@@ -57,7 +57,7 @@ public class ReportController {
 					.header("Content-Type", "application/pdf")
 					.header("Access-Control-Allow-Origin", "*")
 					.header("Access-Control-Expose-Headers", "X-My-Custom-Header, X-Another-Custom-Header, headerValues")
-					.header("Content-Disposition", "attachment; filename=TotalizaÃ§Ã£oDespesas.pdf")
+					.header("Content-Disposition", "attachment; filename=TotalizaçãoDespesas.pdf")
 					.body(new ByteArrayResource(report.get()));
 	}
 	
