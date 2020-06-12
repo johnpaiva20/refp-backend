@@ -1,14 +1,10 @@
 package com.tostringtech.refp.reports.service;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,7 +19,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
 import com.tostringtech.refp.application.domain.CategoriaContabil;
 import com.tostringtech.refp.application.models.Despesa;
@@ -33,11 +28,9 @@ import com.tostringtech.refp.expense.api.service.ExpenseService;
 import com.tostringtech.refp.project.api.service.ProjectService;
 
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 @Service
@@ -49,7 +42,7 @@ public class ReportService {
 	private ProjectService projService;
 	
 	public Optional<byte[]> generateExpenseReport(Long projetoId)
-		throws JRException, FileNotFoundException {
+		throws JRException {
 		Optional<Projeto> proj = projService.findById(projetoId);
 		if (!proj.isPresent()) {
 			return Optional.empty();
@@ -66,7 +59,7 @@ public class ReportService {
 			});
 		
 		return Optional.of(
-			generateReportExpense(
+			generateReport(
 				"reportsTemplates/expenses.jasper",
 				getIdentificacaoRelatorio(projeto),
 				despesas
@@ -245,24 +238,4 @@ public class ReportService {
 		return out.toByteArray();
 	}
 	
-	private byte[] generateReportExpense(
-			String reportPath,
-			Map<String, Object> params,
-			List<?> listDetails
-		) throws JRException, FileNotFoundException {
-			InputStream jasperStream = getResourceAsStream(reportPath);
-			ByteArrayOutputStream out = new ByteArrayOutputStream();
-			JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(
-				listDetails
-			);
-			File file = ResourceUtils.getFile("classpath:reportsTemplates/expenses.jrxml");
-			JasperReport jr = JasperCompileManager.compileReport(file.getAbsolutePath());
-			JasperPrint jasperPrint = JasperFillManager.fillReport(
-				jr,
-				params,
-				ds
-			);
-			JasperExportManager.exportReportToPdfStream(jasperPrint, out);
-			return out.toByteArray();
-		}
 }
