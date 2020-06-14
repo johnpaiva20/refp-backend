@@ -46,16 +46,16 @@ public class ExpenseRestController {
     @PostMapping("/expenses")
     @ApiOperation(tags = {"Expense"}, value = "Cadastrar uma nova Despesa ")
     public ResponseEntity<ExpenseResource> createExpense(@RequestBody ExpenseResource resource) {
-    	if (resource.getUrl() != null && !resource.getUrl().equals("")) {    		
-    		resource.setUrl(resource.getUrl().split("base64,")[1]);
-    		String image = decoder(resource.getUrl(), PATH);
+    	if (resource.getImage() != null && !resource.getImage().equals("")) {    		
+    		resource.setImage(resource.getImage().split("base64,")[1]);
+    		String image = decoder(resource.getImage(), PATH);
     		String imageId = new Date().toString().replace(" ", "");
     		s3.uploadFile(image, imageId);
     		File file = new File("src\\main\\resources\\image.png");
     		boolean isFileDeleted = FileUtils.deleteQuietly(file);
-    		resource.setUrl("https://refp.s3-sa-east-1.amazonaws.com/" + imageId + ".jpg");
+    		resource.setImage("https://refp.s3-sa-east-1.amazonaws.com/" + imageId + ".jpg");
     	} else {
-    		resource.setUrl("");
+    		resource.setImage("");
     	}
         Despesa despesa = expenseService.create(new Despesa(resource));
         resource = new ExpenseResource(despesa);
