@@ -1,6 +1,7 @@
 package com.tostringtech.refp.project.core.service;
 
 import com.tostringtech.refp.application.exceptions.StandardException;
+import com.tostringtech.refp.application.models.Despesa;
 import com.tostringtech.refp.application.models.EmpPro;
 import com.tostringtech.refp.application.models.OrdemServico;
 import com.tostringtech.refp.application.models.Projeto;
@@ -104,6 +105,15 @@ public class ProjectServiceImpl implements ProjectService {
         }
         Projeto projeto = this.findById(id).get();
         return projeto.getEmpresas();
+    }
+
+    @Override
+    public List<Despesa> findAllProjectExpenses(Long id) {
+        if (this.findById(id).isPresent()) {
+            throw new StandardException("Projeto não encontrado");
+        }
+        Projeto projeto = this.findById(id).get();
+        return projeto.getDespesas();
     }
 
     @Override

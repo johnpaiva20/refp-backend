@@ -1,6 +1,7 @@
 package com.tostringtech.refp.project.api.service;
 
 import com.tostringtech.refp.application.exceptions.StandardException;
+import com.tostringtech.refp.application.models.Despesa;
 import com.tostringtech.refp.application.models.EmpPro;
 import com.tostringtech.refp.application.models.Projeto;
 import org.springframework.data.domain.Page;
@@ -20,7 +21,9 @@ public interface ProjectService {
 
     List<EmpPro> findAllProjectEnterprises(Long id);
 
-     List<Projeto> findAll(Pageable pageable);
+    List<Despesa> findAllProjectExpenses(Long id);
+
+    List<Projeto> findAll(Pageable pageable);
 
     int getTotalProjectPages(Pageable pageable);
 
