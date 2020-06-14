@@ -3,6 +3,7 @@ package com.tostringtech.refp.project.rest.controller;
 import com.tostringtech.refp.application.exceptions.ObjectNotFoundException;
 import com.tostringtech.refp.application.models.EmpPro;
 import com.tostringtech.refp.application.models.Projeto;
+import com.tostringtech.refp.expense.api.resources.ExpenseResource;
 import com.tostringtech.refp.project.api.resources.ProjectEnterpriseResource;
 import com.tostringtech.refp.project.api.resources.ProjectResource;
 import com.tostringtech.refp.project.api.service.ProjectService;
@@ -117,6 +118,17 @@ public class ProjectRestController {
                 .findAllProjectEnterprises(id)
                 .stream()
                 .map(ProjectEnterpriseResource::new)
+                .collect(Collectors.toList());
+        return new ResponseEntity<>(resources, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/projects/{id}/expenses")
+    @ApiOperation(tags = {"Project"}, value = "Listar Despesa do Projeto")
+    public ResponseEntity<List<ExpenseResource>> listProjectExpenses(@PathVariable Long id) {
+        List<ExpenseResource> resources = projectService
+                .findAllProjectExpenses(id)
+                .stream()
+                .map(ExpenseResource::new)
                 .collect(Collectors.toList());
         return new ResponseEntity<>(resources, HttpStatus.OK);
     }
