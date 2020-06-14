@@ -53,7 +53,7 @@ public class Despesa implements Serializable {
     private boolean status;
     
     @Column(name = "URL_IMAGE")
-    private String url;
+    private String image;
 
     @JsonIgnoreProperties({"projeto"})
     @ManyToOne
@@ -75,7 +75,7 @@ public class Despesa implements Serializable {
     	this.setValor(resource.getValue());
     	this.setData(resource.getData());
     	this.setStatus(resource.isStatus());
-    	this.setUrl(resource.getUrl());
+    	this.setImage(resource.getImage());
     	this.setProjeto(resource.getProjResource());
     }
 
@@ -159,12 +159,12 @@ public class Despesa implements Serializable {
 		this.status = status;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getImage() {
+		return image;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public Projeto getProjeto() {

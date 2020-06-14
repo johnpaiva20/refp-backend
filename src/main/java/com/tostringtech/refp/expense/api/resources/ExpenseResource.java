@@ -36,7 +36,7 @@ public class ExpenseResource {
 	
 	private boolean status;
 	
-	private String url;
+	private String image;
 	
 	@JsonBackReference
 	private Projeto projResource;
@@ -55,7 +55,7 @@ public class ExpenseResource {
     	this.setData(despesa.getData());
     	this.setExpenseType(ExpenseType.getExpenseType(despesa.getTipoRubrica()));
     	this.setStatus(despesa.isStatus());
-    	this.setUrl(despesa.getUrl());
+    	this.setImage(despesa.getImage());
     	this.setProjResource(despesa.getProjeto());
     }
 
@@ -139,12 +139,12 @@ public class ExpenseResource {
 		this.status = status;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getImage() {
+		return image;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public Projeto getProjResource() {
