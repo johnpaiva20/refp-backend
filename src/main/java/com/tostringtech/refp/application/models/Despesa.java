@@ -48,8 +48,14 @@ public class Despesa implements Serializable {
 
     @Column(name = "DT_DESPESA")
     private Date data;
+    
+    @Column(name = "STATUS")
+    private boolean status;
+    
+    @Column(name = "URL_IMAGE")
+    private String url;
 
-    @JsonIgnoreProperties({"despesas"})
+    @JsonIgnoreProperties({"projeto"})
     @ManyToOne
     @JoinColumn(name = "COD_PROJETO", foreignKey = @ForeignKey(name = "DESPESA_PROJETO_FK"))
     private Projeto projeto;
@@ -68,6 +74,8 @@ public class Despesa implements Serializable {
     	this.setTipoRubrica(resource.getExpenseType().getTipo());
     	this.setValor(resource.getValue());
     	this.setData(resource.getData());
+    	this.setStatus(resource.isStatus());
+    	this.setUrl(resource.getUrl());
     	this.setProjeto(resource.getProjResource());
     }
 
@@ -141,6 +149,22 @@ public class Despesa implements Serializable {
 
 	public void setData(Date data) {
 		this.data = data;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public Projeto getProjeto() {
