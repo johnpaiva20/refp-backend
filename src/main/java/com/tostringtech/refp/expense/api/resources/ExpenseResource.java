@@ -34,7 +34,12 @@ public class ExpenseResource {
 	
 	private ExpenseType expenseType;
 	
-	private Projeto projResource;	
+	private boolean status;
+	
+	private String url;
+	
+	@JsonBackReference
+	private Projeto projResource;
 	
     public ExpenseResource() {
     }
@@ -49,6 +54,8 @@ public class ExpenseResource {
     	this.setValue(despesa.getValor());
     	this.setData(despesa.getData());
     	this.setExpenseType(ExpenseType.getExpenseType(despesa.getTipoRubrica()));
+    	this.setStatus(despesa.isStatus());
+    	this.setUrl(despesa.getUrl());
     	this.setProjResource(despesa.getProjeto());
     }
 
@@ -122,6 +129,22 @@ public class ExpenseResource {
 
 	public void setExpenseType(ExpenseType expenseType) {
 		this.expenseType = expenseType;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public Projeto getProjResource() {

@@ -2,6 +2,7 @@ package com.tostringtech.refp.expense.rest.controller;
 
 import com.tostringtech.refp.application.exceptions.ObjectNotFoundException;
 import com.tostringtech.refp.application.models.Despesa;
+import com.tostringtech.refp.aws.service.S3Service;
 import com.tostringtech.refp.expense.api.repository.ExpenseRepository;
 import com.tostringtech.refp.expense.api.resources.ExpenseResource;
 import com.tostringtech.refp.expense.api.service.ExpenseService;
@@ -10,6 +11,7 @@ import com.tostringtech.refp.expense.api.service.ExpenseService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import org.apache.commons.io.FileUtils;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -17,8 +19,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 @RestController
 @Api(tags = "Expense")
@@ -28,10 +37,22 @@ public class ExpenseRestController {
 
     @Autowired
     private ExpenseService expenseService;
+    
+    @Autowired
+    private S3Service s3;
+    
+    private final String PATH = "src\\main\\resources\\image.png";
 
     @PostMapping("/expenses")
     @ApiOperation(tags = {"Expense"}, value = "Cadastrar uma nova Despesa ")
     public ResponseEntity<ExpenseResource> createExpense(@RequestBody ExpenseResource resource) {
+    	resource.setUrl(resource.getUrl().split("base64,")[1]);
+    	String image = decoder(resource.getUrl(), PATH);
+    	String imageId = new Date().toString().replace(" ", "");
+    	s3.uploadFile(image, imageId);
+    	File file = new File("src\\main\\resources\\image.png");
+		boolean isFileDeleted = FileUtils.deleteQuietly(file);
+    	resource.setUrl("https://refp.s3-sa-east-1.amazonaws.com/" + imageId + ".jpg");
         Despesa despesa = expenseService.create(new Despesa(resource));
         resource = new ExpenseResource(despesa);
         return new ResponseEntity<>(resource, HttpStatus.CREATED);
@@ -89,6 +110,20 @@ public class ExpenseRestController {
     public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
     	expenseService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+    
+    private String decoder(String base64Image, String pathFile) {
+	    try (FileOutputStream imageOutFile = new FileOutputStream(pathFile)) {
+	      // Converting a Base64 String into Image byte array
+	      byte[] imageByteArray = Base64.getDecoder().decode(base64Image);
+	      imageOutFile.write(imageByteArray);
+	      return pathFile;
+	    } catch (FileNotFoundException e) {
+	      System.out.println("Image not found" + e);
+	    } catch (IOException ioe) {
+	      System.out.println("Exception while reading the Image " + ioe);
+	    }
+	    return null;
     }
     
 }

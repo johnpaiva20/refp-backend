@@ -7,3 +7,9 @@ spring:
     url: ${DATABASE_URL}
     username: ${DATABASE_USERNAME}
     password: ${DATABASE_PASSWORD}
+    
+awsinfo:
+  accesskey: AKIAV2J2NVHCS7FEPO3B
+  secretKey: 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
+  bucketName: refp
+  region: sa-east-1
