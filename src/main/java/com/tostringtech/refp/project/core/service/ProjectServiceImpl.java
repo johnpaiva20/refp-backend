@@ -34,14 +34,14 @@ public class ProjectServiceImpl implements ProjectService {
         if (projeto.getTitulo() != null) {
 
             if (projeto.getTitulo().length() > 200)
-                throw new StandardException("T√≠tulo n√£o deve ultrapassar 200 caracteres");
+                throw new StandardException("TÌtulo n„o deve ultrapassar 200 caracteres");
 
         } else {
             throw new StandardException("Titulo deve ser preenchido");
         }
 
         if (projeto.getCodigoAneel() == null)
-            throw new StandardException("C√≥digo ANEEL deve ser preenchido");
+            throw new StandardException("CÛdigo ANEEL deve ser preenchido");
         
         if (projeto.getRbRH() == null)
         	throw new StandardException("Rubrica RH deve ser preenchida");
@@ -65,17 +65,17 @@ public class ProjectServiceImpl implements ProjectService {
             OrdemServico ordemServico = projeto.getOrdemServico();
 
             if (ordemServico.getNumero() == null)
-                throw new StandardException("N√∫mero da ordem de servi√ßo deve ser preenchida");
+                throw new StandardException("N˙mero da ordem de serviÁo deve ser preenchida");
             else if (ordemServico.getNumero().length() > 100)
-                throw new StandardException("Ordem de servi√ßo n√£o deve ultrapassar 100 caracteres");
+                throw new StandardException("Ordem de serviÁo n„o deve ultrapassar 100 caracteres");
 
             if (ordemServico.getDataInicio() == null)
                 throw new StandardException("Data de inicio deve ser preenchida");
 
             if (ordemServico.getDuracao() == 0)
-                throw new StandardException("Dura√ß√£o n√£o pode ser de nenhum m√™s ");
+                throw new StandardException("DuraÁ„o n„o pode ser de nenhum mÍs ");
             else if (ordemServico.getDuracao() > 48)
-                throw new StandardException("Dura√ß√£o n√£o deve ultrapassar 48 meses");
+                throw new StandardException("DuraÁ„o n„o deve ultrapassar 48 meses");
 
         }
         return projectRepository.save(projeto);
@@ -90,7 +90,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public void addEnterprises(List<EmpPro> empresas, Long id) {
         if (this.findById(id).isPresent()) {
-            throw new StandardException("Projeto n√£o encontrado");
+            throw new StandardException("Projeto n„o encontrado");
         }
         Projeto projeto = this.findById(id).get();
         empresas.forEach(empPro -> empPro.setProjeto(projeto));
@@ -100,8 +100,8 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public List<EmpPro> findAllProjectEnterprises(Long id) {
-        if (this.findById(id).isPresent()) {
-            throw new StandardException("Projeto n√£o encontrado");
+        if (!this.findById(id).isPresent()) {
+            throw new StandardException("Projeto n„o encontrado");
         }
         Projeto projeto = this.findById(id).get();
         return projeto.getEmpresas();
@@ -109,8 +109,8 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public List<Despesa> findAllProjectExpenses(Long id) {
-        if (this.findById(id).isPresent()) {
-            throw new StandardException("Projeto n√£o encontrado");
+        if (!this.findById(id).isPresent()) {
+            throw new StandardException("Projeto n„o encontrado");
         }
         Projeto projeto = this.findById(id).get();
         return projeto.getDespesas();
