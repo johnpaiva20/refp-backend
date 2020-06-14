@@ -46,13 +46,17 @@ public class ExpenseRestController {
     @PostMapping("/expenses")
     @ApiOperation(tags = {"Expense"}, value = "Cadastrar uma nova Despesa ")
     public ResponseEntity<ExpenseResource> createExpense(@RequestBody ExpenseResource resource) {
-    	resource.setUrl(resource.getUrl().split("base64,")[1]);
-    	String image = decoder(resource.getUrl(), PATH);
-    	String imageId = new Date().toString().replace(" ", "");
-    	s3.uploadFile(image, imageId);
-    	File file = new File("src\\main\\resources\\image.png");
-		boolean isFileDeleted = FileUtils.deleteQuietly(file);
-    	resource.setUrl("https://refp.s3-sa-east-1.amazonaws.com/" + imageId + ".jpg");
+    	if (resource.getUrl() != null && !resource.getUrl().equals("")) {    		
+    		resource.setUrl(resource.getUrl().split("base64,")[1]);
+    		String image = decoder(resource.getUrl(), PATH);
+    		String imageId = new Date().toString().replace(" ", "");
+    		s3.uploadFile(image, imageId);
+    		File file = new File("src\\main\\resources\\image.png");
+    		boolean isFileDeleted = FileUtils.deleteQuietly(file);
+    		resource.setUrl("https://refp.s3-sa-east-1.amazonaws.com/" + imageId + ".jpg");
+    	} else {
+    		resource.setUrl("");
+    	}
         Despesa despesa = expenseService.create(new Despesa(resource));
         resource = new ExpenseResource(despesa);
         return new ResponseEntity<>(resource, HttpStatus.CREATED);
