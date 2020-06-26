@@ -61,6 +61,8 @@ public class Projeto implements Serializable {
     @JoinColumn(name = "CD_ORDEM_SERVICO", nullable = false)
     private OrdemServico ordemServico;
     
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "CD_DESPESA")
     private Empresa empresa;
 
     @OneToMany(mappedBy = "projeto")
