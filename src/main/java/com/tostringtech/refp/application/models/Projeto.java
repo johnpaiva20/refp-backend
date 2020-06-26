@@ -60,6 +60,8 @@ public class Projeto implements Serializable {
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CD_ORDEM_SERVICO", nullable = false)
     private OrdemServico ordemServico;
+    
+    private Empresa empresa;
 
     @OneToMany(mappedBy = "projeto")
     private List<MembPro> membros = new ArrayList<>();
@@ -88,6 +90,9 @@ public class Projeto implements Serializable {
         this.setRbServicoTerceiros(resource.getRbServTerc());
         this.setRbViagensDiarias(resource.getRbViaDia());
         this.setRbOutros(resource.getRbOutros());
+        if (resource.getMainEnterprise() != null) {        	
+        	this.setEmpresa(new Empresa(resource.getMainEnterprise()));
+        }
         if (resource.getServiceOrder() != null) {
             this.setOrdemServico(new OrdemServico(resource.getServiceOrder()));
         }
@@ -185,7 +190,15 @@ public class Projeto implements Serializable {
         this.ordemServico = ordemServico;
     }
 
-    public List<MembPro> getMembros() {
+    public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
+	public List<MembPro> getMembros() {
         return membros;
     }
 

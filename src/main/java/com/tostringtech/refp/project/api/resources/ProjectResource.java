@@ -1,6 +1,7 @@
 package com.tostringtech.refp.project.api.resources;
 
 import com.tostringtech.refp.application.models.Projeto;
+import com.tostringtech.refp.enterprise.api.resources.EnterpriseResource;
 import com.tostringtech.refp.project.api.enums.ProjectType;
 import io.swagger.annotations.ApiModel;
 
@@ -33,6 +34,8 @@ public class ProjectResource {
     private ProjectType type;
 
     private ServiceOrderResource serviceOrder;
+    
+    private EnterpriseResource mainEnterprise;
 
     private List<ProjectEnterpriseResource> enterprises = new ArrayList<>();
 
@@ -50,6 +53,9 @@ public class ProjectResource {
         this.setRbViaDia(projeto.getRbViagensDiarias());
         this.setRbOutros(projeto.getRbOutros());
         this.setType(ProjectType.getProjectType(projeto.getTipo()));
+        if (projeto.getEmpresa() != null) {        	
+        	this.setMainEnterprise(new EnterpriseResource(projeto.getEmpresa()));
+        }
         if (projeto.getOrdemServico() != null) {
             this.setServiceOrder(new ServiceOrderResource(projeto.getOrdemServico()));
         }
@@ -157,7 +163,15 @@ public class ProjectResource {
         this.serviceOrder = serviceOrder;
     }
 
-    public List<ProjectEnterpriseResource> getEnterprises() {
+    public EnterpriseResource getMainEnterprise() {
+		return mainEnterprise;
+	}
+
+	public void setMainEnterprise(EnterpriseResource mainEnterprise) {
+		this.mainEnterprise = mainEnterprise;
+	}
+
+	public List<ProjectEnterpriseResource> getEnterprises() {
         return enterprises;
     }
 
