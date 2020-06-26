@@ -125,7 +125,7 @@ beneficiado]]></text>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="true"/>
 					</textElement>
-					<text><![CDATA[Valor]]></text>
+					<text><![CDATA[Valor R$]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="0" y="26" width="64" height="19" uuid="69ad8896-18af-4aa7-9535-7bc479ca63ea">
@@ -151,7 +151,7 @@ beneficiado]]></text>
 					</textElement>
 					<text><![CDATA[TOTAL DA RUBRICA]]></text>
 				</staticText>
-				<textField pattern="¤#,##0.00;¤ #,##0.00">
+				<textField pattern="#,##0.00#">
 					<reportElement x="465" y="0" width="80" height="20" uuid="69a9a2ae-cac6-4457-a114-c0851aa52843"/>
 					<box>
 						<pen lineWidth="1.0"/>
@@ -257,7 +257,7 @@ beneficiado]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
 			</textField>
-			<textField pattern="¤#,##0.00;¤ #,##0.00" isBlankWhenNull="true">
+			<textField pattern="#,##0.00#" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="465" y="0" width="80" height="30" isPrintWhenDetailOverflows="true" uuid="8acab755-d485-44fc-a221-2fbe6b25136a"/>
 				<box>
 					<pen lineWidth="1.0"/>
