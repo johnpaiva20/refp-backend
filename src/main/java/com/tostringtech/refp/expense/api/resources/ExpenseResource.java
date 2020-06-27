@@ -38,7 +38,6 @@ public class ExpenseResource {
 	
 	private String image;
 	
-	@JsonBackReference
 	private Projeto projResource;
 	
     public ExpenseResource() {
