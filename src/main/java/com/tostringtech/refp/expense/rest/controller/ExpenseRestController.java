@@ -66,12 +66,11 @@ public class ExpenseRestController {
     @ApiOperation(tags = {"Expense"}, value = "Listar despesas cadastradas")
     public ResponseEntity<List<ExpenseResource>> listExpenses(Pageable pageable) {
 
-        List<ExpenseResource> resources = expenseService
-                .findAll(pageable)
-                .stream()
-                .map(ExpenseResource::new)
-                .collect(Collectors.toList());
-
+    	List<ExpenseResource> resources = expenseService.
+    			findAll()
+    			.stream()
+    			.map(ExpenseResource::new)
+    			.collect(Collectors.toList());
         if (!resources.isEmpty()) {
         	return ResponseEntity.ok(resources);
         }

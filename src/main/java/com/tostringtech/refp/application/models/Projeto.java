@@ -61,7 +61,7 @@ public class Projeto implements Serializable {
     @JoinColumn(name = "CD_ORDEM_SERVICO", nullable = false)
     private OrdemServico ordemServico;
     
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne
     @JoinColumn(name = "CD_EMPRESA")
     private Empresa empresa;
 
