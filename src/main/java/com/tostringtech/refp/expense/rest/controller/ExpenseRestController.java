@@ -93,7 +93,7 @@ public class ExpenseRestController {
     @ApiOperation(tags = {"Expense"}, value = "Atualizar uma Despesa")
     public ResponseEntity<Despesa> updateExpense(@RequestBody ExpenseResource resource, @PathVariable Long id){
     	Despesa despesa = expenseService.findById(id).orElseThrow(() -> {
-            return new ObjectNotFoundException("Despesa n�o encontrada");
+            return new ObjectNotFoundException("Despesa não encontrada");
         });
     	if(resource.getData() != null) {
     		despesa.setData(resource.getData());
@@ -104,7 +104,7 @@ public class ExpenseRestController {
     	if(resource.getDocumentNumber() != null) {
     		despesa.setNumeroDocumento(resource.getDocumentNumber());    		
     	}
-    	despesa = expenseService.update(despesa);
+    	despesa = expenseService.update(new Despesa(resource));
     	return ResponseEntity.noContent().build();
     }
 
