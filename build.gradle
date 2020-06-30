@@ -9,6 +9,14 @@ group = 'com.tostringtech'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+sourceSets {
+    main {
+        resources {
+            srcDir 'resources/reportsTemplates'
+        }
+    }
+}
+
 repositories {
 	mavenCentral()
 }
@@ -22,6 +30,28 @@ dependencies {
 	runtimeOnly 'com.oracle.ojdbc:ojdbc8'
 	runtimeOnly 'mysql:mysql-connector-java'
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	// https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3
+	compile group: 'com.amazonaws', name: 'aws-java-sdk-s3', version: '1.11.773'
+	// https://mvnrepository.com/artifact/commons-io/commons-io
+	compile group: 'commons-io', name: 'commons-io', version: '2.7'
+	
+	
+	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports
+	compile group: 'net.sf.jasperreports', name: 'jasperreports', version: '6.11.0'
+	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-fonts
+	compile group: 'net.sf.jasperreports', name: 'jasperreports-fonts', version: '6.11.0'
+	// https://mvnrepository.com/artifact/com.github.gmazelier/jasperreports-gradle-plugin
+	// compile group: 'com.github.gmazelier', name: 'jasperreports-gradle-plugin', version: '0.4'
+	// https://mvnrepository.com/artifact/org.codehaus.gpars/gpars
+	compile group: 'org.codehaus.gpars', name: 'gpars', version: '1.2.1'
+	// https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-functions
+	compile group: 'net.sf.jasperreports', name: 'jasperreports-functions', version: '6.11.0'
+	// https://mvnrepository.com/artifact/com.lowagie/itext
+	compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
+	//compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13'
+	compile 'org.springframework.security:spring-security-crypto:3.1.0.RELEASE'
+	
+	
 
 	implementation group: 'com.graphql-java', name: 'graphql-java', version: '13.0'
 	implementation group: 'com.graphql-java', name: 'graphql-java-tools', version: '5.2.4'

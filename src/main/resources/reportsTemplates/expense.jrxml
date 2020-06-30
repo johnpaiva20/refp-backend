@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="expense" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="545" leftMargin="30" rightMargin="20" topMargin="30" bottomMargin="20" uuid="af8d8fea-d8f8-451e-a236-6751126ea6a7">
+	<parameter name="logoIati" class="java.io.InputStream"/>
+	<parameter name="logoAneel" class="java.io.InputStream"/>
+	<parameter name="codigoProjeto" class="java.lang.String"/>
+	<parameter name="nomeProjeto" class="java.lang.String"/>
+	<parameter name="despesasRubricaRH" class="java.util.Collection"/>
+	<parameter name="totalRubricaRH" class="java.lang.Double"/>
+	<parameter name="despesasRubricaMC" class="java.util.Collection"/>
+	<parameter name="totalRubricaMC" class="java.lang.Double"/>
+	<parameter name="despesasRubricaMP" class="java.util.Collection"/>
+	<parameter name="totalRubricaMP" class="java.lang.Double"/>
+	<parameter name="despesasRubricaST" class="java.util.Collection"/>
+	<parameter name="totalRubricaST" class="java.lang.Double"/>
+	<parameter name="despesasRubricaVD" class="java.util.Collection"/>
+	<parameter name="totalRubricaVD" class="java.lang.Double"/>
+	<parameter name="despesasRubricaOU" class="java.util.Collection"/>
+	<parameter name="totalRubricaOU" class="java.lang.Double"/>
+	<parameter name="logoIatiCopy" class="java.io.InputStream"/>
+	<parameter name="logoAneelCopy" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="335" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="178" width="540" height="20" uuid="69b6c5d7-c777-410f-8471-37d8fbabd25b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE EXECUÇÃO FINANCEIRA DE PROJETOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="207" width="541" height="17" uuid="83f4e6f8-19a5-40be-a320-32d297ad5f46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPROVAÇÃO DE DESPESAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="254" width="60" height="20" uuid="bc6e2ec1-8282-4af1-97d0-35407eef9b30"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="281" width="60" height="20" uuid="aed69e54-d8d1-44a1-ac20-017663edbbc8"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Projeto:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="63" y="254" width="480" height="20" uuid="156ac9e1-ef85-4be5-a375-fcae244bd683"/>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codigoProjeto}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="64" y="281" width="479" height="20" uuid="fd4bfc04-8dfa-48bf-8915-94fbf790439c"/>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomeProjeto}]]></textFieldExpression>
+			</textField>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement x="465" y="5" width="80" height="60" uuid="0e16aed4-fcbb-4727-b8a8-bdfc70fe4506">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logoAneel}]]></imageExpression>
+			</image>
+			<image vAlign="Middle">
+				<reportElement x="0" y="5" width="80" height="60" uuid="64d1610b-5bbe-41db-b60f-d07b68df2b4e"/>
+				<imageExpression><![CDATA[$P{logoIati}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="78" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > 1]]></printWhenExpression>
+			<image vAlign="Middle">
+				<reportElement x="0" y="5" width="80" height="60" uuid="ce8e0d31-b16e-447e-8762-08f71a1a7998"/>
+				<imageExpression><![CDATA[$P{logoIatiCopy}]]></imageExpression>
+			</image>
+			<image hAlign="Right" vAlign="Middle">
+				<reportElement x="465" y="5" width="80" height="60" uuid="4d4453eb-8352-4228-bef4-509067d2eb26">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logoAneelCopy}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<printWhenExpression><![CDATA[true]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="5" width="545" height="30" uuid="78665016-a157-4500-9f4d-1f2753dadbfb"/>
+				<subreportParameter name="decricaoRubrica">
+					<subreportParameterExpression><![CDATA["Recursos Humanos"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="totalRubrica">
+					<subreportParameterExpression><![CDATA[$P{totalRubricaRH}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{despesasRubricaRH})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reportsTemplates/expense_details.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50" splitType="Stretch">
+			<printWhenExpression><![CDATA[true]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="5" width="545" height="30" uuid="55b98dd5-27c8-493b-802e-b0ea82021208"/>
+				<subreportParameter name="decricaoRubrica">
+					<subreportParameterExpression><![CDATA["Materiais Permanentes"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="totalRubrica">
+					<subreportParameterExpression><![CDATA[$P{totalRubricaMC}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{despesasRubricaMC})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reportsTemplates/expense_details.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50" splitType="Stretch">
+			<printWhenExpression><![CDATA[true]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="5" width="545" height="30" uuid="09cf4290-b356-4f23-a0c2-b5c3a62f1a89"/>
+				<subreportParameter name="decricaoRubrica">
+					<subreportParameterExpression><![CDATA["Materiais de consumo"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="totalRubrica">
+					<subreportParameterExpression><![CDATA[$P{totalRubricaMP}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{despesasRubricaMP})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reportsTemplates/expense_details.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50" splitType="Stretch">
+			<printWhenExpression><![CDATA[true]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="5" width="545" height="30" uuid="69a216dc-6693-437a-92a4-4c9854464634"/>
+				<subreportParameter name="decricaoRubrica">
+					<subreportParameterExpression><![CDATA["Serviços de Terceiros"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="totalRubrica">
+					<subreportParameterExpression><![CDATA[$P{totalRubricaST}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{despesasRubricaST})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reportsTemplates/expense_details.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50" splitType="Stretch">
+			<printWhenExpression><![CDATA[true]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="7" width="545" height="30" uuid="56c51632-d328-42dc-b68d-d2e7d09486d9"/>
+				<subreportParameter name="decricaoRubrica">
+					<subreportParameterExpression><![CDATA["Viagens e Diárias"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="totalRubrica">
+					<subreportParameterExpression><![CDATA[$P{totalRubricaVD}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{despesasRubricaVD})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reportsTemplates/expense_details.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50" splitType="Stretch">
+			<printWhenExpression><![CDATA[true]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="5" width="545" height="30" uuid="b8ef2afb-d46a-499d-b0a5-413748082232"/>
+				<subreportParameter name="decricaoRubrica">
+					<subreportParameterExpression><![CDATA["Outros"]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="totalRubrica">
+					<subreportParameterExpression><![CDATA[$P{totalRubricaOU}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{despesasRubricaOU})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["reportsTemplates/expense_details.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<printWhenExpression><![CDATA[true]]></printWhenExpression>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="354" y="11" width="100" height="30" uuid="ead7f798-d710-4447-a67d-ac309ac3e872"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" evaluationTime="Report">
+				<reportElement x="454" y="11" width="88" height="30" uuid="ea88bd79-39a3-479a-99c5-cba4e214f590"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="dd/MM/YYYY">
+				<reportElement x="60" y="11" width="60" height="30" uuid="ee74a276-e578-41f5-abdd-48594d4c5b02"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="HH:mm">
+				<reportElement x="138" y="11" width="100" height="30" uuid="18737424-b391-405b-a3b2-b0576f20caa9"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="11" width="60" height="30" uuid="048ad6ab-3f1e-4c51-a9d2-45aff63d66fa"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[Emitido em:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="11" width="18" height="30" uuid="eb5bae4c-7f26-4d81-ac68-c718ff4f2110"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<text><![CDATA[às]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
