@@ -62,6 +62,20 @@ public class EnterpriseRestController {
     @PutMapping(value = "/enterprises/{id}")
     @ApiOperation(tags = {"Enterprise"}, value = "Atualizar uma Empresa")
     public ResponseEntity<Void> updateProject(@RequestBody EnterpriseResource resoruce, @PathVariable Long id) {
+        Empresa empresa =  enterpriseService.findById(id).orElse(null);
+        if(empresa == null){
+            return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        if(resoruce.getCompany()!=null){
+            empresa.setRazaoSocial(resoruce.getCompany());
+        }
+        if(resoruce.getInitials()!=null){
+            empresa.setSigla(resoruce.getInitials());
+        }
+        if(resoruce.getTrade()!=null){
+            empresa.setNomeFantasia(resoruce.getTrade());
+        }
+        enterpriseService.update(empresa);
         return ResponseEntity.noContent().build();
     }
 

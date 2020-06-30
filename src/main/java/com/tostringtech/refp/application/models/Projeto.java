@@ -56,6 +56,15 @@ public class Projeto implements Serializable {
     @Column(name = "RB_OUTROS")
     @Value("0")
     private Double rbOutros;
+
+    @Column(name = "TP_SEGMENTO")
+    private String segment;
+
+    @Column(name = "TP_FASE_INOVACAO")
+    private String innovationPhase;
+
+    @Column(name = "TP_COMPARTILHAMENTO")
+    private String sharingMethod;
     
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CD_ORDEM_SERVICO", nullable = false)
@@ -91,6 +100,10 @@ public class Projeto implements Serializable {
         if (resource.getServiceOrder() != null) {
             this.setOrdemServico(new OrdemServico(resource.getServiceOrder()));
         }
+        this.setSegment(resource.getSegment());
+        this.setSharingMethod(resource.getSharingMethod());
+        this.setInnovationPhase(resource.getInnovationPhase());
+
     }
 
     public Projeto(Long id) {
@@ -177,7 +190,31 @@ public class Projeto implements Serializable {
 		this.rbOutros = rbOutros;
 	}
 
-	public OrdemServico getOrdemServico() {
+    public String getSegment() {
+        return segment;
+    }
+
+    public void setSegment(String segment) {
+        this.segment = segment;
+    }
+
+    public String getInnovationPhase() {
+        return innovationPhase;
+    }
+
+    public void setInnovationPhase(String innovationPhase) {
+        this.innovationPhase = innovationPhase;
+    }
+
+    public String getSharingMethod() {
+        return sharingMethod;
+    }
+
+    public void setSharingMethod(String sharingMethod) {
+        this.sharingMethod = sharingMethod;
+    }
+
+    public OrdemServico getOrdemServico() {
         return ordemServico;
     }
 
