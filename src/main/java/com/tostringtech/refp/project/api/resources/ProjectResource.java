@@ -1,6 +1,7 @@
 package com.tostringtech.refp.project.api.resources;
 
 import com.tostringtech.refp.application.models.Projeto;
+import com.tostringtech.refp.enterprise.api.resources.EnterpriseResource;
 import com.tostringtech.refp.project.api.enums.ProjectType;
 import io.swagger.annotations.ApiModel;
 
@@ -33,6 +34,8 @@ public class ProjectResource {
     private ProjectType type;
 
     private ServiceOrderResource serviceOrder;
+    
+    private EnterpriseResource mainEnterprise;
 
     private String segment;
 
@@ -59,6 +62,11 @@ public class ProjectResource {
         this.setSegment(projeto.getSegment());
         this.setSharingMethod(projeto.getSharingMethod());
         this.setInnovationPhase(projeto.getInnovationPhase());
+
+        if (projeto.getEmpresa() != null) {        	
+        	this.setMainEnterprise(new EnterpriseResource(projeto.getEmpresa()));
+        }
+
         if (projeto.getOrdemServico() != null) {
             this.setServiceOrder(new ServiceOrderResource(projeto.getOrdemServico()));
         }
@@ -190,7 +198,15 @@ public class ProjectResource {
         this.serviceOrder = serviceOrder;
     }
 
-    public List<ProjectEnterpriseResource> getEnterprises() {
+    public EnterpriseResource getMainEnterprise() {
+		return mainEnterprise;
+	}
+
+	public void setMainEnterprise(EnterpriseResource mainEnterprise) {
+		this.mainEnterprise = mainEnterprise;
+	}
+
+	public List<ProjectEnterpriseResource> getEnterprises() {
         return enterprises;
     }
 

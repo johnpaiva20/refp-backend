@@ -66,12 +66,11 @@ public class ExpenseRestController {
     @ApiOperation(tags = {"Expense"}, value = "Listar despesas cadastradas")
     public ResponseEntity<List<ExpenseResource>> listExpenses(Pageable pageable) {
 
-        List<ExpenseResource> resources = expenseService
-                .findAll(pageable)
-                .stream()
-                .map(ExpenseResource::new)
-                .collect(Collectors.toList());
-
+    	List<ExpenseResource> resources = expenseService.
+    			findAll()
+    			.stream()
+    			.map(ExpenseResource::new)
+    			.collect(Collectors.toList());
         if (!resources.isEmpty()) {
         	return ResponseEntity.ok(resources);
         }
@@ -94,7 +93,7 @@ public class ExpenseRestController {
     @ApiOperation(tags = {"Expense"}, value = "Atualizar uma Despesa")
     public ResponseEntity<Despesa> updateExpense(@RequestBody ExpenseResource resource, @PathVariable Long id){
     	Despesa despesa = expenseService.findById(id).orElseThrow(() -> {
-            return new ObjectNotFoundException("Despesa n�o encontrada");
+            return new ObjectNotFoundException("Despesa não encontrada");
         });
     	if(resource.getData() != null) {
     		despesa.setData(resource.getData());
@@ -105,7 +104,7 @@ public class ExpenseRestController {
     	if(resource.getDocumentNumber() != null) {
     		despesa.setNumeroDocumento(resource.getDocumentNumber());    		
     	}
-    	despesa = expenseService.update(despesa);
+    	despesa = expenseService.update(new Despesa(resource));
     	return ResponseEntity.noContent().build();
     }
 

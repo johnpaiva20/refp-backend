@@ -14,6 +14,8 @@ public interface ExpenseService {
     List<Despesa> findAll(Pageable pageable);
     
     List<Despesa> findAllByProject(Projeto projeto);
+    
+    List<Despesa> findAll();
 
     Optional<Despesa> findById(Long id);
     

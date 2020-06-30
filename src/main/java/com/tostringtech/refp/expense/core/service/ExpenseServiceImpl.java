@@ -52,4 +52,9 @@ public class ExpenseServiceImpl implements ExpenseService {
         });
 		expenseRepository.delete(despesa);
 	}
+
+	@Override
+	public List<Despesa> findAll() {
+		return expenseRepository.findAll();
+	}
 }
