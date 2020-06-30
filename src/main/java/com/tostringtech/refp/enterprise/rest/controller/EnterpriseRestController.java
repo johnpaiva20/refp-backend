@@ -82,6 +82,11 @@ public class EnterpriseRestController {
     @DeleteMapping(value = "/enterprises/{id}")
     @ApiOperation(tags = {"Enterprise"}, value = "Deletar uma Empresa")
     public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
+        Empresa empresa =  enterpriseService.findById(id).orElse(null);
+        if(empresa == null){
+            return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        enterpriseService.delete(empresa);
         return ResponseEntity.noContent().build();
     }
 
