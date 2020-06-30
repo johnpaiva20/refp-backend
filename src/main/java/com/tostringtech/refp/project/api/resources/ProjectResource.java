@@ -37,6 +37,12 @@ public class ProjectResource {
     
     private EnterpriseResource mainEnterprise;
 
+    private String segment;
+
+    private String innovationPhase;
+
+    private String sharingMethod;
+
     private List<ProjectEnterpriseResource> enterprises = new ArrayList<>();
 
     public ProjectResource() {
@@ -53,9 +59,14 @@ public class ProjectResource {
         this.setRbViaDia(projeto.getRbViagensDiarias());
         this.setRbOutros(projeto.getRbOutros());
         this.setType(ProjectType.getProjectType(projeto.getTipo()));
+        this.setSegment(projeto.getSegment());
+        this.setSharingMethod(projeto.getSharingMethod());
+        this.setInnovationPhase(projeto.getInnovationPhase());
+
         if (projeto.getEmpresa() != null) {        	
         	this.setMainEnterprise(new EnterpriseResource(projeto.getEmpresa()));
         }
+
         if (projeto.getOrdemServico() != null) {
             this.setServiceOrder(new ServiceOrderResource(projeto.getOrdemServico()));
         }
@@ -147,7 +158,31 @@ public class ProjectResource {
 		this.rbOutros = rbOutros;
 	}
 
-	public ProjectType getType() {
+    public String getSegment() {
+        return segment;
+    }
+
+    public void setSegment(String segment) {
+        this.segment = segment;
+    }
+
+    public String getInnovationPhase() {
+        return innovationPhase;
+    }
+
+    public void setInnovationPhase(String innovationPhase) {
+        this.innovationPhase = innovationPhase;
+    }
+
+    public String getSharingMethod() {
+        return sharingMethod;
+    }
+
+    public void setSharingMethod(String sharingMethod) {
+        this.sharingMethod = sharingMethod;
+    }
+
+    public ProjectType getType() {
         return type;
     }
 
